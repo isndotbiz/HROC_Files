@@ -1,0 +1,26 @@
+Quick CLI workflows
+-------------------
+
+Preview site locally
+- cd HROC_Public
+- python3 -m http.server 9000
+- Open http://localhost:9000/
+
+Update an unclear PDF name (in 99_Misc_Guides/Needs_Review)
+- Identify file: ls 99_Misc_Guides/Needs_Review
+- Open/view manually; decide title.
+- mv "99_Misc_Guides/Needs_Review/Untitled.pdf" "99_Misc_Guides/Clear_Title.pdf"
+- Repeat for other Untitled* files.
+
+Refresh Notion package after edits
+- cd .. (repo root)
+- zip -rq HROC_Public_Notion.zip HROC_Public
+
+Git sync when ready
+- git status -sb
+- git add -A
+- git commit -m "Update public hub content"
+- git push origin main
+
+Regenerate action stats (optional)
+- Edit index.html to adjust percentages or text in the complianceData array.

@@ -1,0 +1,29 @@
+Immediate Actions (0-7 days)
+- Fix officer structure: hold a board meeting to elect Brianna Bear as President/Chair, Jonathan as Secretary, Lilly as Treasurer; update minutes and resolutions accordingly.
+- File WA Annual Report with corrected officers and updated contact info.
+- Update WA Charitable Registration to reflect 501(c)(3) approval and current officers; confirm UBI 605 944 010 and Charity Registration No. 2011817 are correct.
+- Gather IRS determination proof: locate CP-575 (or approval letter) and signed Form 1023/1023-EZ; add to 04_IRS.
+- Standardize signatures: ensure all policy PDFs show correct officer titles after officer update.
+
+Near Term (1-4 weeks)
+- Build a 12-month operating budget and cash forecast; add to 05_Financial_Plans.
+- Open dedicated nonprofit bank account; document account-opening resolution if required by bank.
+- Set up donation acceptance and gift acknowledgment flow; create templates and place in 09_Checklists_ToDos.
+- Prepare 990-N/990-EZ process (calendar, responsible person, reminders) and document in 09_Checklists_ToDos.
+- Confirm fiscal sponsorship/partnership status with Evergreen Social Impact / Seattle Parks Foundation; file any MOUs.
+- Review and refresh all policies (Conflict of Interest, Whistleblower, Financial Controls, Retention) with dates matching officer updates.
+
+Mid Term (1-3 months)
+- File any required SPV LLC compliance items (annual report, license renewals) and store in 07_SPV.
+- Document RV lease agreement and insurance (liability, D&O, vehicle); add to 07_SPV.
+- Capture program metrics/logs (naloxone distribution, outreach visits, referrals) in an operational log; store in 06_Operations_Plans.
+- Create a board calendar (meetings, policy reviews, filings) and place in 01_Governance.
+- Draft a grants pipeline and tracking sheet; place in 05_Financial_Plans.
+
+Compliance Cadence (recurring)
+- WA Annual Report: file before deadline each year; track in 03_Registrations_Licenses.
+- WA Charitable Registration renewal: renew annually; update officers and 501(c)(3) status.
+- IRS Form 990-N/990-EZ: file annually based on revenue level; keep proof in 04_IRS.
+- Board meetings: hold at least quarterly; minutes go in 01_Governance.
+- Policy review: annually for Whistleblower, Financial Controls, Conflict of Interest, Retention.
+- Bank reconciliation and financial reports: monthly; store summaries in 05_Financial_Plans.

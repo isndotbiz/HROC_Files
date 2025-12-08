@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healing Roots Outreach Collective | Public Hub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <img src="08_Branding_Signatures/hrocinc.png" alt="HROC logo">
+      <div>
+        <h1>Healing Roots Outreach Collective</h1>
+        <p class="lead">Compliance, governance, and outreach docs — ready for public sharing and Notion import.</p>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h2>✨ Public Transparency Hub</h2>
+        <p class="muted">Download the Notion-ready package, view governance and policy essentials, and track compliance momentum.</p>
+        <div class="hero-actions">
+          <a class="btn" href="../HROC_Public_Notion.zip" download>⬇️ Download Notion Package</a>
+          <a class="btn secondary" href="README.txt">📁 Folder Guide</a>
+        </div>
+        <div class="hero-actions" style="margin-top:10px;">
+          <span class="pill">🛡️ Compliance-first</span>
+          <span class="pill">📑 Governance-ready</span>
+          <span class="pill">🎯 Action-focused</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Quick Progress</h3>
+        <div class="list">
+          <div class="row" style="display:flex;justify-content:space-between;align-items:center;">
+            <span>Board + Policies</span><span class="badge">Strong</span>
+          </div>
+          <div class="bar"><span style="width:88%;"></span></div>
+          <div class="row" style="display:flex;justify-content:space-between;align-items:center;">
+            <span>State & Charity Filings</span><span class="badge">In Motion</span>
+          </div>
+          <div class="bar"><span style="width:72%;"></span></div>
+          <div class="row" style="display:flex;justify-content:space-between;align-items:center;">
+            <span>IRS Evidence on File</span><span class="badge">Needs Docs</span>
+          </div>
+          <div class="bar"><span style="width:48%; background:linear-gradient(90deg,#ffb347,#ff7c70);"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="card">
+        <h3>📚 Document Sets</h3>
+        <div class="metric">10</div>
+        <div class="muted">Curated categories with clean filenames</div>
+      </div>
+      <div class="card">
+        <h3>✅ Policies Signed</h3>
+        <div class="metric">8</div>
+        <div class="muted">Code of Conduct, COI, Financial Controls, Whistleblower, Retention, Gift Acceptance</div>
+      </div>
+      <div class="card">
+        <h3>🗓️ 30-60-90 Plan</h3>
+        <div class="metric">Live</div>
+        <div class="muted">See action plan below for deadlines & owners</div>
+      </div>
+      <div class="card">
+        <h3>🎯 Next Focus</h3>
+        <div class="metric">IRS Proof</div>
+        <div class="muted">Add CP-575 + 1023 to 04_IRS</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>🎨 Categories at a Glance</h3>
+      <div class="category-grid">
+        <div>
+          <span class="pill">🏛️ Governance</span>
+          <div class="muted">Articles, bylaws, rosters, meetings, resolutions</div>
+        </div>
+        <div>
+          <span class="pill">📜 Policies</span>
+          <div class="muted">COI, whistleblower, financial controls, retention</div>
+        </div>
+        <div>
+          <span class="pill">🪪 Registrations</span>
+          <div class="muted">WA charity filings, business licenses</div>
+        </div>
+        <div>
+          <span class="pill">💠 IRS</span>
+          <div class="muted">EIN, Form 1023 (signed/blank), supplemental packet</div>
+        </div>
+        <div>
+          <span class="pill">💵 Financial Plans</span>
+          <div class="muted">Budgets, projections, fundraising plan</div>
+        </div>
+        <div>
+          <span class="pill">🧭 Operations</span>
+          <div class="muted">Operational planning, fiscal sponsor onboarding</div>
+        </div>
+        <div>
+          <span class="pill">🤝 SPV</span>
+          <div class="muted">SPV charter, operating agreement, compliance timeline</div>
+        </div>
+        <div>
+          <span class="pill">✒️ Branding & Signatures</span>
+          <div class="muted">Logos, signature assets for fast signing</div>
+        </div>
+        <div>
+          <span class="pill">📌 Checklists</span>
+          <div class="muted">Action PDFs for banking, 990-N/EZ, transparency hub</div>
+        </div>
+        <div>
+          <span class="pill">📚 Guides</span>
+          <div class="muted">Reference PDFs; “Needs_Review” holds unlabeled items</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="split">
+      <div class="card">
+        <h3>📈 Compliance Momentum</h3>
+        <div id="compliance-chart" class="chart-row"></div>
+      </div>
+      <div class="card">
+        <h3>🗓️ 30-60-90 Highlights</h3>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>✅ Immediate Checklist (0-7 days)</h3>
+      <ul class="list">
+        <li>🧭 Board vote: Brianna Bear as Chair/President; Jonathan Secretary; Lilly Treasurer.</li>
+        <li>🪪 File WA Annual Report + update WA Charitable Registration with 501(c)(3) status.</li>
+        <li>📄 Add IRS CP-575 and signed Form 1023/1023-EZ to <code>04_IRS</code>.</li>
+        <li>✒️ Refresh signatures/titles on policies after officer update.</li>
+      </ul>
+    </section>
+
+    <section class="split">
+      <div class="card">
+        <h3>📅 Upcoming (8-30 days)</h3>
+        <ul class="list">
+          <li>💵 Build 12-month budget + cash forecast; store in <code>05_Financial_Plans</code>.</li>
+          <li>🏦 Open nonprofit bank account; capture resolution if required.</li>
+          <li>🎁 Set up donation acceptance + acknowledgment workflow; templates in <code>09_Checklists_ToDos</code>.</li>
+          <li>🧾 Define 990-N/990-EZ workflow and reminders.</li>
+          <li>🤝 Confirm fiscal sponsor/partner MOUs; file in <code>06_Operations_Plans</code>.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>📌 Mid-Term (31-90 days)</h3>
+        <ul class="list">
+          <li>⚙️ SPV LLC compliance + annual report; add docs to <code>07_SPV</code>.</li>
+          <li>🚐 Add RV lease + insurance; store in <code>07_SPV</code>.</li>
+          <li>📊 Program metrics log (naloxone, outreach, referrals) → <code>06_Operations_Plans</code>.</li>
+          <li>🗂️ Board calendar + agenda templates → <code>01_Governance</code>.</li>
+          <li>🎯 Grant pipeline tracker → <code>05_Financial_Plans</code>.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const complianceData = [
+      { label: "Governance", value: 90, note: "Articles, bylaws, resolutions set" },
+      { label: "Policies", value: 88, note: "Signed core policies in place" },
+      { label: "State Filings", value: 72, note: "WA Annual & Charitable updates pending" },
+      { label: "IRS Evidence", value: 48, note: "Add CP-575 + signed 1023" },
+      { label: "Finance Ops", value: 60, note: "Budget + bank documentation queued" },
+      { label: "SPV Docs", value: 70, note: "Operating agreements in; compliance timeline next" },
+    ];
+
+    const timeline = [
+      { when: "Day 0-7", text: "Elect officers; file WA Annual + Charitable Registration; add CP-575 & Form 1023." },
+      { when: "Day 8-30", text: "Build budget & cash forecast; open bank; donation + acknowledgment flow; 990-N/EZ workflow." },
+      { when: "Day 31-60", text: "SPV annual report + license renewal; RV lease + insurance; program metrics log; board calendar." },
+      { when: "Day 61-90", text: "Grant pipeline tracker; quarterly board under new officers; annual policy refresh; verify reminders." }
+    ];
+
+    const chart = document.getElementById("compliance-chart");
+    complianceData.forEach(item => {
+      const wrap = document.createElement("div");
+      wrap.className = "row";
+      wrap.innerHTML = `
+        <div>
+          <div style="font-weight:700; font-family:'Space Grotesk', sans-serif;">${item.label}</div>
+          <div class="muted" style="font-size:12px;">${item.note}</div>
+        </div>
+        <span class="chip">${item.value}%</span>
+      `;
+      const bar = document.createElement("div");
+      bar.className = "bar";
+      const span = document.createElement("span");
+      span.style.width = item.value + "%";
+      bar.appendChild(span);
+      chart.appendChild(wrap);
+      chart.appendChild(bar);
+    });
+
+    const timelineEl = document.getElementById("timeline");
+    timeline.forEach(step => {
+      const row = document.createElement("div");
+      row.innerHTML = `
+        <div class="dot"></div>
+        <div>
+          <div style="font-weight:700;">${step.when}</div>
+          <div class="muted" style="margin-top:2px;">${step.text}</div>
+        </div>
+      `;
+      row.style.display = "grid";
+      row.style.gridTemplateColumns = "20px 1fr";
+      row.style.alignItems = "flex-start";
+      row.style.gap = "10px";
+      timelineEl.appendChild(row);
+    });
+  </script>
+</body>
+</html>

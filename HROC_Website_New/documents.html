@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Library | Healing Roots Outreach Collective</title>
+  <meta name="description" content="Access all HROC organizational documents including governance, policies, financial plans, and compliance materials.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Additional styles for documents page */
+    .documents-hero {
+      background: linear-gradient(135deg, rgba(233, 30, 140, 0.95) 0%, rgba(0, 212, 232, 0.9) 100%);
+      color: white;
+      padding: var(--space-16) 0 var(--space-12);
+      text-align: center;
+    }
+
+    .documents-hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: var(--space-4);
+    }
+
+    .documents-hero p {
+      font-size: 1.125rem;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.95;
+    }
+
+    .search-box {
+      max-width: 600px;
+      margin: var(--space-8) auto var(--space-12);
+      padding: 0 var(--space-4);
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: var(--space-4);
+      font-size: 1rem;
+      border: 2px solid var(--hroc-cyan);
+      border-radius: var(--radius-md);
+      font-family: var(--font-body);
+    }
+
+    .search-box input:focus {
+      outline: none;
+      border-color: var(--hroc-magenta);
+      box-shadow: 0 0 0 3px rgba(233, 30, 140, 0.1);
+    }
+
+    .folder-section {
+      margin-bottom: var(--space-12);
+      padding-bottom: var(--space-12);
+      border-bottom: 2px solid var(--color-gray-200);
+    }
+
+    .folder-section:last-child {
+      border-bottom: none;
+    }
+
+    .folder-header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-6);
+      padding: var(--space-4);
+      background: linear-gradient(135deg, var(--hroc-magenta) 0%, var(--hroc-cyan) 100%);
+      border-radius: var(--radius-md);
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .folder-header:hover {
+      transform: translateX(4px);
+    }
+
+    .folder-icon {
+      font-size: 1.5rem;
+    }
+
+    .folder-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      margin: 0;
+      flex: 1;
+    }
+
+    .folder-count {
+      background: rgba(255, 255, 255, 0.3);
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .document-list {
+      display: grid;
+      gap: var(--space-3);
+      padding-left: var(--space-8);
+    }
+
+    .document-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-3) var(--space-4);
+      background: white;
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+      text-decoration: none;
+      color: var(--color-text);
+    }
+
+    .document-item:hover {
+      border-color: var(--hroc-cyan);
+      box-shadow: 0 2px 8px rgba(0, 212, 232, 0.15);
+      transform: translateX(4px);
+    }
+
+    .document-icon {
+      font-size: 1.25rem;
+      color: var(--hroc-magenta);
+    }
+
+    .document-name {
+      flex: 1;
+      font-weight: 500;
+    }
+
+    .document-size {
+      font-size: 0.875rem;
+      color: var(--color-gray-600);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-4);
+      margin: var(--space-8) 0;
+    }
+
+    .stat-card {
+      background: white;
+      padding: var(--space-6);
+      border-radius: var(--radius-md);
+      text-align: center;
+      border: 2px solid var(--color-gray-200);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      font-family: var(--font-heading);
+      background: linear-gradient(135deg, var(--hroc-magenta) 0%, var(--hroc-cyan) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-label {
+      font-size: 0.875rem;
+      color: var(--color-gray-600);
+      margin-top: var(--space-2);
+    }
+
+    @media (max-width: 768px) {
+      .document-list {
+        padding-left: var(--space-4);
+      }
+
+      .folder-title {
+        font-size: 1.125rem;
+      }
+
+      .document-name {
+        font-size: 0.875rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Crisis Banner -->
+  <div class="crisis-banner" role="banner">
+    <div class="container">
+      <strong>24/7 Crisis Support:</strong>
+      <a href="tel:2536789186" class="crisis-link">Call (253) 678-9186</a> or
+      <a href="sms:2536789186" class="crisis-link">Text (253) 678-9186</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">
+            <span class="logo-text">Healing Roots</span>
+            <span class="logo-subtitle">Outreach Collective</span>
+          </a>
+        </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <button class="mobile-menu-toggle" aria-expanded="false" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <ul class="nav-list">
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="documents.html" class="active">Documents</a></li>
+            <li><a href="index.html#donate">Donate</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Documents Hero -->
+  <section class="documents-hero">
+    <div class="container">
+      <h1>📚 Document Library</h1>
+      <p>Access all HROC organizational documents, governance materials, policies, and compliance records.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main id="main-content" class="container" style="padding: var(--space-12) var(--space-4);">
+
+    <!-- Search -->
+    <div class="search-box">
+      <input type="search" id="docSearch" placeholder="🔍 Search documents..." aria-label="Search documents">
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">80</div>
+        <div class="stat-label">Total Documents</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">11</div>
+        <div class="stat-label">Categories</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Transparent</div>
+      </div>
+    </div>
+
+    <!-- 01 Governance -->
+    <section class="folder-section" data-folder="governance">
+      <div class="folder-header">
+        <span class="folder-icon">📋</span>
+        <h2 class="folder-title">Governance Documents</h2>
+        <span class="folder-count">18 files</span>
+      </div>
+      <div class="document-list">
+        <a href="HROC_Public/01_Governance/Articles_of_Incorporation.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Articles of Incorporation</span>
+        </a>
+        <a href="HROC_Public/01_Governance/Articles_of_Incorporation_Certificate.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Articles of Incorporation - Certificate</span>
+        </a>
+        <a href="HROC_Public/01_Governance/Bylaws.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Bylaws</span>
+        </a>
+        <a href="HROC_Public/01_Governance/Board_Roster_Certified.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Board Roster (Certified)</span>
+        </a>
+        <a href="HROC_Public/01_Governance/Board_Meeting_First.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">First Board Meeting Minutes</span>
+        </a>
+        <a href="HROC_Public/01_Governance/Board_Meeting_Special.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Special Board Meeting Minutes</span>
+        </a>
+        <a href="HROC_Public/01_Governance/Board_Resolution_2025-03.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Board Resolution No. 2025-03</span>
+        </a>
+        <a href="HROC_Public/01_Governance/Board_Resolution_2025-04.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Board Resolution No. 2025-04</span>
+        </a>
+        <a href="HROC_Public/01_Governance/Governance_and_Policies_Adoption.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Governance & Policies Adoption</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 02 Policies -->
+    <section class="folder-section" data-folder="policies">
+      <div class="folder-header">
+        <span class="folder-icon">📜</span>
+        <h2 class="folder-title">Organizational Policies</h2>
+        <span class="folder-count">9 files</span>
+      </div>
+      <div class="document-list">
+        <a href="HROC_Public/02_Policies/Code_of_Conduct_Policy.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Code of Conduct Policy</span>
+        </a>
+        <a href="HROC_Public/02_Policies/Conflict_of_Interest_Policy.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Conflict of Interest Policy</span>
+        </a>
+        <a href="HROC_Public/02_Policies/Document_Retention_and_Destruction_Policy.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Document Retention & Destruction Policy</span>
+        </a>
+        <a href="HROC_Public/02_Policies/Financial_Controls_and_Reimbursement_Policy.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Financial Controls & Reimbursement Policy</span>
+        </a>
+        <a href="HROC_Public/02_Policies/Gift_Acceptance_and_Acknowledgment_Policy.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Gift Acceptance & Acknowledgment Policy</span>
+        </a>
+        <a href="HROC_Public/02_Policies/Whistleblower_Protection_Policy.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Whistleblower Protection Policy</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 03 Registrations -->
+    <section class="folder-section" data-folder="registrations">
+      <div class="folder-header">
+        <span class="folder-icon">🏛️</span>
+        <h2 class="folder-title">Registrations & Licenses</h2>
+        <span class="folder-count">5 files</span>
+      </div>
+      <div class="document-list">
+        <a href="HROC_Public/03_Registrations_Licenses/Business_License_My_DOR.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Business License (WA DOR)</span>
+        </a>
+        <a href="HROC_Public/03_Registrations_Licenses/Business_License_Receipt_2025-08-08.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Business License Receipt (08/08/2025)</span>
+        </a>
+        <a href="HROC_Public/03_Registrations_Licenses/WA_Charitable_Organization_Registration.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">WA Charitable Organization Registration</span>
+        </a>
+        <a href="HROC_Public/03_Registrations_Licenses/Charitable_Organization_Registration_0000567751.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Charitable Registration Certificate</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 04 IRS -->
+    <section class="folder-section" data-folder="irs">
+      <div class="folder-header">
+        <span class="folder-icon">🏦</span>
+        <h2 class="folder-title">IRS Documents</h2>
+        <span class="folder-count">7 files</span>
+      </div>
+      <div class="document-list">
+        <a href="HROC_Public/04_IRS/IRS_CP575_EIN_Letter_39-3295288.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">EIN Letter (CP-575) - 93-3295288</span>
+        </a>
+        <a href="HROC_Public/04_IRS/IRS_Form_1023_Application_Signed.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Form 1023 Application (Signed)</span>
+        </a>
+        <a href="HROC_Public/04_IRS/IRS_Supplemental_Packet_2025-08-11_Filled.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">IRS Supplemental Packet (08/11/2025)</span>
+        </a>
+        <a href="HROC_Public/04_IRS/IRS_General_Guidance.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">IRS General Guidance</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 05 Financial Plans -->
+    <section class="folder-section" data-folder="financial">
+      <div class="folder-header">
+        <span class="folder-icon">💰</span>
+        <h2 class="folder-title">Financial Plans</h2>
+        <span class="folder-count">4 files</span>
+      </div>
+      <div class="document-list">
+        <a href="HROC_Public/05_Financial_Plans/Projected_Budget_2025_Signed.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Projected Budget 2025 (Signed)</span>
+        </a>
+        <a href="HROC_Public/05_Financial_Plans/Financial_Projections_3yr_Signed.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">3-Year Financial Projections (Signed)</span>
+        </a>
+        <a href="HROC_Public/05_Financial_Plans/Fundraising_Plan.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Fundraising Plan</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 06 Operations -->
+    <section class="folder-section" data-folder="operations">
+      <div class="folder-header">
+        <span class="folder-icon">⚙️</span>
+        <h2 class="folder-title">Operations Plans</h2>
+        <span class="folder-count">2 files</span>
+      </div>
+      <div class="document-list">
+        <a href="HROC_Public/06_Operations_Plans/Fiscal_Sponsor_Onboarding.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Fiscal Sponsor Onboarding</span>
+        </a>
+        <a href="HROC_Public/06_Operations_Plans/Operational_Planning.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Operational Planning Overview</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 07 SPV -->
+    <section class="folder-section" data-folder="spv">
+      <div class="folder-header">
+        <span class="folder-icon">🏢</span>
+        <h2 class="folder-title">SPV LLC Documents</h2>
+        <span class="folder-count">14 files</span>
+      </div>
+      <div class="document-list">
+        <a href="HROC_Public/07_SPV/SPV_Operating_Agreement.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">SPV Operating Agreement</span>
+        </a>
+        <a href="HROC_Public/07_SPV/SPV_Organizational_Charter.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">SPV Organizational Charter</span>
+        </a>
+        <a href="HROC_Public/07_SPV/SPV_and_HROC_Agreement.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">SPV & HROC Agreement</span>
+        </a>
+        <a href="HROC_Public/07_SPV/SPV_Manager.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">SPV Manager Documentation</span>
+        </a>
+        <a href="HROC_Public/07_SPV/SPV_LLC_Protections_and_Compliance_Checklist.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">SPV Protections & Compliance Checklist</span>
+        </a>
+        <a href="HROC_Public/07_SPV/Formation_Timeline_and_Critical_Compliance_Deadlines.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Formation Timeline & Compliance Deadlines</span>
+        </a>
+        <a href="HROC_Public/07_SPV/Annual_Report_Filing_Year_2026.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Annual Report (Filing Year 2026)</span>
+        </a>
+        <a href="HROC_Public/07_SPV/RV_Lease_Market_Analysis_for_Mobile_Outreach_Operations.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">RV Lease Market Analysis</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 08 Branding -->
+    <section class="folder-section" data-folder="branding">
+      <div class="folder-header">
+        <span class="folder-icon">🎨</span>
+        <h2 class="folder-title">Branding & Signatures</h2>
+        <span class="folder-count">7 files</span>
+      </div>
+      <div class="document-list">
+        <a href="HROC_Public/08_Branding_Signatures/hrocinc.png" class="document-item" target="_blank">
+          <span class="document-icon">🖼️</span>
+          <span class="document-name">HROC Logo</span>
+        </a>
+        <a href="HROC_Public/08_Branding_Signatures/notion_cover.png" class="document-item" target="_blank">
+          <span class="document-icon">🖼️</span>
+          <span class="document-name">Notion Cover Image</span>
+        </a>
+        <a href="HROC_Public/08_Branding_Signatures/signature.png" class="document-item" target="_blank">
+          <span class="document-icon">🖼️</span>
+          <span class="document-name">Official Signature</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 09 Checklists -->
+    <section class="folder-section" data-folder="checklists">
+      <div class="folder-header">
+        <span class="folder-icon">✅</span>
+        <h2 class="folder-title">Checklists & To-Dos</h2>
+        <span class="folder-count">9 files</span>
+      </div>
+      <div class="document-list">
+        <a href="HROC_Public/09_Checklists_ToDos/TODO_Adopt_and_Log_Final_Bylaws.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Adopt and Log Final Bylaws</span>
+        </a>
+        <a href="HROC_Public/09_Checklists_ToDos/TODO_Adopt_Document_Retention_and_Destruction_Policy.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Adopt Document Retention Policy</span>
+        </a>
+        <a href="HROC_Public/09_Checklists_ToDos/TODO_Approve_Conflict_of_Interest_and_Collect_Signed_Forms.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Approve Conflict of Interest & Collect Forms</span>
+        </a>
+        <a href="HROC_Public/09_Checklists_ToDos/TODO_Create_Donation_Acceptance_and_Acknowledgment_Process.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Create Donation Acceptance Process</span>
+        </a>
+        <a href="HROC_Public/09_Checklists_ToDos/TODO_Establish_Financial_Controls.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Establish Financial Controls</span>
+        </a>
+        <a href="HROC_Public/09_Checklists_ToDos/TODO_Open_Nonprofit_Bank_Account.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Open Nonprofit Bank Account</span>
+        </a>
+        <a href="HROC_Public/09_Checklists_ToDos/TODO_Setup_IRS_Form_990N_990EZ_Process.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Setup IRS Form 990-N/990-EZ Process</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 99 Misc Guides -->
+    <section class="folder-section" data-folder="guides">
+      <div class="folder-header">
+        <span class="folder-icon">📖</span>
+        <h2 class="folder-title">Miscellaneous Guides</h2>
+        <span class="folder-count">4 files</span>
+      </div>
+      <div class="document-list">
+        <a href="HROC_Public/99_Misc_Guides/Starting_a_Nonprofit_in_WA_Guide_2023.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">Starting a Nonprofit in WA (2023 Guide)</span>
+        </a>
+        <a href="HROC_Public/99_Misc_Guides/IRS_Official_Guidance.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">IRS Official Guidance</span>
+        </a>
+        <a href="HROC_Public/99_Misc_Guides/IRS_Guidance_Brief_Primer.pdf" class="document-item" target="_blank">
+          <span class="document-icon">📄</span>
+          <span class="document-name">IRS Guidance Brief Primer</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Healing Roots Outreach Collective</h3>
+          <p>Indigenous-led, trauma-informed mobile harm reduction services in Pierce County, WA.</p>
+          <p><strong>EIN:</strong> 93-3295288 | <strong>501(c)(3)</strong> Nonprofit</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html#services">Our Services</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="documents.html">Documents</a></li>
+            <li><a href="index.html#donate">Donate</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>📧 <a href="mailto:admin@healingrootsoutreachcollective.org">admin@healingrootsoutreachcollective.org</a></p>
+          <p>📞 <a href="tel:2536789186">(253) 678-9186</a></p>
+          <p>📍 Serving Pierce County, WA</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Healing Roots Outreach Collective. All rights reserved.</p>
+        <p><small>WA State Charitable Solicitations disclosure: Financial information available upon request from WA Secretary of State or at <a href="https://www.sos.wa.gov/charities" target="_blank">www.sos.wa.gov/charities</a></small></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Document search functionality
+    const searchInput = document.getElementById('docSearch');
+    const folderSections = document.querySelectorAll('.folder-section');
+
+    searchInput.addEventListener('input', function(e) {
+      const searchTerm = e.target.value.toLowerCase();
+
+      folderSections.forEach(section => {
+        const documentItems = section.querySelectorAll('.document-item');
+        let hasVisibleDocs = false;
+
+        documentItems.forEach(item => {
+          const docName = item.querySelector('.document-name').textContent.toLowerCase();
+
+          if (docName.includes(searchTerm)) {
+            item.style.display = 'flex';
+            hasVisibleDocs = true;
+          } else {
+            item.style.display = 'none';
+          }
+        });
+
+        // Show/hide entire section based on whether it has visible documents
+        section.style.display = hasVisibleDocs || searchTerm === '' ? 'block' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>

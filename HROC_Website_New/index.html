@@ -66,6 +66,7 @@
           <ul class="nav-list">
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#impact">Impact</a></li>
             <li><a href="documents.html">Documents</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="#donate" class="nav-btn-donate">Donate</a></li>
@@ -75,8 +76,8 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" role="region" aria-label="Welcome and main services">
+  <!-- Hero Section with Background Image -->
+  <section class="hero hero-with-bg" role="region" aria-label="Welcome and main services" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('images/hero-community-gathering.jpg');">
     <div class="container">
       <div class="hero-content">
         <h2 class="hero-title">
@@ -123,17 +124,19 @@
   <!-- Main Content -->
   <main id="main-content" role="main">
 
-    <!-- Services Section -->
+    <!-- Services Section - 3x3 Grid with 9 Services -->
     <section id="services" class="section section-services">
       <div class="container">
         <h2 class="section-title">Our Services</h2>
         <p class="section-intro">All services are free, confidential, and provided without judgment. We meet you where you are.</p>
 
-        <div class="services-grid">
+        <div class="services-grid services-grid-9">
 
           <!-- Service Card 1 -->
           <article class="service-card">
-            <div class="service-icon" aria-hidden="true">💊</div>
+            <div class="service-icon-img">
+              <img src="images/service-overdose-prevention.png" alt="Overdose Prevention Icon" loading="lazy">
+            </div>
             <h3 class="service-title">Overdose Prevention</h3>
             <p class="service-description">
               Free naloxone (Narcan) kits, fentanyl test strips, and overdose response training.
@@ -149,7 +152,9 @@
 
           <!-- Service Card 2 -->
           <article class="service-card">
-            <div class="service-icon" aria-hidden="true">💉</div>
+            <div class="service-icon-img">
+              <img src="images/service-syringe-exchange.png" alt="Syringe Exchange Icon" loading="lazy">
+            </div>
             <h3 class="service-title">Syringe Exchange</h3>
             <p class="service-description">
               Sterile syringes, safer injection supplies, sharps disposal, and harm reduction education
@@ -165,7 +170,9 @@
 
           <!-- Service Card 3 -->
           <article class="service-card">
-            <div class="service-icon" aria-hidden="true">🩹</div>
+            <div class="service-icon-img">
+              <img src="images/service-wound-care.png" alt="Wound Care Icon" loading="lazy">
+            </div>
             <h3 class="service-title">Wound Care</h3>
             <p class="service-description">
               Basic wound assessment, first aid supplies, wound care kits, and referrals to
@@ -181,7 +188,9 @@
 
           <!-- Service Card 4 -->
           <article class="service-card">
-            <div class="service-icon" aria-hidden="true">🧪</div>
+            <div class="service-icon-img">
+              <img src="images/service-health-screening.png" alt="Health Screening Icon" loading="lazy">
+            </div>
             <h3 class="service-title">Health Screening</h3>
             <p class="service-description">
               Blood pressure checks, glucose testing, HIV/HCV rapid testing coordination,
@@ -197,7 +206,9 @@
 
           <!-- Service Card 5 -->
           <article class="service-card">
-            <div class="service-icon" aria-hidden="true">🤝</div>
+            <div class="service-icon-img">
+              <img src="images/service-peer-support.png" alt="Peer Support Icon" loading="lazy">
+            </div>
             <h3 class="service-title">Peer Support</h3>
             <p class="service-description">
               One-on-one peer support from people with lived experience. Crisis de-escalation,
@@ -213,7 +224,9 @@
 
           <!-- Service Card 6 -->
           <article class="service-card">
-            <div class="service-icon" aria-hidden="true">🏠</div>
+            <div class="service-icon-img">
+              <img src="images/service-housing-support.png" alt="Housing Support Icon" loading="lazy">
+            </div>
             <h3 class="service-title">Housing & ID Support</h3>
             <p class="service-description">
               Housing navigation, shelter referrals, ID replacement assistance, and connection
@@ -229,7 +242,9 @@
 
           <!-- Service Card 7 -->
           <article class="service-card">
-            <div class="service-icon" aria-hidden="true">🌿</div>
+            <div class="service-icon-img">
+              <img src="images/service-cultural-healing.png" alt="Cultural Healing Icon" loading="lazy">
+            </div>
             <h3 class="service-title">Cultural Healing</h3>
             <p class="service-description">
               Indigenous-informed healing circles, culturally safe engagement, and traditional
@@ -243,16 +258,101 @@
             </ul>
           </article>
 
+          <!-- Service Card 8 - NEW -->
+          <article class="service-card">
+            <div class="service-icon-img">
+              <img src="images/service-education-training.png" alt="Education & Training Icon" loading="lazy">
+            </div>
+            <h3 class="service-title">Education & Training</h3>
+            <p class="service-description">
+              Community overdose prevention training, harm reduction workshops, and education
+              on safer substance use practices.
+            </p>
+            <ul class="service-list">
+              <li>Naloxone training</li>
+              <li>Harm reduction education</li>
+              <li>Community workshops</li>
+              <li>Peer educator support</li>
+            </ul>
+          </article>
+
+          <!-- Service Card 9 - NEW -->
+          <article class="service-card">
+            <div class="service-icon-img">
+              <img src="images/service-resource-navigation.png" alt="Resource Navigation Icon" loading="lazy">
+            </div>
+            <h3 class="service-title">Resource Navigation</h3>
+            <p class="service-description">
+              Connection to food banks, legal aid, employment services, and community resources
+              to support overall well-being.
+            </p>
+            <ul class="service-list">
+              <li>Food & clothing access</li>
+              <li>Legal aid referrals</li>
+              <li>Employment support</li>
+              <li>Benefits navigation</li>
+            </ul>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- About Section -->
+    <!-- Photo Gallery Section - Our Work in Action -->
+    <section class="section section-gallery">
+      <div class="container">
+        <h2 class="section-title">Our Work in Action</h2>
+        <p class="section-intro">Serving communities with dignity, compassion, and culturally-informed care</p>
+
+        <div class="photo-grid photo-grid-9">
+          <figure class="photo-item">
+            <img src="images/photo-mobile-outreach.jpg" alt="Mobile outreach services at community location" loading="lazy">
+            <figcaption>Mobile Outreach</figcaption>
+          </figure>
+          <figure class="photo-item">
+            <img src="images/photo-naloxone-training.jpg" alt="Naloxone training workshop with community members" loading="lazy">
+            <figcaption>Naloxone Training</figcaption>
+          </figure>
+          <figure class="photo-item">
+            <img src="images/photo-peer-support.jpg" alt="Peer support counseling session" loading="lazy">
+            <figcaption>Peer Support</figcaption>
+          </figure>
+          <figure class="photo-item">
+            <img src="images/photo-health-screening.jpg" alt="Health screening and wellness check services" loading="lazy">
+            <figcaption>Health Screening</figcaption>
+          </figure>
+          <figure class="photo-item">
+            <img src="images/photo-volunteer-team.jpg" alt="Volunteer team preparing outreach supplies" loading="lazy">
+            <figcaption>Volunteer Team</figcaption>
+          </figure>
+          <figure class="photo-item">
+            <img src="images/photo-healing-circle.jpg" alt="Indigenous healing circle gathering" loading="lazy">
+            <figcaption>Healing Circles</figcaption>
+          </figure>
+          <figure class="photo-item">
+            <img src="images/photo-housing-support.jpg" alt="Housing navigation and support services" loading="lazy">
+            <figcaption>Housing Support</figcaption>
+          </figure>
+          <figure class="photo-item">
+            <img src="images/photo-resource-fair.jpg" alt="Community resource fair and outreach event" loading="lazy">
+            <figcaption>Resource Fair</figcaption>
+          </figure>
+          <figure class="photo-item">
+            <img src="images/photo-wound-care.jpg" alt="Wound care services being provided" loading="lazy">
+            <figcaption>Wound Care</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section with Team -->
     <section id="about" class="section section-about">
       <div class="container">
+        <h2 class="section-title">About Us</h2>
+
         <div class="about-content">
           <div class="about-text">
-            <h2 class="section-title">Our Mission</h2>
+            <h3 class="about-subtitle">Our Mission</h3>
             <p class="mission-statement">
               Healing Roots Outreach Collective provides Indigenous-informed, peer-led mobile harm
               reduction services to unhoused and street-involved individuals in King and Pierce
@@ -318,6 +418,109 @@
               <p>All donations are tax-deductible</p>
             </div>
           </div>
+        </div>
+
+        <!-- Team Section -->
+        <div class="team-section">
+          <h3 class="team-title">Our Team</h3>
+          <p class="team-intro">Led by people with lived experience and deep commitment to community healing</p>
+
+          <div class="team-grid">
+            <article class="team-member">
+              <div class="team-photo">
+                <img src="images/photo-team-director.jpg" alt="Executive Director portrait" loading="lazy">
+              </div>
+              <div class="team-info">
+                <h4 class="team-name">Leadership Team</h4>
+                <p class="team-role">Executive Director & Board</p>
+                <p class="team-bio">
+                  Our leadership brings decades of experience in harm reduction, Indigenous health,
+                  and community organizing. We're committed to centering lived experience and
+                  Indigenous wisdom in all aspects of our work.
+                </p>
+              </div>
+            </article>
+
+            <article class="team-member">
+              <div class="team-photo">
+                <img src="images/photo-team-outreach.jpg" alt="Outreach coordinator in the field" loading="lazy">
+              </div>
+              <div class="team-info">
+                <h4 class="team-name">Outreach Team</h4>
+                <p class="team-role">Mobile Harm Reduction Specialists</p>
+                <p class="team-bio">
+                  Our outreach team provides direct services in the field, building relationships
+                  with community members and delivering life-saving supplies and support with
+                  dignity and respect.
+                </p>
+              </div>
+            </article>
+
+            <article class="team-member">
+              <div class="team-photo">
+                <img src="images/photo-team-peer.jpg" alt="Peer support specialist" loading="lazy">
+              </div>
+              <div class="team-info">
+                <h4 class="team-name">Peer Support</h4>
+                <p class="team-role">Peer Navigators & Counselors</p>
+                <p class="team-bio">
+                  Our peer support team members bring personal experience with substance use
+                  and recovery, offering authentic connection, understanding, and guidance to
+                  community members navigating their own journeys.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Section with Infographics -->
+    <section id="impact" class="section section-impact">
+      <div class="container">
+        <h2 class="section-title">Our Impact</h2>
+        <p class="section-intro">Data-driven harm reduction making a real difference in our communities</p>
+
+        <div class="impact-grid impact-grid-9">
+          <div class="impact-stat-card">
+            <img src="images/infographic-naloxone-distribution.png" alt="Naloxone distribution statistics" loading="lazy">
+          </div>
+          <div class="impact-stat-card">
+            <img src="images/infographic-lives-saved.png" alt="Lives saved through overdose prevention" loading="lazy">
+          </div>
+          <div class="impact-stat-card">
+            <img src="images/infographic-syringe-exchange.png" alt="Syringe exchange program statistics" loading="lazy">
+          </div>
+          <div class="impact-stat-card">
+            <img src="images/infographic-peer-support.png" alt="Peer support interactions statistics" loading="lazy">
+          </div>
+          <div class="impact-stat-card">
+            <img src="images/infographic-health-screenings.png" alt="Health screening services provided" loading="lazy">
+          </div>
+          <div class="impact-stat-card">
+            <img src="images/infographic-wound-care.png" alt="Wound care services statistics" loading="lazy">
+          </div>
+          <div class="impact-stat-card">
+            <img src="images/infographic-housing-navigation.png" alt="Housing navigation success stories" loading="lazy">
+          </div>
+          <div class="impact-stat-card">
+            <img src="images/infographic-outreach-visits.png" alt="Mobile outreach visits and locations" loading="lazy">
+          </div>
+          <div class="impact-stat-card">
+            <img src="images/infographic-community-reach.png" alt="Total community members served" loading="lazy">
+          </div>
+        </div>
+
+        <div class="impact-summary">
+          <h3>Making a Measurable Difference</h3>
+          <p>
+            Through consistent mobile outreach, peer-led support, and culturally-informed care,
+            we're reducing overdose deaths, preventing disease transmission, and connecting
+            community members to life-changing resources and services.
+          </p>
+          <p>
+            Every interaction is an opportunity for healing. Every connection saves lives.
+          </p>
         </div>
       </div>
     </section>
@@ -525,6 +728,7 @@
           <ul class="footer-links">
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About Us</a></li>
+            <li><a href="#impact">Impact</a></li>
             <li><a href="#donate">Donate</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>

@@ -1,0 +1,106 @@
+{
+  "hero": {
+    "name": "Hero/Banner Images",
+    "prompts": [
+      {
+        "id": "hero-main",
+        "description": "Main hero banner",
+        "prompt": "A vibrant, hopeful community scene showing diverse people receiving harm reduction services in a mobile outreach setting. Warm, welcoming atmosphere with magenta, cyan, lime, and yellow accent colors. Professional, modern, compassionate healthcare setting. High quality, photorealistic.",
+        "negative_prompt": "drugs, needles, violence, dark, scary, clinical",
+        "filename": "hero-main.jpg"
+      },
+      {
+        "id": "hero-community",
+        "description": "Community outreach banner",
+        "prompt": "Mobile harm reduction RV in an urban community setting, with diverse outreach workers distributing naloxone kits and health resources. Bright daylight, professional healthcare workers in safety vests, welcoming and accessible atmosphere. Vibrant colors: magenta, cyan, lime accents. Photorealistic, high quality.",
+        "negative_prompt": "drugs, needles, violence, clinical hospital, sterile",
+        "filename": "hero-community.jpg"
+      },
+      {
+        "id": "hero-services",
+        "description": "Services overview banner",
+        "prompt": "Compassionate healthcare worker providing harm reduction education and naloxone training to community members. Warm, professional, supportive atmosphere. Modern community health setting with vibrant accent colors (magenta, cyan, lime). Focus on connection, empathy, and life-saving resources. Photorealistic.",
+        "negative_prompt": "drugs, needles, violence, dark, scary",
+        "filename": "hero-services.jpg"
+      }
+    ]
+  },
+  "services": {
+    "name": "Service Illustrations",
+    "prompts": [
+      {
+        "id": "service-naloxone",
+        "description": "Naloxone distribution",
+        "prompt": "Healthcare professional demonstrating naloxone nasal spray usage in a bright, welcoming community health setting. Educational, professional, compassionate. Clean, modern illustration style with magenta and cyan accent colors. Focus on training and life-saving education.",
+        "negative_prompt": "drugs, needles, scary, dark",
+        "filename": "service-naloxone.jpg"
+      },
+      {
+        "id": "service-supplies",
+        "description": "Harm reduction supplies",
+        "prompt": "Organized harm reduction supply kit with naloxone, fentanyl test strips, educational materials, and health resources laid out professionally. Clean, bright, organized presentation. Modern healthcare supplies with vibrant accent colors. Educational and professional.",
+        "negative_prompt": "drugs, needles, messy, clinical",
+        "filename": "service-supplies.jpg"
+      },
+      {
+        "id": "service-outreach",
+        "description": "Mobile outreach",
+        "prompt": "Mobile harm reduction outreach van/RV with welcoming signage, parked in urban community. Healthcare workers greeting community members. Bright daylight, professional, accessible, welcoming atmosphere. Vibrant colors with magenta and cyan accents. Modern, clean, hopeful.",
+        "negative_prompt": "drugs, needles, dark, scary, abandoned",
+        "filename": "service-outreach.jpg"
+      },
+      {
+        "id": "service-education",
+        "description": "Community education",
+        "prompt": "Small group community education session about harm reduction and overdose prevention. Diverse attendees listening to healthcare educator. Welcoming community space, warm lighting, supportive atmosphere. Modern, professional, compassionate. Vibrant accent colors.",
+        "negative_prompt": "drugs, needles, clinical, sterile, dark",
+        "filename": "service-education.jpg"
+      }
+    ]
+  },
+  "community": {
+    "name": "Community Photos",
+    "prompts": [
+      {
+        "id": "community-diverse",
+        "description": "Diverse community members",
+        "prompt": "Diverse group of community members of different ages, ethnicities, and backgrounds coming together in support. Warm, welcoming, hopeful atmosphere. Modern community setting with natural lighting. Focus on connection, mutual aid, and community strength. Vibrant colors.",
+        "negative_prompt": "drugs, needles, violence, segregation",
+        "filename": "community-diverse.jpg"
+      },
+      {
+        "id": "community-volunteer",
+        "description": "Community volunteers",
+        "prompt": "Volunteers organizing harm reduction supplies and preparing for community outreach. Collaborative, organized, professional setting. Warm lighting, diverse volunteers working together. Modern community health space with vibrant accent colors (magenta, cyan, lime).",
+        "negative_prompt": "drugs, needles, messy, dark",
+        "filename": "community-volunteer.jpg"
+      },
+      {
+        "id": "community-support",
+        "description": "Peer support",
+        "prompt": "Two people in supportive conversation at a community health center. Warm, compassionate atmosphere. Natural lighting, comfortable seating area. Focus on connection, empathy, and peer support. Professional but welcoming setting. Vibrant, hopeful colors.",
+        "negative_prompt": "drugs, clinical, sterile, dark, scary",
+        "filename": "community-support.jpg"
+      }
+    ]
+  },
+  "abstract": {
+    "name": "Abstract/Background Images",
+    "prompts": [
+      {
+        "id": "abstract-hope",
+        "description": "Hope and healing abstract",
+        "prompt": "Abstract flowing shapes representing hope, healing, and community connection. Vibrant gradients of magenta, cyan, lime, and yellow. Smooth, organic forms suggesting growth and positive change. Modern, optimistic, uplifting. High quality digital art.",
+        "negative_prompt": "dark, violent, harsh, angular",
+        "filename": "abstract-hope.jpg"
+      },
+      {
+        "id": "abstract-community",
+        "description": "Community connection abstract",
+        "prompt": "Abstract representation of interconnected community network. Flowing lines and nodes in vibrant magenta, cyan, and lime colors. Organic, warm, welcoming visual suggesting support systems and mutual aid. Modern digital art, high quality.",
+        "negative_prompt": "mechanical, cold, dark, isolated",
+        "filename": "abstract-community.jpg"
+      }
+    ]
+  }
+}

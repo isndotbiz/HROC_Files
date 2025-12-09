@@ -1,0 +1,5 @@
+Disposal_Date,Document_Type,Document_Title,Original_Date,Retention_Period,Retention_End_Date,Disposal_Method,Authorized_By,Witness,Notes
+,,,,,,,,,(Example entries below - delete before use)
+2032-08-01,Policy,Gift Acceptance Policy v1.0,2025-07-30,7 years after superseded,2032-07-30,Cross-cut shredding,Jonathan Mallinger,Lilly Fedas,Superseded by v2.0 on 2025-07-30
+2032-12-31,Financial,Bank Statements 2025,2025-01-01,7 years,2032-12-31,Secure shredding,Jonathan Mallinger,Brianna Bear,Routine retention schedule
+2028-12-31,Marketing,Social Media Archive 2025,2025-01-01,3 years,2028-12-31,Secure deletion,Jonathan Mallinger,Lilly Fedas,Routine retention schedule

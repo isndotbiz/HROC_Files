@@ -1,0 +1,176 @@
+🎯 HROC HIERARCHICAL NOTION IMPORT
+==================================
+
+📦 WHAT'S DIFFERENT ABOUT THIS PACKAGE
+---------------------------------------
+This package creates a STRUCTURED workspace with:
+- 1 parent/hub page (00_HROC_Operations_Hub.md)
+- 6 child pages that nest underneath (01-06)
+
+Result: Clean, organized sidebar navigation!
+
+
+🚀 IMPORT INSTRUCTIONS (3 MINUTES)
+===================================
+
+STEP 1: Import All 7 Files
+---------------------------
+1. Open Notion (app or web)
+2. Navigate to where you want HROC workspace
+3. Select ALL 7 .md files in this folder:
+   - 00_HROC_Operations_Hub.md (THE PARENT PAGE)
+   - 01_Getting_Started_After_501c3.md
+   - 02_SPV_Management_Guide.md
+   - 03_Compliance_Calendar_2025_2026.md
+   - 04_Officer_Transition_Critical_Tasks.md
+   - 05_Web_Accessibility_Checklist.md
+   - 06_IRS_Communications_Log.md
+
+4. Drag all 7 files into Notion at once
+5. Wait for import to complete (10-15 seconds)
+
+✅ All 7 pages should now be visible in Notion
+
+
+STEP 2: Create the Hierarchy (1 minute)
+----------------------------------------
+Right now, all 7 pages are at the same level. Let's organize them:
+
+1. In your Notion sidebar, find these 7 pages
+2. One by one, DRAG each page (01-06) ONTO the "00_HROC_Operations_Hub" page
+3. When you drag a page onto another, it becomes a child page
+
+Do this for all 6 pages (01, 02, 03, 04, 05, 06)
+
+Your sidebar should now look like:
+```
+🏛️ HROC Operations Hub
+├── ✨ Getting Started After 501(c)(3)
+├── 🚀 SPV Management Guide
+├── 📅 Compliance Calendar 2025-2026
+├── 🔄 Officer Transition Critical Tasks
+├── ♿ Web Accessibility Checklist
+└── 📬 IRS Communications Log
+```
+
+✅ Perfect! You have a clean, organized structure
+
+
+STEP 3: Read and Act (10 minutes)
+----------------------------------
+1. Open "🏛️ HROC Operations Hub" (the parent page)
+2. Read the "URGENT: Critical Actions This Week" section
+3. Open "🔄 Officer Transition Critical Tasks" page
+4. Follow the steps listed there
+5. Add critical deadlines to your calendar:
+   - Oct 28, 2025: SPV BOI Report DUE
+   - May 15, 2026: Form 990 DUE
+
+
+🤖 STEP 4: Enhance with AI (Optional - 30-60 min)
+==================================================
+
+Want databases, automation, and tracking instead of static pages?
+
+1. Find the file: MASTER_NOTION_PROMPTS.md
+   Location: /Users/jonathanmallinger/Documents/HROC_Files/
+
+2. Open it in a text editor or Notion
+
+3. Choose your path:
+   - QUICK: Use "THE ONE MASTER PROMPT" (30 min)
+   - PROFESSIONAL: Follow all 12 prompts (60 min)
+
+4. Copy prompts from that file, paste into Notion AI
+
+Result: Interactive databases, reminders, dashboards!
+
+
+⚡ THE FASTEST WAY
+===================
+
+1. Import all 7 files (drag & drop)
+2. Nest 6 pages under the hub page (drag onto it)
+3. Read "Critical Actions" section
+4. Schedule board meeting this week
+5. Add Oct 28 to calendar
+✅ Done! You're operational in 5 minutes
+
+
+🎯 WHAT EACH PAGE DOES
+=======================
+
+00 - Hub Page:
+     Your home base, critical actions, navigation
+
+01 - Getting Started:
+     Post-501(c)(3) requirements and setup
+
+02 - SPV Management:
+     Monthly/quarterly/annual SPV tasks
+
+03 - Compliance Calendar:
+     All federal and state deadlines
+
+04 - Officer Transition:
+     URGENT - Board meeting procedures
+
+05 - Web Accessibility:
+     Monthly website testing checklist
+
+06 - IRS Communications:
+     Log all IRS interactions
+
+
+✅ SUCCESS CHECKLIST
+=====================
+
+After import:
+- [ ] 7 pages visible in Notion
+- [ ] Hub page at top level
+- [ ] 6 pages nested underneath hub
+- [ ] Can navigate easily in sidebar
+- [ ] Emojis and formatting look good
+
+After reading:
+- [ ] Know what to do this week
+- [ ] Board meeting scheduled
+- [ ] Oct 28 deadline in calendar
+- [ ] Understand compliance requirements
+
+
+🆘 TROUBLESHOOTING
+==================
+
+Pages won't nest:
+- Drag the page ONTO another page (not next to it)
+- You should see a blue highlight when hovering
+- Release when you see the indent indicator
+
+Import looks broken:
+- Try importing one file at a time
+- Use /import command in Notion
+- Check files end in .md extension
+
+Can't find files after import:
+- Check your sidebar (left side)
+- Try searching in Notion (Cmd/Ctrl + P)
+- Look in "All pages" section
+
+
+📞 NEXT STEPS
+=============
+
+1. Import pages (3 minutes)
+2. Organize hierarchy (1 minute)
+3. Read critical actions (5 minutes)
+4. Take urgent actions this week
+5. Enhance with AI when ready (optional)
+
+
+═══════════════════════════════════════════
+Made for: Healing Roots Outreach Collective
+Package: Hierarchical Notion Import
+Updated: December 2025
+🌱 Rooted in community. Growing toward healing. 💙
+═══════════════════════════════════════════

@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HROC UX/UI Code Snippets - Mobile-First Harm Reduction</title>
+  <style>
+    /* Base styles for this reference document */
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #f8fafc;
+    }
+    .snippet-section {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      border-left: 4px solid #0066cc;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    code {
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'Monaco', 'Consolas', monospace;
+      font-size: 0.9em;
+    }
+    pre {
+      background: #1e293b;
+      color: #f1f5f9;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    pre code {
+      background: transparent;
+      color: inherit;
+      padding: 0;
+    }
+    h1 { color: #0066cc; }
+    h2 { color: #1e293b; margin-top: 2rem; }
+    h3 { color: #475569; }
+    .note {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 12px;
+      margin: 12px 0;
+      border-radius: 4px;
+    }
+    .demo {
+      border: 2px dashed #cbd5e1;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      background: #f8fafc;
+    }
+  </style>
+</head>
+<body>
+  <h1>🏥 HROC UX/UI Code Snippets</h1>
+  <p><strong>Purpose:</strong> Ready-to-use HTML/CSS/JavaScript for mobile-first harm reduction website</p>
+  <p><strong>WCAG 2.1 AA Compliant</strong> | <strong>Performance Optimized</strong> | <strong>Crisis-Focused</strong></p>
+
+  <!-- ========================================
+       SNIPPET 1: Crisis Banner (Sticky)
+       ======================================== -->
+  <div class="snippet-section">
+    <h2>1. Crisis Banner (Sticky Header)</h2>
+    <p>High-contrast, sticky banner with one-tap calling/texting. Always visible on scroll.</p>
+
+    <h3>HTML</h3>
+    <pre><code>&lt;!-- Add immediately after &lt;body&gt; tag --&gt;
+&lt;div class="crisis-banner" role="banner" aria-label="Emergency contact information"&gt;
+  &lt;div class="crisis-banner-content"&gt;
+    &lt;a href="tel:+12065551234" class="crisis-cta crisis-cta-phone"&gt;
+      &lt;svg class="icon" aria-hidden="true" width="20" height="20" fill="currentColor"&gt;
+        &lt;path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/&gt;
+      &lt;/svg&gt;
+      &lt;span class="crisis-text"&gt;
+        &lt;span class="crisis-label"&gt;Crisis Line&lt;/span&gt;
+        &lt;span class="crisis-number"&gt;(206) 555-1234&lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/a&gt;
+
+    &lt;a href="sms:+12065551234?&amp;body=I%20need%20help" class="crisis-cta crisis-cta-sms"&gt;
+      &lt;svg class="icon" aria-hidden="true" width="20" height="20" fill="currentColor"&gt;
+        &lt;path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/&gt;
+        &lt;path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/&gt;
+      &lt;/svg&gt;
+      &lt;span class="crisis-text"&gt;Text for Help&lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+    <h3>CSS</h3>
+    <pre><code>/* Crisis Banner - Sticky Header */
+.crisis-banner {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #1e293b; /* Dark slate - 14.7:1 contrast with white text */
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.crisis-banner-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.crisis-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  min-height: 48px; /* WCAG 2.5.5 touch target */
+  min-width: 48px;
+}
+
+.crisis-cta-phone {
+  background: #b91c1c; /* Red-700 - emergency color */
+}
+
+.crisis-cta-phone:hover,
+.crisis-cta-phone:focus {
+  background: #991b1b; /* Darker on hover */
+  outline: 3px solid white;
+  outline-offset: 2px;
+}
+
+.crisis-cta-sms {
+  background: #047857; /* Emerald-700 */
+}
+
+.crisis-cta-sms:hover,
+.crisis-cta-sms:focus {
+  background: #065f46;
+  outline: 3px solid white;
+  outline-offset: 2px;
+}
+
+.crisis-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.2;
+}
+
+.crisis-label {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.crisis-number {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .crisis-banner-content {
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .crisis-cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .crisis-label {
+    display: none; /* Simplify on mobile */
+  }
+}</code></pre>
+
+    <div class="note">
+      <strong>✅ Accessibility Notes:</strong>
+      <ul>
+        <li>role="banner" indicates landmark region</li>
+        <li>SVG icons use aria-hidden="true" (decorative)</li>
+        <li>48px minimum touch targets (WCAG 2.5.5)</li>
+        <li>14.7:1 contrast ratio (exceeds WCAG AAA)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ========================================
+       SNIPPET 2: Mobile Hamburger Menu
+       ======================================== -->
+  <div class="snippet-section">
+    <h2>2. Mobile Hamburger Navigation</h2>
+    <p>Accessible hamburger menu with keyboard support and focus trapping.</p>
+
+    <h3>HTML</h3>
+    <pre><code>&lt;nav class="main-nav" role="navigation" aria-label="Main navigation"&gt;
+  &lt;!-- Mobile menu toggle button --&gt;
+  &lt;button
+    id="menu-toggle"
+    class="menu-toggle"
+    aria-expanded="false"
+    aria-controls="menu-items"
+    aria-label="Toggle navigation menu"
+  &gt;
+    &lt;span class="hamburger"&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;span&gt;&lt;/span&gt;
+    &lt;/span&gt;
+    &lt;span class="menu-label"&gt;Menu&lt;/span&gt;
+  &lt;/button&gt;
+
+  &lt;!-- Navigation menu --&gt;
+  &lt;ul id="menu-items" class="menu-items" hidden&gt;
+    &lt;li&gt;&lt;a href="/"&gt;🏠 Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;
+      &lt;button class="submenu-toggle" aria-expanded="false" aria-controls="services-submenu"&gt;
+        🏥 Services
+        &lt;span class="arrow"&gt;▼&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;ul id="services-submenu" class="submenu" hidden&gt;
+        &lt;li&gt;&lt;a href="/services/naloxone"&gt;Naloxone Distribution&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/services/syringe"&gt;Syringe Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/services/wound-care"&gt;Wound Care&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/services/peer-support"&gt;Peer Support&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/services/cultural-wellness"&gt;Cultural Wellness&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href="/locations"&gt;📍 Find Us&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/about"&gt;ℹ️ About&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/donate"&gt;💰 Donate&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/transparency"&gt;📄 Transparency&lt;/a&gt;&lt;/li&gt;
+
+    &lt;li class="menu-divider"&gt;&lt;/li&gt;
+
+    &lt;li class="crisis-menu-item"&gt;
+      &lt;strong&gt;⚠️ Emergency Contacts&lt;/strong&gt;
+      &lt;a href="tel:+12065551234"&gt;📞 Call: (206) 555-1234&lt;/a&gt;
+      &lt;a href="sms:+12065551234"&gt;💬 Text: (206) 555-1234&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+
+    <h3>CSS</h3>
+    <pre><code>/* Mobile Navigation */
+.main-nav {
+  position: relative;
+}
+
+.menu-toggle {
+  display: none; /* Hidden on desktop */
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 48px;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 24px;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animated hamburger to X */
+.menu-toggle[aria-expanded="true"] .hamburger span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] .hamburger span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.menu-items {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-items a {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.menu-items a:hover,
+.menu-items a:focus {
+  background: var(--color-primary);
+  color: white;
+}
+
+.submenu-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  list-style: none;
+  padding: 8px;
+  margin: 8px 0 0 0;
+  min-width: 200px;
+}
+
+.submenu a {
+  padding: 10px 14px;
+}
+
+.menu-divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 8px 0;
+}
+
+.crisis-menu-item {
+  background: #fef3c7;
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 4px solid #f59e0b;
+}
+
+.crisis-menu-item strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #92400e;
+}
+
+.crisis-menu-item a {
+  display: block;
+  padding: 8px;
+  margin: 4px 0;
+  background: white;
+  border-radius: 6px;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu-items {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    padding: 80px 20px 20px;
+    overflow-y: auto;
+    gap: 0;
+    z-index: 999;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .menu-items:not([hidden]) {
+    transform: translateX(0);
+  }
+
+  .submenu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    border-left: 3px solid var(--color-primary);
+    margin-left: 16px;
+  }
+
+  .submenu-toggle .arrow {
+    transition: transform 0.3s;
+  }
+
+  .submenu-toggle[aria-expanded="true"] .arrow {
+    transform: rotate(180deg);
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+  .menu-items {
+    display: flex !important;
+  }
+
+  .submenu-toggle:hover + .submenu,
+  .submenu:hover {
+    display: block;
+  }
+}</code></pre>
+
+    <h3>JavaScript</h3>
+    <pre><code>/**
+ * Mobile hamburger menu with accessibility features
+ */
+function initMobileMenu() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuItems = document.getElementById('menu-items');
+  const submenuToggles = document.querySelectorAll('.submenu-toggle');
+
+  if (!menuToggle || !menuItems) return;
+
+  // Toggle menu
+  menuToggle.addEventListener('click', () => {
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+
+    menuToggle.setAttribute('aria-expanded', !isExpanded);
+    menuItems.hidden = isExpanded;
+
+    // Trap focus in menu when open
+    if (!isExpanded) {
+      const firstLink = menuItems.querySelector('a, button');
+      if (firstLink) firstLink.focus();
+    } else {
+      menuToggle.focus();
+    }
+  });
+
+  // Toggle submenus
+  submenuToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const submenuId = toggle.getAttribute('aria-controls');
+      const submenu = document.getElementById(submenuId);
+      const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+
+      toggle.setAttribute('aria-expanded', !isExpanded);
+      submenu.hidden = isExpanded;
+    });
+  });
+
+  // Close menu on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !menuItems.hidden) {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuItems.hidden = true;
+      menuToggle.focus();
+    }
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!menuItems.hidden &&
+        !menuToggle.contains(e.target) &&
+        !menuItems.contains(e.target)) {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuItems.hidden = true;
+    }
+  });
+}
+
+// Initialize on DOM ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initMobileMenu);
+} else {
+  initMobileMenu();
+}</code></pre>
+  </div>
+
+  <!-- ========================================
+       SNIPPET 3: Service Request Form
+       ======================================== -->
+  <div class="snippet-section">
+    <h2>3. Service Request Form (Minimal Friction)</h2>
+    <p>Crisis-optimized form with large touch targets, optional fields, and clear privacy assurance.</p>
+
+    <h3>HTML</h3>
+    <pre><code>&lt;form action="/api/request-service" method="post" class="service-request-form"&gt;
+  &lt;h2&gt;Request Services&lt;/h2&gt;
+  &lt;p class="form-intro"&gt;We'll contact you within 2 hours. All information is confidential.&lt;/p&gt;
+
+  &lt;!-- Urgency (required) --&gt;
+  &lt;fieldset class="urgency-fieldset"&gt;
+    &lt;legend&gt;When do you need help? *&lt;/legend&gt;
+
+    &lt;label class="urgency-option urgency-emergency"&gt;
+      &lt;input type="radio" name="urgency" value="emergency" required&gt;
+      &lt;span class="urgency-content"&gt;
+        &lt;span class="urgency-icon"&gt;🚨&lt;/span&gt;
+        &lt;span class="urgency-label"&gt;
+          &lt;strong&gt;Right Now&lt;/strong&gt;
+          &lt;small&gt;Emergency - call instead&lt;/small&gt;
+        &lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/label&gt;
+
+    &lt;label class="urgency-option urgency-today"&gt;
+      &lt;input type="radio" name="urgency" value="today" required&gt;
+      &lt;span class="urgency-content"&gt;
+        &lt;span class="urgency-icon"&gt;⚡&lt;/span&gt;
+        &lt;span class="urgency-label"&gt;
+          &lt;strong&gt;Today&lt;/strong&gt;
+          &lt;small&gt;Within 4-6 hours&lt;/small&gt;
+        &lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/label&gt;
+
+    &lt;label class="urgency-option urgency-week"&gt;
+      &lt;input type="radio" name="urgency" value="this-week" required&gt;
+      &lt;span class="urgency-content"&gt;
+        &lt;span class="urgency-icon"&gt;📅&lt;/span&gt;
+        &lt;span class="urgency-label"&gt;
+          &lt;strong&gt;This Week&lt;/strong&gt;
+          &lt;small&gt;Non-urgent&lt;/small&gt;
+        &lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/label&gt;
+  &lt;/fieldset&gt;
+
+  &lt;!-- Services needed --&gt;
+  &lt;fieldset class="services-fieldset"&gt;
+    &lt;legend&gt;What services do you need? (check all that apply)&lt;/legend&gt;
+
+    &lt;label class="service-checkbox"&gt;
+      &lt;input type="checkbox" name="services[]" value="naloxone"&gt;
+      &lt;span&gt;🏥 Naloxone (Narcan)&lt;/span&gt;
+    &lt;/label&gt;
+
+    &lt;label class="service-checkbox"&gt;
+      &lt;input type="checkbox" name="services[]" value="syringes"&gt;
+      &lt;span&gt;💉 Clean Syringes&lt;/span&gt;
+    &lt;/label&gt;
+
+    &lt;label class="service-checkbox"&gt;
+      &lt;input type="checkbox" name="services[]" value="wound-care"&gt;
+      &lt;span&gt;🩹 Wound Care&lt;/span&gt;
+    &lt;/label&gt;
+
+    &lt;label class="service-checkbox"&gt;
+      &lt;input type="checkbox" name="services[]" value="peer-support"&gt;
+      &lt;span&gt;🤝 Peer Support&lt;/span&gt;
+    &lt;/label&gt;
+
+    &lt;label class="service-checkbox"&gt;
+      &lt;input type="checkbox" name="services[]" value="other"&gt;
+      &lt;span&gt;❓ Other (describe below)&lt;/span&gt;
+    &lt;/label&gt;
+  &lt;/fieldset&gt;
+
+  &lt;!-- Contact info (optional but encouraged) --&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="name"&gt;Name (optional - use initials if you prefer)&lt;/label&gt;
+    &lt;input type="text" id="name" name="name" autocomplete="name"
+           placeholder="e.g., J.M. or John"&gt;
+  &lt;/div&gt;
+
+  &lt;div class="form-group"&gt;
+    &lt;label for="contact"&gt;How can we reach you? *&lt;/label&gt;
+    &lt;input type="text" id="contact" name="contact" required
+           autocomplete="tel"
+           placeholder="Phone number or email"
+           aria-describedby="contact-help"&gt;
+    &lt;small id="contact-help"&gt;We'll only use this to respond to your request&lt;/small&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Additional details --&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="details"&gt;Anything else we should know? (optional)&lt;/label&gt;
+    &lt;textarea id="details" name="details" rows="4"
+              placeholder="Location, specific needs, best time to contact you, etc."&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Submit --&gt;
+  &lt;div class="form-actions"&gt;
+    &lt;button type="submit" class="btn-submit"&gt;Send Request&lt;/button&gt;
+    &lt;p class="privacy-note"&gt;
+      🔒 Your information is confidential and never shared.
+      &lt;a href="/privacy"&gt;Privacy Policy&lt;/a&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Error messages container --&gt;
+  &lt;div id="form-errors" role="alert" aria-live="assertive" hidden&gt;&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+
+    <h3>CSS</h3>
+    <pre><code>/* Service Request Form */
+.service-request-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  border: 2px solid var(--color-border);
+}
+
+.form-intro {
+  color: var(--color-text-muted);
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+legend {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: var(--color-text);
+}
+
+/* Urgency options - large, visual radio buttons */
+.urgency-fieldset {
+  margin-bottom: 32px;
+}
+
+.urgency-option {
+  display: block;
+  position: relative;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.urgency-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.urgency-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border: 3px solid var(--color-border);
+  border-radius: 12px;
+  background: white;
+  transition: all 0.2s;
+  min-height: 72px; /* Large touch target */
+}
+
+.urgency-option input:checked + .urgency-content {
+  border-color: var(--color-primary);
+  background: #eff6ff;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+.urgency-option input:focus + .urgency-content {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.urgency-icon {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.urgency-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.urgency-label strong {
+  font-size: 18px;
+  color: var(--color-text);
+}
+
+.urgency-label small {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+.urgency-emergency .urgency-content {
+  border-color: #fca5a5;
+}
+
+.urgency-emergency input:checked + .urgency-content {
+  border-color: #b91c1c;
+  background: #fef2f2;
+}
+
+/* Service checkboxes - large, visual */
+.service-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  margin-bottom: 8px;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 56px;
+}
+
+.service-checkbox:hover {
+  border-color: var(--color-primary);
+  background: #f8fafc;
+}
+
+.service-checkbox input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.service-checkbox span {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Form inputs */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--color-text);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 16px; /* Prevents iOS zoom */
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+  min-height: 52px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+.form-group small {
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Submit button */
+.form-actions {
+  margin-top: 32px;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 18px 24px;
+  font-size: 18px;
+  font-weight: 700;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 60px;
+}
+
+.btn-submit:hover,
+.btn-submit:focus {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+.privacy-note {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.privacy-note a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* Error messages */
+#form-errors {
+  background: #fef2f2;
+  border: 2px solid #b91c1c;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
+  color: #991b1b;
+}
+
+#form-errors:not([hidden]) {
+  display: block;
+}</code></pre>
+
+    <h3>JavaScript (Form Validation)</h3>
+    <pre><code>/**
+ * Service request form validation and submission
+ */
+function initServiceRequestForm() {
+  const form = document.querySelector('.service-request-form');
+  const errorsContainer = document.getElementById('form-errors');
+
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Clear previous errors
+    errorsContainer.hidden = true;
+    errorsContainer.innerHTML = '';
+
+    // Validate form
+    const formData = new FormData(form);
+    const errors = [];
+
+    // Check urgency selected
+    if (!formData.get('urgency')) {
+      errors.push('Please select when you need help');
+    }
+
+    // Check contact info
+    if (!formData.get('contact')) {
+      errors.push('Please provide a way to reach you');
+    }
+
+    // If emergency selected, suggest calling instead
+    if (formData.get('urgency') === 'emergency') {
+      if (confirm('For emergency help, calling is faster. Would you like to call now?')) {
+        window.location.href = 'tel:+12065551234';
+        return;
+      }
+    }
+
+    // Show errors if any
+    if (errors.length > 0) {
+      errorsContainer.innerHTML = `
+        &lt;strong&gt;Please fix the following:&lt;/strong&gt;
+        &lt;ul&gt;
+          ${errors.map(err => `&lt;li&gt;${err}&lt;/li&gt;`).join('')}
+        &lt;/ul&gt;
+      `;
+      errorsContainer.hidden = false;
+      errorsContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      return;
+    }
+
+    // Submit form
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData
+      });
+
+      if (response.ok) {
+        // Show success message
+        form.innerHTML = `
+          &lt;div class="success-message" role="alert"&gt;
+            &lt;h2&gt;✅ Request Received&lt;/h2&gt;
+            &lt;p&gt;&lt;strong&gt;We'll contact you within 2 hours&lt;/strong&gt; at the contact you provided.&lt;/p&gt;
+            &lt;div class="next-steps"&gt;
+              &lt;h3&gt;While you wait:&lt;/h3&gt;
+              &lt;ul&gt;
+                &lt;li&gt;📍 &lt;a href="/locations"&gt;Find our nearest RV location&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;🏥 &lt;a href="/naloxone"&gt;Learn about naloxone&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;📞 Crisis? Call now: &lt;a href="tel:+12065551234"&gt;(206) 555-1234&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        `;
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (error) {
+      errorsContainer.innerHTML = `
+        &lt;strong&gt;Submission Error&lt;/strong&gt;
+        &lt;p&gt;We couldn't submit your request. Please call us directly at &lt;a href="tel:+12065551234"&gt;(206) 555-1234&lt;/a&gt;.&lt;/p&gt;
+      `;
+      errorsContainer.hidden = false;
+    }
+  });
+}
+
+// Initialize
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initServiceRequestForm);
+} else {
+  initServiceRequestForm();
+}</code></pre>
+  </div>
+
+  <!-- ========================================
+       SNIPPET 4: Floating Action Buttons
+       ======================================== -->
+  <div class="snippet-section">
+    <h2>4. Floating Action Buttons (Quick Access)</h2>
+    <p>Persistent quick-access buttons for calling, texting, and finding locations.</p>
+
+    <h3>HTML</h3>
+    <pre><code>&lt;!-- Add before closing &lt;/body&gt; tag --&gt;
+&lt;div class="floating-actions" role="complementary" aria-label="Quick actions"&gt;
+  &lt;a href="tel:+12065551234" class="fab fab-phone" aria-label="Call crisis line"&gt;
+    &lt;svg width="24" height="24" fill="currentColor" aria-hidden="true"&gt;
+      &lt;path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/&gt;
+    &lt;/svg&gt;
+  &lt;/a&gt;
+
+  &lt;a href="sms:+12065551234" class="fab fab-sms" aria-label="Text for help"&gt;
+    &lt;svg width="24" height="24" fill="currentColor" aria-hidden="true"&gt;
+      &lt;path d="M2 5a2 2 0 012-2h16a2 2 0 012 2v10a2 2 0 01-2 2H6l-4 4V5z"/&gt;
+    &lt;/svg&gt;
+  &lt;/a&gt;
+
+  &lt;a href="/locations" class="fab fab-location" aria-label="Find RV location"&gt;
+    &lt;svg width="24" height="24" fill="currentColor" aria-hidden="true"&gt;
+      &lt;path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/&gt;
+    &lt;/svg&gt;
+  &lt;/a&gt;
+&lt;/div&gt;</code></pre>
+
+    <h3>CSS</h3>
+    <pre><code>/* Floating Action Buttons */
+.floating-actions {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+}
+
+.fab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.fab:hover,
+.fab:focus {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.fab-phone {
+  background: #b91c1c; /* Red for emergency */
+  animation: pulse 2s infinite;
+}
+
+.fab-sms {
+  background: #047857; /* Green */
+}
+
+.fab-location {
+  background: #0066cc; /* Blue */
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(185, 28, 28, 0.3),
+                0 0 0 0 rgba(185, 28, 28, 0.7);
+  }
+  50% {
+    box-shadow: 0 4px 12px rgba(185, 28, 28, 0.3),
+                0 0 0 10px rgba(185, 28, 28, 0);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .floating-actions {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .fab {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .fab-phone {
+    animation: none;
+  }
+
+  .fab:hover,
+  .fab:focus {
+    transform: none;
+  }
+}</code></pre>
+  </div>
+
+  <!-- ========================================
+       SNIPPET 5: Performance Optimization
+       ======================================== -->
+  <div class="snippet-section">
+    <h2>5. Performance Optimization Techniques</h2>
+
+    <h3>Critical CSS Inlining</h3>
+    <pre><code>&lt;!-- In &lt;head&gt; --&gt;
+&lt;style&gt;
+  /* Inline only critical above-the-fold styles */
+  :root {
+    --color-primary: #0066cc;
+    --color-text: #1e293b;
+    --color-bg: #ffffff;
+  }
+  body { margin: 0; font: 18px/1.6 system-ui, sans-serif; }
+  .crisis-banner { background: #1e293b; color: #fff; padding: 1rem; }
+  /* ... minimal critical styles only ... */
+&lt;/style&gt;
+
+&lt;!-- Load full CSS asynchronously --&gt;
+&lt;link rel="preload" href="/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"&gt;
+&lt;noscript&gt;&lt;link rel="stylesheet" href="/styles.css"&gt;&lt;/noscript&gt;</code></pre>
+
+    <h3>Responsive Images (WebP)</h3>
+    <pre><code>&lt;picture&gt;
+  &lt;source
+    srcset="/images/hero-320.webp 320w,
+            /images/hero-768.webp 768w,
+            /images/hero-1200.webp 1200w"
+    sizes="(max-width: 768px) 100vw,
+           (max-width: 1200px) 80vw,
+           1200px"
+    type="image/webp"&gt;
+  &lt;source
+    srcset="/images/hero-320.jpg 320w,
+            /images/hero-768.jpg 768w,
+            /images/hero-1200.jpg 1200w"
+    sizes="(max-width: 768px) 100vw,
+           (max-width: 1200px) 80vw,
+           1200px"&gt;
+  &lt;img src="/images/hero-768.jpg"
+       alt="HROC mobile RV providing harm reduction services"
+       loading="lazy"
+       width="1200"
+       height="675"&gt;
+&lt;/picture&gt;</code></pre>
+
+    <h3>Lazy Loading</h3>
+    <pre><code>&lt;!-- Native lazy loading for images below fold --&gt;
+&lt;img src="/images/service.jpg" alt="Naloxone distribution" loading="lazy"&gt;
+
+&lt;!-- Lazy load JavaScript --&gt;
+&lt;script src="/script.js" defer&gt;&lt;/script&gt;
+
+&lt;!-- Async load non-critical scripts --&gt;
+&lt;script src="/analytics.js" async&gt;&lt;/script&gt;</code></pre>
+
+    <h3>Font Optimization</h3>
+    <pre><code>&lt;!-- Preconnect to font CDN --&gt;
+&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+
+&lt;!-- Async load fonts --&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"&gt;
+&lt;noscript&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"&gt;
+&lt;/noscript&gt;
+
+&lt;!-- OR use system fonts (fastest) --&gt;
+&lt;style&gt;
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+&lt;/style&gt;</code></pre>
+
+    <h3>Resource Hints</h3>
+    <pre><code>&lt;!-- In &lt;head&gt; --&gt;
+&lt;!-- Preconnect to critical domains --&gt;
+&lt;link rel="preconnect" href="https://api.hroc.com"&gt;
+
+&lt;!-- Preload critical resources --&gt;
+&lt;link rel="preload" href="/styles.css" as="style"&gt;
+&lt;link rel="preload" href="/logo.webp" as="image"&gt;
+
+&lt;!-- DNS prefetch for third-party domains --&gt;
+&lt;link rel="dns-prefetch" href="https://analytics.google.com"&gt;</code></pre>
+  </div>
+
+  <!-- ========================================
+       SNIPPET 6: Accessibility Utilities
+       ======================================== -->
+  <div class="snippet-section">
+    <h2>6. Accessibility Utilities</h2>
+
+    <h3>Screen Reader Only Text</h3>
+    <pre><code>/* Hide visually but keep for screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Reveal on focus (for skip links) */
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}</code></pre>
+
+    <h3>Skip Navigation Links</h3>
+    <pre><code>&lt;!-- Add at top of &lt;body&gt; --&gt;
+&lt;a href="#main-content" class="skip-link"&gt;Skip to main content&lt;/a&gt;
+&lt;a href="#services" class="skip-link"&gt;Skip to services&lt;/a&gt;
+&lt;a href="#contact" class="skip-link"&gt;Skip to contact&lt;/a&gt;
+
+&lt;!-- CSS --&gt;
+&lt;style&gt;
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #1e293b;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  z-index: 10000;
+  border-radius: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid #0066cc;
+  outline-offset: 2px;
+}
+&lt;/style&gt;</code></pre>
+
+    <h3>Live Region Announcements</h3>
+    <pre><code>/**
+ * Announce message to screen readers
+ * @param {string} message - Message to announce
+ * @param {string} priority - 'polite' (default) or 'assertive'
+ */
+function announceToScreenReader(message, priority = 'polite') {
+  const announcement = document.createElement('div');
+  announcement.setAttribute('role', 'status');
+  announcement.setAttribute('aria-live', priority);
+  announcement.className = 'sr-only';
+  announcement.textContent = message;
+
+  document.body.appendChild(announcement);
+
+  // Remove after announcement (don't clutter DOM)
+  setTimeout(() => {
+    document.body.removeChild(announcement);
+  }, 1000);
+}
+
+// Usage examples
+announceToScreenReader('Form submitted successfully');
+announceToScreenReader('Error: Please fix the highlighted fields', 'assertive');</code></pre>
+
+    <h3>Focus Management for Modals</h3>
+    <pre><code>/**
+ * Trap focus within a modal
+ * @param {HTMLElement} modal - Modal element
+ */
+function trapFocus(modal) {
+  const focusableElements = modal.querySelectorAll(
+    'a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])'
+  );
+  const firstElement = focusableElements[0];
+  const lastElement = focusableElements[focusableElements.length - 1];
+
+  modal.addEventListener('keydown', (e) => {
+    // Trap Tab key
+    if (e.key === 'Tab') {
+      if (e.shiftKey && document.activeElement === firstElement) {
+        e.preventDefault();
+        lastElement.focus();
+      } else if (!e.shiftKey && document.activeElement === lastElement) {
+        e.preventDefault();
+        firstElement.focus();
+      }
+    }
+
+    // Close on Escape
+    if (e.key === 'Escape') {
+      closeModal(modal);
+    }
+  });
+
+  // Focus first element when modal opens
+  firstElement.focus();
+}
+
+// Usage
+const modal = document.getElementById('my-modal');
+modal.removeAttribute('hidden');
+trapFocus(modal);</code></pre>
+
+    <h3>Color Contrast Checker</h3>
+    <pre><code>/**
+ * Calculate WCAG contrast ratio between two colors
+ * @param {string} color1 - Hex color (e.g., '#0066cc')
+ * @param {string} color2 - Hex color
+ * @returns {number} Contrast ratio (1-21)
+ */
+function getContrastRatio(color1, color2) {
+  const getLuminance = (hex) => {
+    const rgb = parseInt(hex.slice(1), 16);
+    const r = (rgb >> 16) & 0xff;
+    const g = (rgb >> 8) & 0xff;
+    const b = (rgb >> 0) & 0xff;
+
+    const srgb = [r, g, b].map(val => {
+      val /= 255;
+      return val <= 0.03928 ? val / 12.92 : Math.pow((val + 0.055) / 1.055, 2.4);
+    });
+
+    return 0.2126 * srgb[0] + 0.7152 * srgb[1] + 0.0722 * srgb[2];
+  };
+
+  const lum1 = getLuminance(color1);
+  const lum2 = getLuminance(color2);
+  const brightest = Math.max(lum1, lum2);
+  const darkest = Math.min(lum1, lum2);
+
+  return (brightest + 0.05) / (darkest + 0.05);
+}
+
+// Usage
+const ratio = getContrastRatio('#0066cc', '#ffffff');
+console.log(`Contrast ratio: ${ratio.toFixed(1)}:1`);
+// WCAG AA requires 4.5:1 for text, 3:1 for large text
+// WCAG AAA requires 7:1 for text, 4.5:1 for large text</code></pre>
+  </div>
+
+  <div class="snippet-section">
+    <h2>✅ Implementation Checklist</h2>
+    <ul style="list-style: none; padding: 0;">
+      <li>☐ Crisis banner with tel:/sms: links (Snippet 1)</li>
+      <li>☐ Mobile hamburger menu (Snippet 2)</li>
+      <li>☐ Service request form (Snippet 3)</li>
+      <li>☐ Floating action buttons (Snippet 4)</li>
+      <li>☐ Image optimization (WebP, lazy loading)</li>
+      <li>☐ Font loading optimization</li>
+      <li>☐ Critical CSS inlining</li>
+      <li>☐ Skip navigation links</li>
+      <li>☐ ARIA labels and roles</li>
+      <li>☐ Keyboard navigation testing</li>
+      <li>☐ Screen reader testing (NVDA/VoiceOver)</li>
+      <li>☐ Mobile device testing (iOS/Android)</li>
+      <li>☐ Lighthouse audit (target: 90+ accessibility score)</li>
+    </ul>
+  </div>
+
+  <footer style="margin-top: 40px; padding: 20px; background: #1e293b; color: white; border-radius: 8px;">
+    <p><strong>HROC Website Code Snippets</strong></p>
+    <p>Version 1.0 | Last Updated: 2025-12-08</p>
+    <p>For implementation questions, refer to UX_UI_OPTIMIZATION_PLAN.md</p>
+  </footer>
+</body>
+</html>

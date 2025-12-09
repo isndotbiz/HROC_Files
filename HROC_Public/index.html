@@ -118,6 +118,25 @@
       </div>
     </section>
 
+    <section class="card">
+      <h3>📂 File Library</h3>
+      <div class="muted" style="margin-bottom:10px;">Search or filter across every file. Click to open/download.</div>
+      <div class="file-panel">
+        <div class="filter-row">
+          <input id="search" type="search" placeholder="Search files..." />
+          <select id="folder-filter">
+            <option value="">All folders</option>
+          </select>
+        </div>
+        <table class="file-table" id="file-table">
+          <thead>
+            <tr><th>File</th><th>Folder</th><th>Type</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
     <section class="split">
       <div class="card">
         <h3>📈 Compliance Momentum</h3>
@@ -164,6 +183,136 @@
   </div>
 
   <script>
+    const filesData = [
+      "00_Action_Plan/CLI_Workflow.txt",
+      "00_Action_Plan/Next_Actions.txt",
+      "00_Action_Plan/Schedule_30-60-90.txt",
+      "01_Governance/Articles_of_Incorporation.pdf",
+      "01_Governance/Articles_of_Incorporation_0022584962.pdf",
+      "01_Governance/Articles_of_Incorporation_Certificate.pdf",
+      "01_Governance/Articles_of_Incorporation_Congratulations_0022584962.pdf",
+      "01_Governance/Board_Meeting_First.pdf",
+      "01_Governance/Board_Meeting_First_notes.pdf",
+      "01_Governance/Board_Meeting_Special.pdf",
+      "01_Governance/Board_Meeting_Special_notes.pdf",
+      "01_Governance/Board_Resolution_2025-03.pdf",
+      "01_Governance/Board_Resolution_2025-03_signed_alt.pdf",
+      "01_Governance/Board_Resolution_2025-04.pdf",
+      "01_Governance/Board_Resolution_2025-04_signed_alt.pdf",
+      "01_Governance/Board_Roster.pdf",
+      "01_Governance/Board_Roster_Certified.pdf",
+      "01_Governance/Bylaws.pdf",
+      "01_Governance/Formation_and_Governance.pdf",
+      "01_Governance/Governance_and_Policies_Adoption.pdf",
+      "01_Governance/Governance_and_Policies_Adoption_notes.pdf",
+      "02_Policies/Code_of_Conduct_Policy.pdf",
+      "02_Policies/Conflict_of_Interest_Policy.pdf",
+      "02_Policies/Conflict_of_Interest_Policy_alt.pdf",
+      "02_Policies/Document_Retention_Policy.pdf",
+      "02_Policies/Document_Retention_and_Destruction_Policy.pdf",
+      "02_Policies/Financial_Controls_and_Reimbursement_Policy.pdf",
+      "02_Policies/Financial_Controls_and_Reimbursement_Policy_alt.pdf",
+      "02_Policies/Gift_Acceptance_Policy.pdf",
+      "02_Policies/Gift_Acceptance_and_Acknowledgment_Policy.pdf",
+      "02_Policies/Policies_and_Procedures_Overview.pdf",
+      "02_Policies/Whistleblower_Protection_Policy.pdf",
+      "03_Registrations_Licenses/Business_License_My_DOR.pdf",
+      "03_Registrations_Licenses/Business_License_Receipt_2025-08-08.pdf",
+      "03_Registrations_Licenses/Charitable_Organization_Registration_0000567751.pdf",
+      "03_Registrations_Licenses/Charity_Organization_Information_0000567751.pdf",
+      "03_Registrations_Licenses/WA_Charitable_Organization_Registration.pdf",
+      "04_IRS/IRS_CP575_EIN_Letter_39-3295288.pdf",
+      "04_IRS/IRS_CP575_EIN_Letter_copy.pdf",
+      "04_IRS/IRS_Form_1023_Application.pdf",
+      "04_IRS/IRS_Form_1023_Application_Signed.pdf",
+      "04_IRS/IRS_Form_i1023_Blank.pdf",
+      "04_IRS/IRS_General_Guidance.pdf",
+      "04_IRS/IRS_Supplemental_Packet_2025-08-11_Filled.pdf",
+      "05_Financial_Plans/Financial_Planning.pdf",
+      "05_Financial_Plans/Financial_Projections_3yr_Signed.pdf",
+      "05_Financial_Plans/Fundraising_Plan.pdf",
+      "05_Financial_Plans/Projected_Budget_2025_Signed.pdf",
+      "06_Operations_Plans/Fiscal_Sponsor_Onboarding.pdf",
+      "06_Operations_Plans/Operational_Planning.pdf",
+      "07_SPV/Annual_Report_Filing_Year_2026.pdf",
+      "07_SPV/Business_License_Application_Healing_Roots_Outreach.pdf",
+      "07_SPV/Formation_Timeline_and_Critical_Compliance_Deadlines.pdf",
+      "07_SPV/RV_Lease_Market_Analysis_for_Mobile_Outreach_Operations.pdf",
+      "07_SPV/Review_SPV_and_Fiscal_Sponsorship_Agreements.pdf",
+      "07_SPV/SPV_Documents_Index.pdf",
+      "07_SPV/SPV_LLC_Protections_and_Compliance_Checklist.pdf",
+      "07_SPV/SPV_Manager.pdf",
+      "07_SPV/SPV_Operating_Agreement.pdf",
+      "07_SPV/SPV_Organizational_Charter.pdf",
+      "07_SPV/SPV_Protection_Approval.pdf",
+      "07_SPV/SPV_Protection_Approval_notes.pdf",
+      "07_SPV/SPV_and_HROC_Agreement.pdf",
+      "08_Branding_Signatures/hrocinc.png",
+      "08_Branding_Signatures/notion_cover.png",
+      "08_Branding_Signatures/sig_BB.png",
+      "08_Branding_Signatures/sig_JDM.png",
+      "08_Branding_Signatures/sig_JDM_200.png",
+      "08_Branding_Signatures/sig_LF.png",
+      "08_Branding_Signatures/signature.png",
+      "09_Checklists_ToDos/TODO_Adopt_Document_Retention_and_Destruction_Policy.pdf",
+      "09_Checklists_ToDos/TODO_Adopt_and_Log_Final_Bylaws.pdf",
+      "09_Checklists_ToDos/TODO_Approve_Conflict_of_Interest_and_Collect_Signed_Forms.pdf",
+      "09_Checklists_ToDos/TODO_Create_Donation_Acceptance_and_Acknowledgment_Process.pdf",
+      "09_Checklists_ToDos/TODO_Establish_Financial_Controls.pdf",
+      "09_Checklists_ToDos/TODO_Open_Nonprofit_Bank_Account.pdf",
+      "09_Checklists_ToDos/TODO_Publish_Transparency_Hub.pdf",
+      "09_Checklists_ToDos/TODO_Register_with_WA_Charities_Program_SOS.pdf",
+      "09_Checklists_ToDos/TODO_Setup_IRS_Form_990N_990EZ_Process.pdf",
+      "99_Misc_Guides/IRS_Guidance_Brief_Primer.pdf",
+      "99_Misc_Guides/IRS_Official_Guidance.pdf",
+      "99_Misc_Guides/Starting_a_Nonprofit_in_WA_Guide_2023.pdf",
+      "99_Misc_Guides/Z_Proton_Recovery_Kit.pdf"
+    ];
+
+    function initFileTable() {
+      const folderSelect = document.getElementById('folder-filter');
+      const tbody = document.querySelector('#file-table tbody');
+      const search = document.getElementById('search');
+
+      const data = filesData.map(p => {
+        const parts = p.split('/');
+        const folder = parts[0];
+        const name = parts.slice(1).join('/');
+        const ext = (p.split('.').pop() || '').toUpperCase();
+        return { path: p, folder, name, ext };
+      });
+
+      // folders
+      [...new Set(data.map(d => d.folder))].forEach(f => {
+        const opt = document.createElement('option');
+        opt.value = f;
+        opt.textContent = f;
+        folderSelect.appendChild(opt);
+      });
+
+      function render() {
+        const term = search.value.toLowerCase();
+        const filterFolder = folderSelect.value;
+        tbody.innerHTML = '';
+        data
+          .filter(d => (!filterFolder || d.folder === filterFolder))
+          .filter(d => d.path.toLowerCase().includes(term))
+          .forEach(d => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+              <td><a href="${d.path}" download>${d.name}</a></td>
+              <td><span class="tag">${d.folder}</span></td>
+              <td class="muted">${d.ext}</td>
+            `;
+            tbody.appendChild(tr);
+          });
+      }
+
+      search.addEventListener('input', render);
+      folderSelect.addEventListener('change', render);
+      render();
+    }
+
     const complianceData = [
       { label: "Governance", value: 90, note: "Articles, bylaws, resolutions set" },
       { label: "Policies", value: 88, note: "Signed core policies in place" },
@@ -216,6 +365,8 @@
       row.style.gap = "10px";
       timelineEl.appendChild(row);
     });
+
+    initFileTable();
   </script>
 </body>
 </html>

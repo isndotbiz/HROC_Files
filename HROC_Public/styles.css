@@ -242,3 +242,70 @@ p.lead {
     grid-template-columns: 1fr;
   }
 }
+
+/* File library */
+.file-panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+  margin-top: 14px;
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.filter-row input,
+.filter-row select {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 10px 12px;
+  min-width: 220px;
+}
+
+.file-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.file-table th,
+.file-table td {
+  text-align: left;
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.file-table th {
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 10px;
+  background: rgba(29, 211, 176, 0.12);
+  color: #1dd3b0;
+  border: 1px solid rgba(29, 211, 176, 0.2);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.file-table a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.file-table a:hover {
+  color: var(--accent-3);
+}

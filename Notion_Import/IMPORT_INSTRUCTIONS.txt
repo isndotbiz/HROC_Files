@@ -1,0 +1,150 @@
+🎁 HROC NOTION IMPORT PACKAGE
+===============================
+
+📦 WHAT'S IN THIS ZIP FILE
+--------------------------
+6 comprehensive Notion pages ready to import:
+
+1. Getting Started After 501(c)(3)
+2. SPV Management Guide
+3. Compliance Calendar 2025-2026
+4. Officer Transition Critical Tasks (URGENT)
+5. Web Accessibility Checklist
+6. IRS Communications Log
+
+
+🚀 HOW TO IMPORT (2 METHODS)
+============================
+
+METHOD 1: BULK IMPORT (EASIEST - 30 seconds)
+--------------------------------------------
+1. Extract this ZIP file to a folder
+2. Open Notion (app or web)
+3. Create a new page: "🏛️ HROC Operations Hub"
+4. Select ALL 6 .md files from the extracted folder
+5. Drag them into your Notion page
+6. ✅ Done! All 6 pages imported at once
+
+
+METHOD 2: INDIVIDUAL IMPORT (5 minutes)
+---------------------------------------
+1. Extract this ZIP file
+2. In Notion, create page: "🏛️ HROC Operations Hub"
+3. For each .md file:
+   - Click "+ New Page"
+   - Type /import
+   - Select "Markdown"
+   - Upload the file
+4. Repeat for all 6 files
+
+
+✅ AFTER IMPORT CHECKLIST
+-------------------------
+- [ ] All 6 pages visible in Notion
+- [ ] Pages nested under "HROC Operations Hub"
+- [ ] Emoji icons display correctly
+- [ ] Tables and formatting look good
+- [ ] You can read all content
+
+
+🤖 NEXT: ENHANCE WITH NOTION AI
+================================
+
+For ultimate setup with databases and automation:
+
+1. Find the file: NOTION_AI_SETUP_GUIDE.md
+   (in the main HROC_Files folder, not in this zip)
+
+2. Open it in a text editor
+
+3. Follow the 12 step-by-step prompts
+
+4. Copy each prompt and paste into Notion AI
+
+Essential prompts (30 min):
+- Step 1: Master Dashboard
+- Step 2: Compliance Database
+- Step 4: IRS Communications Tracker
+- Step 9: Reminders Setup
+
+
+⚡ THE ONE ESSENTIAL PROMPT
+===========================
+
+If you only use ONE Notion AI prompt, use this:
+
+Open your "03_Compliance_Calendar" page and paste:
+
+---
+Create a comprehensive "Master Compliance Tracker" database for HROC nonprofit with these exact properties and entries:
+
+PROPERTIES:
+- Task/Filing (title)
+- Due Date (date)
+- Category (select: Federal | State | SPV | Organizational)
+- Frequency (select: Monthly | Quarterly | Annual | One-time)
+- Status (select: 🔴 Overdue | 🟡 Due Soon | ⏳ Upcoming | ✅ Complete)
+- Priority (select: 🔴 Critical | 🟡 Important | 🟢 Standard)
+- Owner (person)
+- Notes (text)
+
+POPULATE WITH THESE CRITICAL DEADLINES:
+1. Form 990 for 2025 | May 15, 2026 | Federal | Annual | Critical
+2. WA Annual Report - HROC | July 31, 2026 | State | Annual | Critical
+3. WA Annual Report - SPV LLC | July 31, 2026 | State | Annual | Critical
+4. SPV BOI Report to FinCEN | October 28, 2025 | Federal | One-time | Critical
+5. Annual Conflict of Interest Disclosures | January 2026 | Organizational | Annual | Important
+6. Donor Acknowledgment Letters | January 31, 2026 | Federal | Annual | Important
+7. SPV Monthly Financial Statement | 5th of each month | SPV | Monthly | Important
+8. SPV Quarterly Board Report | Quarterly | SPV | Quarterly | Important
+
+CREATE THESE VIEWS:
+1. Calendar View showing all deadlines visually
+2. Table View filtered to "Critical" priority only
+3. Table View filtered to "Due in next 30 days"
+4. Kanban View grouped by Status
+
+Set Calendar View as default. Add reminders: 30 days, 14 days, and 7 days before each critical deadline.
+---
+
+
+🔥 URGENT: DO THIS WEEK
+=======================
+Before setting up anything else:
+
+1. Add to calendar: Oct 28, 2025 - "SPV BOI Report DUE"
+   Set reminders: Oct 21, Oct 14, Sep 28
+
+2. Schedule board meeting to elect officers:
+   - Brianna Bear → Chair/President
+   - Jonathan Mallinger → Secretary
+   - Lilly Fedas → Treasurer
+
+3. File WA Annual Report with updated officers
+
+Read the "04_Officer_Transition" page for step-by-step details.
+
+
+📞 NEED HELP?
+=============
+Check these files in the main HROC_Files folder:
+- START_HERE.md - Complete guide
+- COMPLETE_PACKAGE_SUMMARY.md - Quick reference
+- NOTION_AI_SETUP_GUIDE.md - Detailed AI prompts
+
+
+🎯 QUICK START
+==============
+1. Extract this ZIP (you probably already did)
+2. Drag all 6 .md files into Notion
+3. Read "04_Officer_Transition" page first
+4. Use the ONE prompt above to create compliance tracker
+5. Set reminders for critical deadlines
+6. ✅ You're operational!
+
+
+═══════════════════════════════════════════
+Made for: Healing Roots Outreach Collective
+Updated: December 2025
+🌱 Rooted in community. Growing toward healing. 💙
+═══════════════════════════════════════════

@@ -1,5 +1,54 @@
-# macOS
-.DS_Store
+# Training and Generated Data - NOT for production
+Generated_Images/
+HROC_Website_New/lora_training/
+HROC_Website_New/lora_models/
+HROC_Website_New/generate_images.py
+train_*.py
+**/train_*.py
 
-# Sensitive recovery files
-*Recovery_Kit.pdf
+# Project assets and templates - development only
+Project_Assets/
+HROC_Website_New/cloudflare-tunnel-setup.sh
+HROC_Website_New/generate_images.py
+HROC_Website_New/nginx.conf
+
+# Temporary and build files
+Temp/
+.DS_Store
+*.pyc
+__pycache__/
+*.log
+*.tmp
+.env
+.env.local
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build and dist
+dist/
+build/
+*.egg-info/
+
+# Archive - keep but don't track large files
+Archive/duplicates_by_hash/**/*.pdf
+Archive/disposal_logs/*.csv
+Archive/legacy_raw/**/*
+
+# Node modules (if ever used)
+node_modules/
+npm-debug.log
+
+# Keep only essential website files
+# HROC_Website_New/index.html - tracked
+# HROC_Website_New/styles.css - tracked
+# HROC_Website_New/script.js - tracked
+# HROC_Website_New/generated_images/ - tracked for deployment

@@ -55,13 +55,13 @@ Expected after optimization: 20-40 MB
 
 | # | Filename | Page Placement | Description |
 |---|----------|----------------|-------------|
-| 1 | hero_01_mobile_outreach_vehicle.png | Homepage | Mobile RV with vibrant branding |
-| 2 | hero_02_community_engagement.png | About Page | Diverse community receiving care |
-| 3 | hero_03_peer_support.png | Services Page | Supportive counseling conversation |
-| 4 | hero_04_naloxone_training.png | Training Page | Educational training session |
-| 5 | hero_05_hands_holding.png | Donate Page | Hands joined in solidarity |
-| 6 | hero_06_pacific_northwest_landscape.png | Contact Page | Pacific Northwest scenery |
-| 7 | hero_07_community_circle.png | Programs Page | Traditional talking circle |
+| 1 | hero_01_mobile_outreach_vehicle.webp | Homepage | Mobile RV with vibrant branding |
+| 2 | hero_02_community_engagement.webp | About Page | Diverse community receiving care |
+| 3 | hero_03_peer_support.webp | Services Page | Supportive counseling conversation |
+| 4 | hero_04_naloxone_training.webp | Training Page | Educational training session |
+| 5 | hero_05_hands_holding.webp | Donate Page | Hands joined in solidarity |
+| 6 | hero_06_pacific_northwest_landscape.webp | Contact Page | Pacific Northwest scenery |
+| 7 | hero_07_community_circle.webp | Programs Page | Traditional talking circle |
 
 **Key Features:**
 - Professional photography style
@@ -79,18 +79,18 @@ Expected after optimization: 20-40 MB
 
 | # | Service | Icon Filename |
 |---|---------|---------------|
-| 1 | Naloxone Distribution | icon_01_naloxone_kit.png |
-| 2 | Syringe Exchange | icon_02_syringe_exchange.png |
-| 3 | Peer Support | icon_03_peer_support.png |
-| 4 | Healthcare Navigation | icon_04_healthcare_navigation.png |
-| 5 | Mobile Outreach | icon_05_mobile_outreach.png |
-| 6 | Education & Training | icon_06_education_training.png |
-| 7 | Harm Reduction Supplies | icon_07_harm_reduction_supplies.png |
-| 8 | Crisis Support | icon_08_crisis_support.png |
-| 9 | Cultural Competency | icon_09_cultural_competency.png |
-| 10 | Community Resources | icon_10_community_resources.png |
-| 11 | Safe Spaces | icon_11_safe_space.png |
-| 12 | Wellness Checks | icon_12_wellness_check.png |
+| 1 | Naloxone Distribution | icon_01_naloxone_kit.webp |
+| 2 | Syringe Exchange | icon_02_syringe_exchange.webp |
+| 3 | Peer Support | icon_03_peer_support.webp |
+| 4 | Healthcare Navigation | icon_04_healthcare_navigation.webp |
+| 5 | Mobile Outreach | icon_05_mobile_outreach.webp |
+| 6 | Education & Training | icon_06_education_training.webp |
+| 7 | Harm Reduction Supplies | icon_07_harm_reduction_supplies.webp |
+| 8 | Crisis Support | icon_08_crisis_support.webp |
+| 9 | Cultural Competency | icon_09_cultural_competency.webp |
+| 10 | Community Resources | icon_10_community_resources.webp |
+| 11 | Safe Spaces | icon_11_safe_space.webp |
+| 12 | Wellness Checks | icon_12_wellness_check.webp |
 
 **Key Features:**
 - Modern, professional icon design
@@ -108,16 +108,16 @@ Expected after optimization: 20-40 MB
 
 | # | Pattern Style | Filename | Best Used For |
 |---|--------------|----------|---------------|
-| 1 | Abstract waves | bg_pattern_01_flowing_waves.png | General sections |
-| 2 | Geometric shapes | bg_pattern_02_geometric_shapes.png | Corporate sections |
-| 3 | Gradient mesh | bg_pattern_03_gradient_mesh.png | Hero overlays |
-| 4 | Organic curves | bg_pattern_04_organic_curves.png | Content sections |
-| 5 | Dot matrix | bg_pattern_05_dot_matrix.png | Statistics/data |
-| 6 | Watercolor wash | bg_pattern_06_watercolor_wash.png | Testimonials |
-| 7 | Line art | bg_pattern_07_line_art.png | About/info sections |
-| 8 | Radial burst | bg_pattern_08_radial_burst.png | Call-to-action |
-| 9 | Indigenous-inspired | bg_pattern_09_tribal_modern.png | Cultural programs |
-| 10 | Light texture | bg_pattern_10_light_texture.png | Universal overlay |
+| 1 | Abstract waves | bg_pattern_01_flowing_waves.webp | General sections |
+| 2 | Geometric shapes | bg_pattern_02_geometric_shapes.webp | Corporate sections |
+| 3 | Gradient mesh | bg_pattern_03_gradient_mesh.webp | Hero overlays |
+| 4 | Organic curves | bg_pattern_04_organic_curves.webp | Content sections |
+| 5 | Dot matrix | bg_pattern_05_dot_matrix.webp | Statistics/data |
+| 6 | Watercolor wash | bg_pattern_06_watercolor_wash.webp | Testimonials |
+| 7 | Line art | bg_pattern_07_line_art.webp | About/info sections |
+| 8 | Radial burst | bg_pattern_08_radial_burst.webp | Call-to-action |
+| 9 | Indigenous-inspired | bg_pattern_09_tribal_modern.webp | Cultural programs |
+| 10 | Light texture | bg_pattern_10_light_texture.webp | Universal overlay |
 
 **Key Features:**
 - Versatile backgrounds for any website section
@@ -135,21 +135,21 @@ Expected after optimization: 20-40 MB
 
 | # | Scene | Filename | Section |
 |---|-------|----------|---------|
-| 1 | Diverse group smiling | community_01_diverse_group_smiling.png | Community impact |
-| 2 | Peer counselor listening | community_02_peer_counselor_listening.png | Peer support |
-| 3 | Elder and youth | community_03_elder_and_youth.png | Cultural programs |
-| 4 | Volunteers organizing | community_04_volunteers_organizing.png | Get involved |
-| 5 | Person receiving naloxone | community_05_person_receiving_naloxone.png | Naloxone program |
-| 6 | Group training session | community_06_group_training_session.png | Education programs |
-| 7 | Mobile unit service | community_07_mobile_unit_service.png | Mobile services |
-| 8 | Safe space interior | community_08_safe_space_interior.png | Facilities |
-| 9 | Person hope expression | community_09_person_hope_expression.png | Testimonials |
-| 10 | Hands distributing supplies | community_10_hands_distributing_supplies.png | Services overview |
-| 11 | Team photo staff | community_11_team_photo_staff.png | About team |
-| 12 | People walking together | community_12_people_walking_together.png | Peer support |
-| 13 | Celebration gathering | community_13_celebration_gathering.png | Events/news |
-| 14 | Person receiving care | community_14_person_receiving_care.png | Healthcare services |
-| 15 | Youth empowerment | community_15_youth_empowerment.png | Youth programs |
+| 1 | Diverse group smiling | community_01_diverse_group_smiling.webp | Community impact |
+| 2 | Peer counselor listening | community_02_peer_counselor_listening.webp | Peer support |
+| 3 | Elder and youth | community_03_elder_and_youth.webp | Cultural programs |
+| 4 | Volunteers organizing | community_04_volunteers_organizing.webp | Get involved |
+| 5 | Person receiving naloxone | community_05_person_receiving_naloxone.webp | Naloxone program |
+| 6 | Group training session | community_06_group_training_session.webp | Education programs |
+| 7 | Mobile unit service | community_07_mobile_unit_service.webp | Mobile services |
+| 8 | Safe space interior | community_08_safe_space_interior.webp | Facilities |
+| 9 | Person hope expression | community_09_person_hope_expression.webp | Testimonials |
+| 10 | Hands distributing supplies | community_10_hands_distributing_supplies.webp | Services overview |
+| 11 | Team photo staff | community_11_team_photo_staff.webp | About team |
+| 12 | People walking together | community_12_people_walking_together.webp | Peer support |
+| 13 | Celebration gathering | community_13_celebration_gathering.webp | Events/news |
+| 14 | Person receiving care | community_14_person_receiving_care.webp | Healthcare services |
+| 15 | Youth empowerment | community_15_youth_empowerment.webp | Youth programs |
 
 **Key Features:**
 - Authentic, dignified representation
@@ -167,18 +167,18 @@ Expected after optimization: 20-40 MB
 
 | # | Type | Content | Filename |
 |---|------|---------|----------|
-| 1 | Map | Service area (King & Pierce) | info_01_service_area_map.png |
-| 2 | Statistics | Naloxone impact numbers | info_02_naloxone_saves_lives_stat.png |
-| 3 | Educational | Harm reduction principles | info_03_harm_reduction_principles.png |
-| 4 | Flowchart | Service access process | info_04_services_flowchart.png |
-| 5 | Dashboard | Program impact metrics | info_05_impact_numbers.png |
-| 6 | Guide | Overdose response steps | info_06_overdose_response_steps.png |
-| 7 | Directory | Community resources | info_07_resource_directory.png |
-| 8 | Timeline | Organizational history | info_08_timeline_organization_history.png |
-| 9 | Checklist | Supplies inventory | info_09_supplies_checklist.png |
-| 10 | Roles | Volunteer opportunities | info_10_volunteer_opportunities.png |
-| 11 | Impact | Donation breakdown | info_11_donation_impact.png |
-| 12 | Calendar | Monthly outreach schedule | info_12_monthly_outreach_calendar.png |
+| 1 | Map | Service area (King & Pierce) | info_01_service_area_map.webp |
+| 2 | Statistics | Naloxone impact numbers | info_02_naloxone_saves_lives_stat.webp |
+| 3 | Educational | Harm reduction principles | info_03_harm_reduction_principles.webp |
+| 4 | Flowchart | Service access process | info_04_services_flowchart.webp |
+| 5 | Dashboard | Program impact metrics | info_05_impact_numbers.webp |
+| 6 | Guide | Overdose response steps | info_06_overdose_response_steps.webp |
+| 7 | Directory | Community resources | info_07_resource_directory.webp |
+| 8 | Timeline | Organizational history | info_08_timeline_organization_history.webp |
+| 9 | Checklist | Supplies inventory | info_09_supplies_checklist.webp |
+| 10 | Roles | Volunteer opportunities | info_10_volunteer_opportunities.webp |
+| 11 | Impact | Donation breakdown | info_11_donation_impact.webp |
+| 12 | Calendar | Monthly outreach schedule | info_12_monthly_outreach_calendar.webp |
 
 **Key Features:**
 - Professional data visualization
@@ -335,7 +335,7 @@ All 56 images include comprehensive, descriptive alt text stored in `image_manif
 ### Homepage
 ```html
 <!-- Hero Section -->
-<section class="hero" style="background-image: url('generated_images/hero_banners/hero_01_mobile_outreach_vehicle.png');">
+<section class="hero" style="background-image: url('generated_images/hero_banners/hero_01_mobile_outreach_vehicle.webp');">
     <div class="hero-content">
         <h1>Healing Roots Outreach Collective</h1>
         <p>Mobile harm reduction services for King & Pierce Counties</p>
@@ -348,7 +348,7 @@ All 56 images include comprehensive, descriptive alt text stored in `image_manif
     <h2>Our Services</h2>
     <div class="service-grid">
         <div class="service-card">
-            <img src="generated_images/service_icons/icon_01_naloxone_kit.png"
+            <img src="generated_images/service_icons/icon_01_naloxone_kit.webp"
                  alt="Naloxone distribution service icon"
                  width="200" height="200">
             <h3>Naloxone Distribution</h3>
@@ -359,8 +359,8 @@ All 56 images include comprehensive, descriptive alt text stored in `image_manif
 </section>
 
 <!-- Impact Statistics with Background -->
-<section class="impact" style="background-image: url('generated_images/background_patterns/bg_pattern_05_dot_matrix.png'); opacity: 0.4;">
-    <img src="generated_images/informational_graphics/info_05_impact_numbers.png"
+<section class="impact" style="background-image: url('generated_images/background_patterns/bg_pattern_05_dot_matrix.webp'); opacity: 0.4;">
+    <img src="generated_images/informational_graphics/info_05_impact_numbers.webp"
          alt="Dashboard showing HROC program impact metrics">
 </section>
 ```
@@ -451,45 +451,45 @@ All 56 images include comprehensive, descriptive alt text stored in `image_manif
 ## Usage by Website Section
 
 ### Homepage
-- Hero: `hero_01_mobile_outreach_vehicle.png`
+- Hero: `hero_01_mobile_outreach_vehicle.webp`
 - Services: All 12 service icons
-- Background: `bg_pattern_03_gradient_mesh.png`
-- Community: `community_01_diverse_group_smiling.png`
-- Statistics: `info_05_impact_numbers.png`
+- Background: `bg_pattern_03_gradient_mesh.webp`
+- Community: `community_01_diverse_group_smiling.webp`
+- Statistics: `info_05_impact_numbers.webp`
 
 ### About Page
-- Hero: `hero_02_community_engagement.png`
-- Team: `community_11_team_photo_staff.png`
-- History: `info_08_timeline_organization_history.png`
-- Background: `bg_pattern_07_line_art.png`
+- Hero: `hero_02_community_engagement.webp`
+- Team: `community_11_team_photo_staff.webp`
+- History: `info_08_timeline_organization_history.webp`
+- Background: `bg_pattern_07_line_art.webp`
 
 ### Services Page
-- Hero: `hero_03_peer_support.png`
+- Hero: `hero_03_peer_support.webp`
 - Icons: All 12 service icons
-- Process: `info_04_services_flowchart.png`
-- Mobile: `community_07_mobile_unit_service.png`
+- Process: `info_04_services_flowchart.webp`
+- Mobile: `community_07_mobile_unit_service.webp`
 
 ### Programs/Training
-- Hero: `hero_04_naloxone_training.png`
-- Training: `community_06_group_training_session.png`
-- Guide: `info_06_overdose_response_steps.png`
-- Principles: `info_03_harm_reduction_principles.png`
+- Hero: `hero_04_naloxone_training.webp`
+- Training: `community_06_group_training_session.webp`
+- Guide: `info_06_overdose_response_steps.webp`
+- Principles: `info_03_harm_reduction_principles.webp`
 
 ### Get Involved/Donate
-- Hero: `hero_05_hands_holding.png`
-- Impact: `info_11_donation_impact.png`
-- Volunteers: `info_10_volunteer_opportunities.png`
-- Background: `bg_pattern_08_radial_burst.png`
+- Hero: `hero_05_hands_holding.webp`
+- Impact: `info_11_donation_impact.webp`
+- Volunteers: `info_10_volunteer_opportunities.webp`
+- Background: `bg_pattern_08_radial_burst.webp`
 
 ### Contact/Locations
-- Hero: `hero_06_pacific_northwest_landscape.png`
-- Map: `info_01_service_area_map.png`
-- Schedule: `info_12_monthly_outreach_calendar.png`
+- Hero: `hero_06_pacific_northwest_landscape.webp`
+- Map: `info_01_service_area_map.webp`
+- Schedule: `info_12_monthly_outreach_calendar.webp`
 
 ### Cultural Programs
-- Hero: `hero_07_community_circle.png`
-- Elder/Youth: `community_03_elder_and_youth.png`
-- Background: `bg_pattern_09_tribal_modern.png`
+- Hero: `hero_07_community_circle.webp`
+- Elder/Youth: `community_03_elder_and_youth.webp`
+- Background: `bg_pattern_09_tribal_modern.webp`
 
 ---
 

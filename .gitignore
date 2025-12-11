@@ -1,5 +1,6 @@
 # Training and Generated Data - NOT for production
 Generated_Images/
+!HROC_Website_New/generated_images/
 HROC_Website_New/lora_training/
 HROC_Website_New/lora_models/
 HROC_Website_New/generate_images.py

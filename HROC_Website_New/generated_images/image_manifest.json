@@ -1,0 +1,745 @@
+{
+  "generation_date": "2025-12-10 04:00:46",
+  "organization": "Healing Roots Outreach Collective (HROC)",
+  "brand_colors": {
+    "magenta_pink": "#E23D87",
+    "bright_cyan_blue": "#00B4E5",
+    "lime_yellow_green": "#D4E157",
+    "deep_plum_purple": "#4B1B3F",
+    "heart_pink": "#FF4F86"
+  },
+  "total_images": 56,
+  "successful_count": 56,
+  "failed_count": 0,
+  "images": [
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/hero_banners/hero_01_mobile_outreach_vehicle.webp",
+      "filename": "hero_01_mobile_outreach_vehicle.webp",
+      "category": "hero_banners",
+      "alt_text": "HROC mobile outreach vehicle providing community services",
+      "placement": "Homepage hero banner",
+      "tags": [
+        "hero",
+        "vehicle",
+        "outreach"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/hero_banners/hero_02_community_engagement.webp",
+      "filename": "hero_02_community_engagement.webp",
+      "category": "hero_banners",
+      "alt_text": "Community members engaging with HROC healthcare services",
+      "placement": "About page hero",
+      "tags": [
+        "hero",
+        "community",
+        "care"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/hero_banners/hero_03_peer_support.webp",
+      "filename": "hero_03_peer_support.webp",
+      "category": "hero_banners",
+      "alt_text": "Peer counselor providing compassionate support",
+      "placement": "Services page hero",
+      "tags": [
+        "hero",
+        "support",
+        "counseling"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/hero_banners/hero_04_naloxone_training.webp",
+      "filename": "hero_04_naloxone_training.webp",
+      "category": "hero_banners",
+      "alt_text": "Community naloxone training and education session",
+      "placement": "Training page hero",
+      "tags": [
+        "hero",
+        "training",
+        "education"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/hero_banners/hero_05_hands_holding.webp",
+      "filename": "hero_05_hands_holding.webp",
+      "category": "hero_banners",
+      "alt_text": "Hands joined in solidarity and support",
+      "placement": "Donate page hero",
+      "tags": [
+        "hero",
+        "community",
+        "support"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/hero_banners/hero_06_pacific_northwest_landscape.webp",
+      "filename": "hero_06_pacific_northwest_landscape.webp",
+      "category": "hero_banners",
+      "alt_text": "Pacific Northwest landscape representing HROC service area",
+      "placement": "Contact page hero",
+      "tags": [
+        "hero",
+        "location",
+        "landscape"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/hero_banners/hero_07_community_circle.webp",
+      "filename": "hero_07_community_circle.webp",
+      "category": "hero_banners",
+      "alt_text": "Community gathering in traditional talking circle formation",
+      "placement": "Programs page hero",
+      "tags": [
+        "hero",
+        "community",
+        "culture"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/service_icons/icon_01_naloxone_kit.webp",
+      "filename": "icon_01_naloxone_kit.webp",
+      "category": "service_icons",
+      "alt_text": "Naloxone distribution service icon",
+      "placement": "Services grid icon",
+      "tags": [
+        "icon",
+        "service",
+        "naloxone"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/service_icons/icon_02_syringe_exchange.webp",
+      "filename": "icon_02_syringe_exchange.webp",
+      "category": "service_icons",
+      "alt_text": "Syringe exchange program icon",
+      "placement": "Services grid icon",
+      "tags": [
+        "icon",
+        "service",
+        "harm-reduction"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/service_icons/icon_03_peer_support.webp",
+      "filename": "icon_03_peer_support.webp",
+      "category": "service_icons",
+      "alt_text": "Peer support services icon",
+      "placement": "Services grid icon",
+      "tags": [
+        "icon",
+        "service",
+        "support"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/service_icons/icon_04_healthcare_navigation.webp",
+      "filename": "icon_04_healthcare_navigation.webp",
+      "category": "service_icons",
+      "alt_text": "Healthcare navigation services icon",
+      "placement": "Services grid icon",
+      "tags": [
+        "icon",
+        "service",
+        "navigation"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/service_icons/icon_05_mobile_outreach.webp",
+      "filename": "icon_05_mobile_outreach.webp",
+      "category": "service_icons",
+      "alt_text": "Mobile outreach services icon",
+      "placement": "Services grid icon",
+      "tags": [
+        "icon",
+        "service",
+        "mobile"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/service_icons/icon_06_education_training.webp",
+      "filename": "icon_06_education_training.webp",
+      "category": "service_icons",
+      "alt_text": "Education and training programs icon",
+      "placement": "Services grid icon",
+      "tags": [
+        "icon",
+        "service",
+        "education"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/service_icons/icon_07_harm_reduction_supplies.webp",
+      "filename": "icon_07_harm_reduction_supplies.webp",
+      "category": "service_icons",
+      "alt_text": "Harm reduction supplies icon",
+      "placement": "Services grid icon",
+      "tags": [
+        "icon",
+        "service",
+        "supplies"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/service_icons/icon_08_crisis_support.webp",
+      "filename": "icon_08_crisis_support.webp",
+      "category": "service_icons",
+      "alt_text": "Crisis support and hotline icon",
+      "placement": "Services grid icon",
+      "tags": [
+        "icon",
+        "service",
+        "crisis"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/service_icons/icon_09_cultural_competency.webp",
+      "filename": "icon_09_cultural_competency.webp",
+      "category": "service_icons",
+      "alt_text": "Culturally competent care icon",
+      "placement": "Services grid icon",
+      "tags": [
+        "icon",
+        "service",
+        "culture"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/service_icons/icon_10_community_resources.webp",
+      "filename": "icon_10_community_resources.webp",
+      "category": "service_icons",
+      "alt_text": "Community resources and connections icon",
+      "placement": "Services grid icon",
+      "tags": [
+        "icon",
+        "service",
+        "resources"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/service_icons/icon_11_safe_space.webp",
+      "filename": "icon_11_safe_space.webp",
+      "category": "service_icons",
+      "alt_text": "Safe and welcoming space icon",
+      "placement": "Services grid icon",
+      "tags": [
+        "icon",
+        "service",
+        "safety"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/service_icons/icon_12_wellness_check.webp",
+      "filename": "icon_12_wellness_check.webp",
+      "category": "service_icons",
+      "alt_text": "Wellness checks and health monitoring icon",
+      "placement": "Services grid icon",
+      "tags": [
+        "icon",
+        "service",
+        "wellness"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/background_patterns/bg_pattern_01_flowing_waves.webp",
+      "filename": "bg_pattern_01_flowing_waves.webp",
+      "category": "background_patterns",
+      "alt_text": "Flowing wave background pattern in brand colors",
+      "placement": "Section backgrounds",
+      "tags": [
+        "background",
+        "pattern",
+        "abstract"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/background_patterns/bg_pattern_02_geometric_shapes.webp",
+      "filename": "bg_pattern_02_geometric_shapes.webp",
+      "category": "background_patterns",
+      "alt_text": "Geometric shapes background pattern",
+      "placement": "Section backgrounds",
+      "tags": [
+        "background",
+        "pattern",
+        "geometric"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/background_patterns/bg_pattern_03_gradient_mesh.webp",
+      "filename": "bg_pattern_03_gradient_mesh.webp",
+      "category": "background_patterns",
+      "alt_text": "Gradient mesh background in brand colors",
+      "placement": "Hero section overlay",
+      "tags": [
+        "background",
+        "gradient",
+        "abstract"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/background_patterns/bg_pattern_04_organic_curves.webp",
+      "filename": "bg_pattern_04_organic_curves.webp",
+      "category": "background_patterns",
+      "alt_text": "Organic curves background pattern",
+      "placement": "Content section backgrounds",
+      "tags": [
+        "background",
+        "pattern",
+        "organic"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/background_patterns/bg_pattern_05_dot_matrix.webp",
+      "filename": "bg_pattern_05_dot_matrix.webp",
+      "category": "background_patterns",
+      "alt_text": "Dot matrix background pattern",
+      "placement": "Statistics section background",
+      "tags": [
+        "background",
+        "pattern",
+        "dots"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/background_patterns/bg_pattern_06_watercolor_wash.webp",
+      "filename": "bg_pattern_06_watercolor_wash.webp",
+      "category": "background_patterns",
+      "alt_text": "Watercolor wash background",
+      "placement": "Testimonial section background",
+      "tags": [
+        "background",
+        "watercolor",
+        "artistic"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/background_patterns/bg_pattern_07_line_art.webp",
+      "filename": "bg_pattern_07_line_art.webp",
+      "category": "background_patterns",
+      "alt_text": "Line art connection pattern background",
+      "placement": "About section background",
+      "tags": [
+        "background",
+        "pattern",
+        "lines"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/background_patterns/bg_pattern_08_radial_burst.webp",
+      "filename": "bg_pattern_08_radial_burst.webp",
+      "category": "background_patterns",
+      "alt_text": "Radial burst background pattern",
+      "placement": "CTA section background",
+      "tags": [
+        "background",
+        "pattern",
+        "radial"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/background_patterns/bg_pattern_09_tribal_modern.webp",
+      "filename": "bg_pattern_09_tribal_modern.webp",
+      "category": "background_patterns",
+      "alt_text": "Contemporary Indigenous-inspired pattern background",
+      "placement": "Cultural programs section",
+      "tags": [
+        "background",
+        "pattern",
+        "cultural"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/background_patterns/bg_pattern_10_light_texture.webp",
+      "filename": "bg_pattern_10_light_texture.webp",
+      "category": "background_patterns",
+      "alt_text": "Light texture overlay background",
+      "placement": "Universal background overlay",
+      "tags": [
+        "background",
+        "texture",
+        "subtle"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/community_photos/community_01_diverse_group_smiling.webp",
+      "filename": "community_01_diverse_group_smiling.webp",
+      "category": "community_photos",
+      "alt_text": "Diverse community members smiling together",
+      "placement": "Community impact section",
+      "tags": [
+        "community",
+        "people",
+        "diverse"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/community_photos/community_02_peer_counselor_listening.webp",
+      "filename": "community_02_peer_counselor_listening.webp",
+      "category": "community_photos",
+      "alt_text": "Peer counselor providing compassionate listening support",
+      "placement": "Peer support section",
+      "tags": [
+        "community",
+        "support",
+        "counseling"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/community_photos/community_03_elder_and_youth.webp",
+      "filename": "community_03_elder_and_youth.webp",
+      "category": "community_photos",
+      "alt_text": "Elder sharing wisdom with younger community member",
+      "placement": "Cultural programs section",
+      "tags": [
+        "community",
+        "culture",
+        "intergenerational"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/community_photos/community_04_volunteers_organizing.webp",
+      "filename": "community_04_volunteers_organizing.webp",
+      "category": "community_photos",
+      "alt_text": "Volunteers preparing harm reduction supply kits",
+      "placement": "Get involved section",
+      "tags": [
+        "community",
+        "volunteers",
+        "supplies"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/community_photos/community_05_person_receiving_naloxone.webp",
+      "filename": "community_05_person_receiving_naloxone.webp",
+      "category": "community_photos",
+      "alt_text": "Community member receiving life-saving naloxone kit",
+      "placement": "Naloxone program section",
+      "tags": [
+        "community",
+        "service",
+        "naloxone"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/community_photos/community_06_group_training_session.webp",
+      "filename": "community_06_group_training_session.webp",
+      "category": "community_photos",
+      "alt_text": "Community training session on harm reduction practices",
+      "placement": "Education programs section",
+      "tags": [
+        "community",
+        "training",
+        "education"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/community_photos/community_07_mobile_unit_service.webp",
+      "filename": "community_07_mobile_unit_service.webp",
+      "category": "community_photos",
+      "alt_text": "Mobile outreach team serving community members",
+      "placement": "Mobile services section",
+      "tags": [
+        "community",
+        "mobile",
+        "outreach"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/community_photos/community_08_safe_space_interior.webp",
+      "filename": "community_08_safe_space_interior.webp",
+      "category": "community_photos",
+      "alt_text": "Welcoming interior of HROC safe space facility",
+      "placement": "Facilities section",
+      "tags": [
+        "community",
+        "space",
+        "interior"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/community_photos/community_09_person_hope_expression.webp",
+      "filename": "community_09_person_hope_expression.webp",
+      "category": "community_photos",
+      "alt_text": "Community member portrait showing hope and resilience",
+      "placement": "Testimonial section",
+      "tags": [
+        "community",
+        "portrait",
+        "hope"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/community_photos/community_10_hands_distributing_supplies.webp",
+      "filename": "community_10_hands_distributing_supplies.webp",
+      "category": "community_photos",
+      "alt_text": "Hands exchanging harm reduction supplies with care",
+      "placement": "Services overview section",
+      "tags": [
+        "community",
+        "hands",
+        "supplies"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/community_photos/community_11_team_photo_staff.webp",
+      "filename": "community_11_team_photo_staff.webp",
+      "category": "community_photos",
+      "alt_text": "HROC staff and volunteer team photo",
+      "placement": "About team section",
+      "tags": [
+        "community",
+        "staff",
+        "team"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/community_photos/community_12_people_walking_together.webp",
+      "filename": "community_12_people_walking_together.webp",
+      "category": "community_photos",
+      "alt_text": "Peers walking together in supportive companionship",
+      "placement": "Peer support programs",
+      "tags": [
+        "community",
+        "support",
+        "walking"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/community_photos/community_13_celebration_gathering.webp",
+      "filename": "community_13_celebration_gathering.webp",
+      "category": "community_photos",
+      "alt_text": "Community celebration and gathering event",
+      "placement": "Events and news section",
+      "tags": [
+        "community",
+        "celebration",
+        "event"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/community_photos/community_14_person_receiving_care.webp",
+      "filename": "community_14_person_receiving_care.webp",
+      "category": "community_photos",
+      "alt_text": "Community member receiving compassionate healthcare",
+      "placement": "Healthcare services section",
+      "tags": [
+        "community",
+        "healthcare",
+        "care"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/community_photos/community_15_youth_empowerment.webp",
+      "filename": "community_15_youth_empowerment.webp",
+      "category": "community_photos",
+      "alt_text": "Youth participating in empowerment program",
+      "placement": "Youth programs section",
+      "tags": [
+        "community",
+        "youth",
+        "empowerment"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/informational_graphics/info_01_service_area_map.webp",
+      "filename": "info_01_service_area_map.webp",
+      "category": "informational_graphics",
+      "alt_text": "Map showing HROC service area in King and Pierce Counties",
+      "placement": "Service area section",
+      "tags": [
+        "infographic",
+        "map",
+        "service-area"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/informational_graphics/info_02_naloxone_saves_lives_stat.webp",
+      "filename": "info_02_naloxone_saves_lives_stat.webp",
+      "category": "informational_graphics",
+      "alt_text": "Statistics showing lives saved through naloxone distribution",
+      "placement": "Impact statistics section",
+      "tags": [
+        "infographic",
+        "statistics",
+        "impact"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/informational_graphics/info_03_harm_reduction_principles.webp",
+      "filename": "info_03_harm_reduction_principles.webp",
+      "category": "informational_graphics",
+      "alt_text": "Key principles of harm reduction approach",
+      "placement": "Education resources section",
+      "tags": [
+        "infographic",
+        "education",
+        "principles"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/informational_graphics/info_04_services_flowchart.webp",
+      "filename": "info_04_services_flowchart.webp",
+      "category": "informational_graphics",
+      "alt_text": "Flowchart showing how to access HROC services",
+      "placement": "How it works section",
+      "tags": [
+        "infographic",
+        "flowchart",
+        "process"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/informational_graphics/info_05_impact_numbers.webp",
+      "filename": "info_05_impact_numbers.webp",
+      "category": "informational_graphics",
+      "alt_text": "Dashboard showing HROC program impact metrics",
+      "placement": "Annual impact section",
+      "tags": [
+        "infographic",
+        "metrics",
+        "impact"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/informational_graphics/info_06_overdose_response_steps.webp",
+      "filename": "info_06_overdose_response_steps.webp",
+      "category": "informational_graphics",
+      "alt_text": "Step-by-step guide for overdose response",
+      "placement": "Emergency response section",
+      "tags": [
+        "infographic",
+        "education",
+        "emergency"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/informational_graphics/info_07_resource_directory.webp",
+      "filename": "info_07_resource_directory.webp",
+      "category": "informational_graphics",
+      "alt_text": "Directory of community resources and partner organizations",
+      "placement": "Resources page",
+      "tags": [
+        "infographic",
+        "resources",
+        "directory"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/informational_graphics/info_08_timeline_organization_history.webp",
+      "filename": "info_08_timeline_organization_history.webp",
+      "category": "informational_graphics",
+      "alt_text": "Timeline of HROC organization history and milestones",
+      "placement": "About history section",
+      "tags": [
+        "infographic",
+        "timeline",
+        "history"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/informational_graphics/info_09_supplies_checklist.webp",
+      "filename": "info_09_supplies_checklist.webp",
+      "category": "informational_graphics",
+      "alt_text": "Checklist of harm reduction supplies and resources",
+      "placement": "Supplies information section",
+      "tags": [
+        "infographic",
+        "supplies",
+        "checklist"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/informational_graphics/info_10_volunteer_opportunities.webp",
+      "filename": "info_10_volunteer_opportunities.webp",
+      "category": "informational_graphics",
+      "alt_text": "Volunteer opportunities and roles at HROC",
+      "placement": "Get involved page",
+      "tags": [
+        "infographic",
+        "volunteer",
+        "opportunities"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/informational_graphics/info_11_donation_impact.webp",
+      "filename": "info_11_donation_impact.webp",
+      "category": "informational_graphics",
+      "alt_text": "Visual breakdown of donation impact and uses",
+      "placement": "Donate page",
+      "tags": [
+        "infographic",
+        "donation",
+        "impact"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "/Users/jonathanmallinger/Documents/HROC_Files/HROC_Website_New/generated_images/informational_graphics/info_12_monthly_outreach_calendar.webp",
+      "filename": "info_12_monthly_outreach_calendar.webp",
+      "category": "informational_graphics",
+      "alt_text": "Monthly calendar of mobile outreach locations and times",
+      "placement": "Schedule section",
+      "tags": [
+        "infographic",
+        "calendar",
+        "schedule"
+      ]
+    }
+  ],
+  "failed_images": []
+}

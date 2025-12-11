@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HROC Image Library - Visual Reference</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --magenta-pink: #E23D87;
+            --bright-cyan: #00B4E5;
+            --lime-green: #D4E157;
+            --deep-plum: #4B1B3F;
+            --heart-pink: #FF4F86;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, var(--deep-plum) 0%, var(--magenta-pink) 100%);
+            color: #333;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid var(--magenta-pink);
+        }
+
+        h1 {
+            color: var(--deep-plum);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--magenta-pink);
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .stat {
+            background: linear-gradient(135deg, var(--bright-cyan), var(--magenta-pink));
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .color-palette {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .color-swatch {
+            text-align: center;
+        }
+
+        .color-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            margin-bottom: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .color-label {
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        .category {
+            margin-bottom: 60px;
+        }
+
+        .category-header {
+            background: linear-gradient(135deg, var(--deep-plum), var(--magenta-pink));
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .category-title {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .category-description {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .image-grid.icons {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+
+        .image-card {
+            background: #f9f9f9;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .image-wrapper {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-wrapper.icon {
+            height: 200px;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-info {
+            padding: 20px;
+        }
+
+        .image-filename {
+            font-weight: bold;
+            color: var(--deep-plum);
+            margin-bottom: 10px;
+            font-size: 0.95em;
+            word-break: break-all;
+        }
+
+        .image-alt {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .image-placement {
+            color: var(--magenta-pink);
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .image-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: var(--bright-cyan);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+            color: #666;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, var(--magenta-pink), var(--heart-pink));
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.2s ease;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .image-grid, .image-grid.icons {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>HROC Image Library</h1>
+            <p class="subtitle">Professional AI-Generated Images for Website</p>
+
+            <div class="stats">
+                <div class="stat">56 Total Images</div>
+                <div class="stat">5 Categories</div>
+                <div class="stat">High Resolution</div>
+                <div class="stat">Brand Aligned</div>
+            </div>
+
+            <div class="color-palette">
+                <div class="color-swatch">
+                    <div class="color-box" style="background: #E23D87;"></div>
+                    <div class="color-label">Magenta Pink</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background: #00B4E5;"></div>
+                    <div class="color-label">Bright Cyan</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background: #D4E157;"></div>
+                    <div class="color-label">Lime Green</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background: #4B1B3F;"></div>
+                    <div class="color-label">Deep Plum</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background: #FF4F86;"></div>
+                    <div class="color-label">Heart Pink</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Banners -->
+        <section class="category">
+            <div class="category-header">
+                <h2 class="category-title">Hero/Banner Images</h2>
+                <p class="category-description">7 large hero images (1920x1080) for page headers and featured content</p>
+            </div>
+            <div class="image-grid">
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="hero_banners/hero_01_mobile_outreach_vehicle.webp" alt="Mobile outreach vehicle">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-filename">hero_01_mobile_outreach_vehicle.webp</div>
+                        <div class="image-alt">HROC mobile outreach vehicle providing community services</div>
+                        <div class="image-placement">Homepage hero banner</div>
+                        <div class="image-tags">
+                            <span class="tag">hero</span>
+                            <span class="tag">vehicle</span>
+                            <span class="tag">outreach</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="hero_banners/hero_02_community_engagement.webp" alt="Community engagement">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-filename">hero_02_community_engagement.webp</div>
+                        <div class="image-alt">Community members engaging with HROC healthcare services</div>
+                        <div class="image-placement">About page hero</div>
+                        <div class="image-tags">
+                            <span class="tag">hero</span>
+                            <span class="tag">community</span>
+                            <span class="tag">care</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="hero_banners/hero_03_peer_support.webp" alt="Peer support">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-filename">hero_03_peer_support.webp</div>
+                        <div class="image-alt">Peer counselor providing compassionate support</div>
+                        <div class="image-placement">Services page hero</div>
+                        <div class="image-tags">
+                            <span class="tag">hero</span>
+                            <span class="tag">support</span>
+                            <span class="tag">counseling</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="hero_banners/hero_04_naloxone_training.webp" alt="Naloxone training">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-filename">hero_04_naloxone_training.webp</div>
+                        <div class="image-alt">Community naloxone training and education session</div>
+                        <div class="image-placement">Training page hero</div>
+                        <div class="image-tags">
+                            <span class="tag">hero</span>
+                            <span class="tag">training</span>
+                            <span class="tag">education</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="hero_banners/hero_05_hands_holding.webp" alt="Hands holding">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-filename">hero_05_hands_holding.webp</div>
+                        <div class="image-alt">Hands joined in solidarity and support</div>
+                        <div class="image-placement">Donate page hero</div>
+                        <div class="image-tags">
+                            <span class="tag">hero</span>
+                            <span class="tag">community</span>
+                            <span class="tag">support</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="hero_banners/hero_06_pacific_northwest_landscape.webp" alt="Pacific Northwest">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-filename">hero_06_pacific_northwest_landscape.webp</div>
+                        <div class="image-alt">Pacific Northwest landscape representing HROC service area</div>
+                        <div class="image-placement">Contact page hero</div>
+                        <div class="image-tags">
+                            <span class="tag">hero</span>
+                            <span class="tag">location</span>
+                            <span class="tag">landscape</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="hero_banners/hero_07_community_circle.webp" alt="Community circle">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-filename">hero_07_community_circle.webp</div>
+                        <div class="image-alt">Community gathering in traditional talking circle formation</div>
+                        <div class="image-placement">Programs page hero</div>
+                        <div class="image-tags">
+                            <span class="tag">hero</span>
+                            <span class="tag">community</span>
+                            <span class="tag">culture</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Icons -->
+        <section class="category">
+            <div class="category-header">
+                <h2 class="category-title">Service Icons</h2>
+                <p class="category-description">12 service icons (1024x1024) for services grids and feature highlights</p>
+            </div>
+            <div class="image-grid icons">
+                <div class="image-card">
+                    <div class="image-wrapper icon">
+                        <img src="service_icons/icon_01_naloxone_kit.webp" alt="Naloxone kit icon">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-filename">icon_01_naloxone_kit.webp</div>
+                        <div class="image-alt">Naloxone distribution service icon</div>
+                        <div class="image-placement">Services grid icon</div>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper icon">
+                        <img src="service_icons/icon_02_syringe_exchange.webp" alt="Syringe exchange icon">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-filename">icon_02_syringe_exchange.webp</div>
+                        <div class="image-alt">Syringe exchange program icon</div>
+                        <div class="image-placement">Services grid icon</div>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper icon">
+                        <img src="service_icons/icon_03_peer_support.webp" alt="Peer support icon">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-filename">icon_03_peer_support.webp</div>
+                        <div class="image-alt">Peer support services icon</div>
+                        <div class="image-placement">Services grid icon</div>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper icon">
+                        <img src="service_icons/icon_04_healthcare_navigation.webp" alt="Healthcare navigation icon">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-filename">icon_04_healthcare_navigation.webp</div>
+                        <div class="image-alt">Healthcare navigation services icon</div>
+                        <div class="image-placement">Services grid icon</div>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper icon">
+                        <img src="service_icons/icon_05_mobile_outreach.webp" alt="Mobile outreach icon">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-filename">icon_05_mobile_outreach.webp</div>
+                        <div class="image-alt">Mobile outreach services icon</div>
+                        <div class="image-placement">Services grid icon</div>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper icon">
+                        <img src="service_icons/icon_06_education_training.webp" alt="Education icon">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-filename">icon_06_education_training.webp</div>
+                        <div class="image-alt">Education and training programs icon</div>
+                        <div class="image-placement">Services grid icon</div>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper icon">
+                        <img src="service_icons/icon_07_harm_reduction_supplies.webp" alt="Supplies icon">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-filename">icon_07_harm_reduction_supplies.webp</div>
+                        <div class="image-alt">Harm reduction supplies icon</div>
+                        <div class="image-placement">Services grid icon</div>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper icon">
+                        <img src="service_icons/icon_08_crisis_support.webp" alt="Crisis support icon">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-filename">icon_08_crisis_support.webp</div>
+                        <div class="image-alt">Crisis support and hotline icon</div>
+                        <div class="image-placement">Services grid icon</div>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper icon">
+                        <img src="service_icons/icon_09_cultural_competency.webp" alt="Cultural competency icon">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-filename">icon_09_cultural_competency.webp</div>
+                        <div class="image-alt">Culturally competent care icon</div>
+                        <div class="image-placement">Services grid icon</div>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper icon">
+                        <img src="service_icons/icon_10_community_resources.webp" alt="Resources icon">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-filename">icon_10_community_resources.webp</div>
+                        <div class="image-alt">Community resources and connections icon</div>
+                        <div class="image-placement">Services grid icon</div>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper icon">
+                        <img src="service_icons/icon_11_safe_space.webp" alt="Safe space icon">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-filename">icon_11_safe_space.webp</div>
+                        <div class="image-alt">Safe and welcoming space icon</div>
+                        <div class="image-placement">Services grid icon</div>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper icon">
+                        <img src="service_icons/icon_12_wellness_check.webp" alt="Wellness icon">
+                    </div>
+                    <div class="image-info">
+                        <div class="image-filename">icon_12_wellness_check.webp</div>
+                        <div class="image-alt">Wellness checks and health monitoring icon</div>
+                        <div class="image-placement">Services grid icon</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p><strong>Healing Roots Outreach Collective (HROC)</strong></p>
+            <p>Image Library Generated: December 10, 2025</p>
+            <p>56 Professional Images | fal.ai flux-pro</p>
+            <p style="margin-top: 20px; color: #999; font-size: 0.9em;">
+                See IMAGE_USAGE_GUIDE.md for complete documentation and image_manifest.json for technical details
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Add loading error handling
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('error', function() {
+                this.parentElement.style.background = 'linear-gradient(135deg, #E23D87, #00B4E5)';
+                this.parentElement.innerHTML = '<div style="color: white; padding: 20px; text-align: center;">Image loading...</div>';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -15,68 +15,68 @@ The HROC website has been transformed into a world-class nonprofit website featu
 ### Total Images on Website: 60+
 
 **Community Photos (15 images)**
-- community_01_diverse_group_smiling.png
-- community_02_peer_counselor_listening.png
-- community_03_elder_and_youth.png
-- community_04_volunteers_organizing.png
-- community_05_person_receiving_naloxone.png
-- community_06_group_training_session.png
-- community_07_mobile_unit_service.png
-- community_08_safe_space_interior.png
-- community_09_person_hope_expression.png
-- community_10_hands_distributing_supplies.png
-- community_11_team_photo_staff.png
-- community_12_people_walking_together.png
-- community_13_celebration_gathering.png
-- community_14_person_receiving_care.png
-- community_15_youth_empowerment.png
+- community_01_diverse_group_smiling.webp
+- community_02_peer_counselor_listening.webp
+- community_03_elder_and_youth.webp
+- community_04_volunteers_organizing.webp
+- community_05_person_receiving_naloxone.webp
+- community_06_group_training_session.webp
+- community_07_mobile_unit_service.webp
+- community_08_safe_space_interior.webp
+- community_09_person_hope_expression.webp
+- community_10_hands_distributing_supplies.webp
+- community_11_team_photo_staff.webp
+- community_12_people_walking_together.webp
+- community_13_celebration_gathering.webp
+- community_14_person_receiving_care.webp
+- community_15_youth_empowerment.webp
 
 **Hero Banners & Impact Stories (12 images)**
-- hero_01_mobile_outreach_vehicle.png
-- hero_02_community_engagement.png
-- hero_03_peer_support.png
-- hero_04_naloxone_training.png
-- hero_05_hands_holding.png
-- hero_06_pacific_northwest_landscape.png
-- hero_07_community_circle.png
-- info_01_service_area_map.png
-- info_02_naloxone_saves_lives_stat.png
-- info_03_harm_reduction_principles.png
-- info_04_services_flowchart.png
-- info_05_impact_numbers.png
+- hero_01_mobile_outreach_vehicle.webp
+- hero_02_community_engagement.webp
+- hero_03_peer_support.webp
+- hero_04_naloxone_training.webp
+- hero_05_hands_holding.webp
+- hero_06_pacific_northwest_landscape.webp
+- hero_07_community_circle.webp
+- info_01_service_area_map.webp
+- info_02_naloxone_saves_lives_stat.webp
+- info_03_harm_reduction_principles.webp
+- info_04_services_flowchart.webp
+- info_05_impact_numbers.webp
 
 **Service Category Icons (12 images)**
-- icon_01_naloxone_kit.png
-- icon_02_syringe_exchange.png
-- icon_03_peer_support.png
-- icon_04_healthcare_navigation.png
-- icon_05_mobile_outreach.png
-- icon_06_education_training.png
-- icon_07_harm_reduction_supplies.png
-- icon_08_crisis_support.png
-- icon_09_cultural_competency.png
-- icon_10_community_resources.png
-- icon_11_safe_space.png
-- icon_12_wellness_check.png
+- icon_01_naloxone_kit.webp
+- icon_02_syringe_exchange.webp
+- icon_03_peer_support.webp
+- icon_04_healthcare_navigation.webp
+- icon_05_mobile_outreach.webp
+- icon_06_education_training.webp
+- icon_07_harm_reduction_supplies.webp
+- icon_08_crisis_support.webp
+- icon_09_cultural_competency.webp
+- icon_10_community_resources.webp
+- icon_11_safe_space.webp
+- icon_12_wellness_check.webp
 
 **Founder Portraits (3 images)**
-- bri_set2_professional_2.png (Bri - Co-Founder & Executive Director)
-- lilly_professional_04.png (Lilly - Co-Founder & Cultural Director)
-- jonathan_urban_outdoor.png (Jonathan - Co-Founder & Operations Lead)
+- bri_set2_professional_2.webp (Bri - Co-Founder & Executive Director)
+- lilly_professional_04.webp (Lilly - Co-Founder & Cultural Director)
+- jonathan_urban_outdoor.webp (Jonathan - Co-Founder & Operations Lead)
 
 **Service & Team Photos (9+ images)**
-- photo-mobile-outreach.jpg
-- photo-naloxone-training.jpg
-- photo-peer-support.jpg
-- photo-health-screening.jpg
-- photo-volunteer-team.jpg
-- photo-healing-circle.jpg
-- photo-housing-support.jpg
-- photo-resource-fair.jpg
-- photo-wound-care.jpg
+- photo-mobile-outreach.webp
+- photo-naloxone-training.webp
+- photo-peer-support.webp
+- photo-health-screening.webp
+- photo-volunteer-team.webp
+- photo-healing-circle.webp
+- photo-housing-support.webp
+- photo-resource-fair.webp
+- photo-wound-care.webp
 
 **Additional Infographics**
-- infographic-*.png (9 impact stat cards)
+- infographic-*.webp (9 impact stat cards)
 
 ---
 

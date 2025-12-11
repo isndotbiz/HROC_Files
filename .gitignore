@@ -43,6 +43,7 @@ Archive/duplicates_by_hash/**/*.pdf
 Archive/disposal_logs/*.csv
 Archive/legacy_raw/**/*
 Archive/website_backups/**
+Archive_backup_*.zip
 
 # Node modules (if ever used)
 node_modules/

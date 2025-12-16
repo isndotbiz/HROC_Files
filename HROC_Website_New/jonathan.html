@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meet Jonathan - HROC Chairman & Co-Founder. Discover Jonathan's vision for scaling peer-led harm reduction with operational excellence.">
+  <title>Jonathan - HROC Chairman & Co-Founder | Healing Roots Outreach Collective</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+  <link rel="stylesheet" href="styles.css?v=20251213-founders">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23E91E8C'/><text x='50' y='60' font-size='60' text-anchor='middle' fill='white' font-weight='bold'>🌱</text></svg>">
+
+  <style>
+    /* Founder Profile Specific Styles */
+    .founder-profile {
+      background: linear-gradient(135deg, #E91E8C 0%, #00D4E8 100%);
+      color: white;
+      padding: var(--space-12) 0 var(--space-8);
+      text-align: center;
+    }
+
+    .founder-profile h1 {
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      margin-bottom: var(--space-3);
+      font-weight: 800;
+    }
+
+    .founder-profile .role-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: var(--space-2) var(--space-4);
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: var(--space-4);
+      backdrop-filter: blur(10px);
+    }
+
+    .founder-profile p {
+      font-size: 1.125rem;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.95;
+    }
+
+    .founder-hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+      align-items: center;
+      margin-top: var(--space-8);
+    }
+
+    .founder-image-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .founder-image-container img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      border: 4px solid white;
+    }
+
+    .founder-intro-text {
+      text-align: left;
+      color: white;
+    }
+
+    .founder-intro-text p {
+      text-align: left;
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: var(--space-4);
+    }
+
+    .passion-quote {
+      background: rgba(255, 255, 255, 0.15);
+      padding: var(--space-4) var(--space-6);
+      border-left: 4px solid white;
+      border-radius: var(--radius-md);
+      font-style: italic;
+      font-size: 1.125rem;
+      line-height: 1.6;
+      margin: var(--space-6) 0;
+    }
+
+    .profile-section {
+      padding: var(--space-12) 0;
+      border-bottom: 1px solid var(--color-gray-200);
+    }
+
+    .profile-section:last-child {
+      border-bottom: none;
+    }
+
+    .profile-section h2 {
+      font-size: 2rem;
+      margin-bottom: var(--space-6);
+      color: var(--hroc-magenta);
+    }
+
+    .leadership-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-6);
+      margin: var(--space-6) 0;
+    }
+
+    .highlight-card {
+      background: white;
+      padding: var(--space-6);
+      border-radius: var(--radius-md);
+      border: 2px solid var(--color-gray-200);
+      transition: all 0.3s ease;
+    }
+
+    .highlight-card:hover {
+      border-color: var(--hroc-magenta);
+      box-shadow: 0 8px 24px rgba(233, 30, 140, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .highlight-icon {
+      font-size: 2.5rem;
+      margin-bottom: var(--space-3);
+    }
+
+    .highlight-card h3 {
+      font-size: 1.125rem;
+      color: var(--hroc-magenta);
+      margin-bottom: var(--space-2);
+    }
+
+    .highlight-card p {
+      color: var(--color-text);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .founder-bio-extended {
+      background: #f8f9fa;
+      padding: var(--space-8);
+      border-radius: var(--radius-md);
+      margin: var(--space-6) 0;
+      border-left: 4px solid var(--hroc-magenta);
+    }
+
+    .founder-bio-extended h3 {
+      color: var(--hroc-magenta);
+      margin-bottom: var(--space-4);
+    }
+
+    .founder-bio-extended p {
+      line-height: 1.8;
+      color: var(--color-text);
+      margin-bottom: var(--space-3);
+    }
+
+    .founder-bio-extended ul {
+      margin-left: 1.5rem;
+      line-height: 1.8;
+    }
+
+    .founder-bio-extended li {
+      margin-bottom: var(--space-2);
+    }
+
+    .founder-contact-card {
+      background: linear-gradient(135deg, #E91E8C 0%, #00D4E8 100%);
+      color: white;
+      padding: var(--space-6);
+      border-radius: var(--radius-md);
+      text-align: center;
+      margin: var(--space-8) 0;
+    }
+
+    .founder-contact-card h3 {
+      color: white;
+      margin-bottom: var(--space-3);
+    }
+
+    .founder-contact-card a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      margin: 0 var(--space-2);
+    }
+
+    .founder-contact-card a:hover {
+      background: rgba(255, 255, 255, 0.3);
+      text-decoration: underline;
+    }
+
+    .founder-nav {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-4);
+      margin: var(--space-8) 0;
+      flex-wrap: wrap;
+    }
+
+    .founder-nav a {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-5);
+      border: 2px solid var(--hroc-magenta);
+      color: var(--hroc-magenta);
+      background: white;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .founder-nav a:hover {
+      background: var(--hroc-magenta);
+      color: white;
+    }
+
+    .founder-nav a.active {
+      background: var(--hroc-magenta);
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .founder-hero-content {
+        grid-template-columns: 1fr;
+      }
+
+      .founder-intro-text {
+        text-align: center;
+      }
+
+      .founder-intro-text p {
+        text-align: center;
+      }
+
+      .founder-profile h1 {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Crisis Banner -->
+  <div class="crisis-banner" role="banner">
+    <div class="container">
+      <div class="crisis-content">
+        <span class="crisis-icon">🚨</span>
+        <p class="crisis-text"><strong>Need help now?</strong> Call or text us</p>
+        <div class="crisis-actions">
+          <a href="tel:+12538817377" class="crisis-btn crisis-btn-call">📞 Call</a>
+          <a href="sms:+12538817377" class="crisis-btn crisis-btn-text">💬 Text</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <header class="main-header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo-wrapper">
+          <div class="logo">🌱</div>
+          <div class="org-info">
+            <h1 class="org-name">Healing Roots Outreach Collective</h1>
+            <p class="org-tagline">Indigenous-Led Mobile Harm Reduction</p>
+          </div>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+          <span class="hamburger"></span>
+        </button>
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#impact">Impact</a></li>
+            <li><a href="documents.html">Documents</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="index.html#donate" class="nav-btn-donate">Donate</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Founder Profile Hero -->
+  <section class="founder-profile">
+    <div class="container">
+      <span class="role-badge">🏛️ Chairman & Co-Founder</span>
+      <h1>Meet Jonathan</h1>
+      <p>Strategic visionary bringing operational excellence to scaling peer-led harm reduction with commitment to community partnership and systemic change.</p>
+    </div>
+  </section>
+
+  <!-- Founder Navigation -->
+  <section class="section">
+    <div class="container">
+      <nav class="founder-nav">
+        <a href="bri.html">👋 Bri</a>
+        <a href="lilly.html">👋 Lilly</a>
+        <a href="jonathan.html" class="active">👋 Jonathan</a>
+        <a href="index.html#about">← Back to Team</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero with Image -->
+    <section class="profile-section">
+      <div class="container">
+        <div class="founder-hero-content">
+          <div class="founder-image-container">
+            <picture>
+              <source srcset="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/j/j_fluxmulti_01.webp" type="image/webp">
+              <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/j/j_fluxmulti_01.png" alt="Jonathan - HROC Chairman">
+            </picture>
+          </div>
+          <div class="founder-intro-text">
+            <p>
+              🤝 <strong>Jonathan brings strategic vision and operational excellence to HROC's mission.</strong> With commitment to scaling peer-led harm reduction, Jonathan builds the systems and partnerships that allow HROC to serve more people with quality, dignity, and impact.
+            </p>
+            <div class="passion-quote">
+              "We can't do this alone. Collaboration, partnership, and community drive everything. 🤝"
+            </div>
+            <p>
+              As Chairman, Jonathan focuses on sustainable systems, strategic partnerships, and operational infrastructure that allows HROC's peer leaders and community members to do their best work.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership Highlights -->
+    <section class="profile-section">
+      <div class="container">
+        <h2>🏛️ Leadership Highlights</h2>
+        <div class="leadership-highlights">
+          <div class="highlight-card">
+            <div class="highlight-icon">🎯</div>
+            <h3>Strategic Vision</h3>
+            <p>Develops long-term strategies for scaling impact while maintaining fidelity to peer-led, community-centered principles.</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">🤝</div>
+            <h3>Partnership Building</h3>
+            <p>Cultivates collaborations with funders, partners, and community organizations to amplify HROC's reach and impact.</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">⚙️</div>
+            <h3>Operational Excellence</h3>
+            <p>Builds efficient systems that enable peer leaders and community members to focus on service delivery and community connection.</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">📊</div>
+            <h3>Data-Driven Impact</h3>
+            <p>Uses data and evidence to demonstrate effectiveness while maintaining community accountability and transparency.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Extended Biography -->
+    <section class="profile-section">
+      <div class="container">
+        <h2>📖 Jonathan's Story & Vision</h2>
+
+        <div class="founder-bio-extended">
+          <h3>From Vision to Systems</h3>
+          <p>
+            Jonathan's career reflects commitment to turning visionary ideas into sustainable, scalable systems that serve communities. Understanding that great missions require great operations, Jonathan combines strategic thinking with practical implementation.
+          </p>
+          <p>
+            Jonathan believes that peer-led harm reduction works best when supported by strong systems - clear processes, strategic partnerships, reliable funding, and operational infrastructure that enables community members to do their best work.
+          </p>
+        </div>
+
+        <div class="founder-bio-extended">
+          <h3>🤝 Core Principles</h3>
+          <p>
+            <strong>Community Partnership:</strong> Jonathan works with - not for - communities. All strategic decisions incorporate community wisdom and lived experience.
+          </p>
+          <p>
+            <strong>Scalable Impact:</strong> Rather than scaling services through top-down models, Jonathan works to scale the principles of peer-led, community-centered harm reduction.
+          </p>
+          <p>
+            <strong>Collaborative Leadership:</strong> Jonathan sees leadership as facilitation. The goal is enabling others - especially peer leaders and community members - to lead.
+          </p>
+        </div>
+
+        <div class="founder-bio-extended">
+          <h3>🏛️ Operational Leadership</h3>
+          <p>
+            As Chairman, Jonathan focuses on:
+          </p>
+          <ul>
+            <li>📋 Clear organizational governance rooted in community accountability</li>
+            <li>💼 Strategic partnerships with funders, medical systems, and community organizations</li>
+            <li>⚙️ Operational systems that support peer leaders and front-line staff</li>
+            <li>📊 Data collection and reporting that demonstrates impact</li>
+            <li>🌱 Sustainable funding models that support long-term mission</li>
+            <li>🚀 Growth strategies that maintain peer-led, community-centered principles</li>
+          </ul>
+        </div>
+
+        <div class="founder-bio-extended">
+          <h3>🌐 Building Partnerships</h3>
+          <p>
+            Jonathan is passionate about strategic partnerships that expand HROC's reach:
+          </p>
+          <ul>
+            <li>🏥 Healthcare systems that provide medically-supported detoxification and treatment</li>
+            <li>🏛️ Government agencies working on harm reduction and public health</li>
+            <li>🤝 Community organizations addressing housing, food security, and social services</li>
+            <li>💰 Foundations and donors aligned with peer-led harm reduction</li>
+            <li>🔬 Research institutions documenting effectiveness and impact</li>
+            <li>🌍 National harm reduction networks advancing policy change</li>
+          </ul>
+        </div>
+
+        <div class="founder-bio-extended">
+          <h3>🚀 Vision for Scale & Impact</h3>
+          <p>
+            Jonathan envisions HROC as a model that proves peer-led, community-centered harm reduction can be scaled, sustained, and replicated.
+          </p>
+          <p>
+            "Great operations serve great missions. By building systems that work, we can demonstrate that community-centered harm reduction isn't just morally right - it's sustainable and scalable. That changes everything."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Connect with Jonathan -->
+    <section class="profile-section">
+      <div class="container">
+        <h2>📧 Connect with Jonathan</h2>
+        <div class="founder-contact-card">
+          <h3>Get In Touch</h3>
+          <p style="margin-bottom: var(--space-4); color: white;">Interested in partnership, funding, or collaborating on scaling peer-led harm reduction?</p>
+          <div>
+            <a href="mailto:Jonathan.Mallinger@hrocinc.org">📧 Email Jonathan</a>
+            <a href="tel:+12538817377">📞 Call HROC</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Back to Team -->
+    <section class="profile-section">
+      <div class="container" style="text-align: center;">
+        <h2>Learn About Our Other Leaders</h2>
+        <div class="founder-nav">
+          <a href="bri.html">👋 Meet Bri</a>
+          <a href="lilly.html">👋 Meet Lilly</a>
+          <a href="index.html#about">← Back to Full Team</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Healing Roots Outreach Collective</h3>
+          <p>Indigenous-led, trauma-informed mobile harm reduction services in King & Pierce Counties, Washington.</p>
+          <p class="footer-tagline">🌱 Rooted in community. Growing toward healing. 💙</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#impact">Impact</a></li>
+            <li><a href="index.html#donate">Donate</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Team</h3>
+          <ul class="footer-links">
+            <li><a href="bri.html">Bri</a></li>
+            <li><a href="lilly.html">Lilly</a></li>
+            <li><a href="jonathan.html">Jonathan</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Legal</h3>
+          <p><strong>501(c)(3) Tax-Exempt Organization</strong></p>
+          <p>EIN: 39-3295288</p>
+          <p>WA Charity Reg: 2011817</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Healing Roots Outreach Collective. All rights reserved.</p>
+        <p class="footer-disclaimer">
+          Healing Roots Outreach Collective is registered with the Washington Secretary of State's
+          Charities Program. Registration does not imply endorsement.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Action Buttons -->
+  <div class="fab-container">
+    <a href="tel:+12538817377" class="fab fab-call">📞</a>
+    <a href="sms:+12538817377" class="fab fab-text">💬</a>
+    <a href="index.html#about" class="fab fab-services">👥</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

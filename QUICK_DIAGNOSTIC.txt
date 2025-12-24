@@ -1,0 +1,162 @@
+=============================================================================
+HROC WEBSITE MIGRATION - QUICK DIAGNOSTIC REPORT
+=============================================================================
+Date: 2025-12-13
+Status: INVESTIGATION NEEDED - Images not displaying
+
+=============================================================================
+INFRASTRUCTURE STATUS
+=============================================================================
+
+S3 BUCKET:
+  Name: hroc-outreach-assets-1765630540
+  Region: us-west-2
+  Status: ✓ PUBLIC (200 OK responses verified)
+  Files: 155 total (images + PDFs)
+  
+DOCKER CONTAINER:
+  Name: hrocinc-nginx
+  Status: ✓ RUNNING
+  Port: 8081 (HTTP) / 8444 (HTTPS)
+  Mount: /mnt/tank/encrypted/containers/hrocinc/web → /usr/share/nginx/html
+
+WEBSITE:
+  URL: https://hrocinc.org
+  Status: ✓ RESPONDING (HTML served)
+  Last Deploy: 2025-12-13 08:51:08
+  S3 References in HTML: 60+
+
+=============================================================================
+VERIFICATION RESULTS
+=============================================================================
+
+S3 URL ACCESSIBILITY:
+  ✓ service-overdose-prevention.png → HTTP 200
+  ✓ bri-about.png → HTTP 200
+  ✓ community_01_diverse_group_smiling.png → HTTP 200
+  ✓ icon_01_naloxone_kit.png → HTTP 200
+  ✓ Board_Roster_Certified.pdf → HTTP 200
+
+HTML VERIFICATION:
+  ✓ File exists: /mnt/tank/encrypted/containers/hrocinc/web/index.html
+  ✓ S3 URLs present: 60 references found
+  ✓ Paths correct: No duplicate folders detected
+  ✓ Docker serving: Confirmed via docker exec
+
+BUCKET POLICY:
+  ✓ Public read policy applied
+  ✓ Block Public Access: DISABLED
+  ✓ ACLs disabled (not required with bucket policy)
+
+=============================================================================
+PROBLEM: IMAGES NOT DISPLAYING
+=============================================================================
+
+What Works:
+  • S3 bucket publicly accessible
+  • Files exist in S3 ✓
+  • HTML contains S3 URLs ✓
+  • Docker is running ✓
+  • Nginx is proxying correctly ✓
+  • All S3 files return HTTP 200 ✓
+
+What Doesn't Work:
+  • Images not visible on website ✗
+
+Likely Causes:
+  1. Browser cache of old broken URLs (MOST LIKELY)
+  2. CORS issue blocking cross-origin S3 requests
+  3. Nginx response caching old HTML
+  4. Path mismatch between HTML and S3 (less likely, verified)
+
+=============================================================================
+IMMEDIATE ACTION FOR CODEX
+=============================================================================
+
+1. OPEN BROWSER DEVTOOLS
+   - Go to https://hrocinc.org
+   - Press F12
+   - Click "Network" tab
+
+2. CLEAR BROWSER CACHE
+   - Press Ctrl+Shift+Delete (Windows)
+   - Or Cmd+Shift+Delete (Mac)
+   - Clear ALL browsing data
+
+3. RELOAD PAGE
+   - Press Ctrl+F5 (hard refresh)
+   - Look at Network tab for image requests
+
+4. CHECK IMAGE REQUESTS
+   - Filter for ".png" files
+   - Status should be: 200 (success)
+   - If 403: S3 permission issue
+   - If 404: Path doesn't exist in S3
+   - If missing: Network blocked or HTML issue
+
+5. CHECK BROWSER CONSOLE
+   - Look for CORS errors
+   - Look for mixed content warnings
+   - Look for 404/403 errors
+
+=============================================================================
+DIAGNOSTIC COMMANDS FOR CODEX
+=============================================================================
+
+Test S3 URL directly:
+  curl -I "https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/generated/service-overdose-prevention.png"
+  Expected: HTTP/1.1 200 OK
+
+Check HTML on server:
+  ssh -i ~/.ssh/truenas_admin_10_0_0_89 root@10.0.0.89
+  grep "service-overdose-prevention" /mnt/tank/encrypted/containers/hrocinc/web/index.html
+  Expected: Full S3 URL with .png extension
+
+Check Docker is serving updates:
+  ssh -i ~/.ssh/truenas_admin_10_0_0_89 root@10.0.0.89
+  docker exec hrocinc-nginx grep "service-overdose-prevention" /usr/share/nginx/html/index.html
+  Expected: Full S3 URL
+
+Restart Docker:
+  ssh -i ~/.ssh/truenas_admin_10_0_0_89 root@10.0.0.89
+  docker restart hrocinc-nginx
+
+Check S3 bucket policy:
+  aws s3api get-bucket-policy --bucket hroc-outreach-assets-1765630540 --region us-west-2
+  Expected: PublicReadGetObject policy with Allow effect
+
+=============================================================================
+KEY CREDENTIALS
+=============================================================================
+
+TrueNAS:
+  IP: 10.0.0.89
+  User: root
+  SSH Key: ~/.ssh/truenas_admin_10_0_0_89
+  
+S3 Bucket:
+  Name: hroc-outreach-assets-1765630540
+  Region: us-west-2
+  Base: https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/
+
+Website:
+  Main: https://hrocinc.org
+  Status: https://hrocinc.org/index.html
+
+=============================================================================
+FILES FOR REFERENCE
+=============================================================================
+
+Full Documentation:
+  D:\workspace\HROC_Files\CODEX_REVIEW_FULL_STATUS.md (15 sections, comprehensive)
+
+Context Document (in Git):
+  D:\workspace\HROC_Files\HROC_WEBSITE_CDN_MIGRATION_CONTEXT.md
+
+Git Commit:
+  cf949a5 (main branch)
+  Message: Migrate HROC website assets to AWS S3 CDN
+
+=============================================================================
+END OF QUICK DIAGNOSTIC
+=============================================================================

@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(aws s3 ls:*)",
+      "Bash(aws s3 sync:*)",
+      "Bash(env)",
+      "Bash(find:*)",
+      "Bash(bash:*)",
+      "Bash(cat:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "hroc-image-generator",
+  "version": "1.0.0",
+  "description": "AI image generator for HROC website using fal.ai",
+  "main": "generate.js",
+  "type": "module",
+  "scripts": {
+    "generate": "node generate.js",
+    "test": "node generate.js --test"
+  },
+  "keywords": ["fal.ai", "image-generation", "hroc"],
+  "author": "HROC",
+  "license": "MIT",
+  "dependencies": {
+    "@fal-ai/serverless-client": "^0.14.3",
+    "dotenv": "^16.4.5"
+  }
+}

@@ -1,0 +1,151 @@
+========================================
+AWS S3 SYNC COMMANDS - QUICK REFERENCE
+========================================
+
+IMPORTANT: Wait until all 57 images are generated before syncing!
+Current Status: 44/57 images (77% complete)
+
+==========================================
+PRIMARY COMMANDS
+==========================================
+
+1. DRY-RUN (Always run this first!)
+-----------------------------------
+aws s3 sync D:/workspace/HROC_Files/HROC_Website_New/generated_images s3://hroc-outreach-assets-1765630540/images/generated_images --region us-west-2 --acl public-read --dryrun
+
+
+2. ACTUAL SYNC (Conservative - No Delete)
+------------------------------------------
+aws s3 sync D:/workspace/HROC_Files/HROC_Website_New/generated_images s3://hroc-outreach-assets-1765630540/images/generated_images --region us-west-2 --acl public-read
+
+
+3. SYNC WITH DELETE (Use with caution!)
+----------------------------------------
+aws s3 sync D:/workspace/HROC_Files/HROC_Website_New/generated_images s3://hroc-outreach-assets-1765630540/images/generated_images --region us-west-2 --acl public-read --delete
+
+
+==========================================
+VERIFICATION COMMANDS
+==========================================
+
+4. List Remote Files
+--------------------
+aws s3 ls s3://hroc-outreach-assets-1765630540/images/generated_images/ --recursive --region us-west-2 --human-readable
+
+
+5. Count Remote Files
+---------------------
+aws s3 ls s3://hroc-outreach-assets-1765630540/images/generated_images/ --recursive --region us-west-2 | wc -l
+
+
+6. Check AWS Configuration
+---------------------------
+aws configure get region
+aws configure get aws_access_key_id
+aws sts get-caller-identity
+
+
+7. Check Bucket Permissions
+----------------------------
+aws s3api get-bucket-acl --bucket hroc-outreach-assets-1765630540 --region us-west-2
+
+
+==========================================
+CONVENIENT ALIASES (Optional)
+==========================================
+
+# Add to ~/.bashrc or ~/.zshrc:
+
+alias hroc-s3-dryrun='aws s3 sync D:/workspace/HROC_Files/HROC_Website_New/generated_images s3://hroc-outreach-assets-1765630540/images/generated_images --region us-west-2 --acl public-read --dryrun'
+
+alias hroc-s3-sync='aws s3 sync D:/workspace/HROC_Files/HROC_Website_New/generated_images s3://hroc-outreach-assets-1765630540/images/generated_images --region us-west-2 --acl public-read'
+
+alias hroc-s3-ls='aws s3 ls s3://hroc-outreach-assets-1765630540/images/generated_images/ --recursive --region us-west-2 --human-readable'
+
+
+==========================================
+IMAGE URLS AFTER SYNC
+==========================================
+
+Base URL:
+https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/generated_images/
+
+Examples:
+https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/generated_images/impact-story-hero-1.png
+https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/generated_images/service-overdose-prevention/4.png
+https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/generated_images/service-syringe-exchange/6.png
+
+
+==========================================
+CURRENT STATUS
+==========================================
+
+Total Images: 44 (Target: 57)
+Total Size: 19 MB (Estimated final: ~24-25 MB)
+
+COMPLETE SERVICES (6/6 images):
+  ✓ service-overdose-prevention
+  ✓ service-syringe-exchange
+
+PARTIAL SERVICES:
+  ⚠ service-wound-care (4/6) - Missing: 5, 6
+
+INCOMPLETE SERVICES (3/6 images):
+  ✗ service-cultural-healing - Missing: 4, 5, 6
+  ✗ service-education-training - Missing: 4, 5, 6
+  ✗ service-health-screening - Missing: 4, 5, 6
+  ✗ service-housing-support - Missing: 4, 5, 6
+  ✗ service-peer-support - Missing: 4, 5, 6
+  ✗ service-resource-navigation - Missing: 4, 5, 6
+
+
+==========================================
+ESTIMATED SYNC TIME
+==========================================
+
+Current (44 images, 19 MB): 1-3 minutes
+When Complete (57 images, ~25 MB): 2-4 minutes
+With AWS overhead: Add 1-2 minutes
+
+
+==========================================
+RECOMMENDED WORKFLOW
+==========================================
+
+1. Generate all remaining images (13 more needed)
+2. Verify local directory has 57 images
+3. Run dry-run command (#1 above)
+4. Review dry-run output
+5. Run actual sync (#2 above)
+6. Verify with list command (#4 above)
+7. Test random URLs in browser
+8. Update website HTML to use S3 URLs
+
+
+==========================================
+TROUBLESHOOTING
+==========================================
+
+If sync fails:
+- Check AWS credentials: aws configure list
+- Verify bucket exists: aws s3 ls s3://hroc-outreach-assets-1765630540/ --region us-west-2
+- Check IAM permissions (need s3:PutObject, s3:PutObjectAcl)
+- Verify network connection
+- Try syncing one directory at a time
+
+If images not publicly accessible:
+- Check ACL: aws s3api get-object-acl --bucket hroc-outreach-assets-1765630540 --key images/generated_images/impact-story-hero-1.png --region us-west-2
+- Verify bucket policy allows public reads
+- Check CloudFront distribution (if using CDN)
+
+
+==========================================
+BACKUP COMMAND (Before Sync)
+==========================================
+
+# Backup existing S3 content (if any):
+aws s3 sync s3://hroc-outreach-assets-1765630540/images/generated_images D:/workspace/HROC_Files/HROC_Website_New/s3_backup --region us-west-2
+
+
+Last Updated: 2025-12-18 20:53 UTC
+Generated by: Claude Code AWS S3 Sync Preparation

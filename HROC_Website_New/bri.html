@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meet Bri - HROC Secretary & Co-Founder. Learn about Bri's vision for Indigenous-led harm reduction and community healing.">
+  <title>Bri - HROC Secretary & Co-Founder | Healing Roots Outreach Collective</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+  <link rel="stylesheet" href="styles.css?v=20251213-founders">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23E91E8C'/><text x='50' y='60' font-size='60' text-anchor='middle' fill='white' font-weight='bold'>🌱</text></svg>">
+
+  <style>
+    /* Founder Profile Specific Styles */
+    .founder-profile {
+      background: linear-gradient(135deg, #E91E8C 0%, #00D4E8 100%);
+      color: white;
+      padding: var(--space-12) 0 var(--space-8);
+      text-align: center;
+    }
+
+    .founder-profile h1 {
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      margin-bottom: var(--space-3);
+      font-weight: 800;
+    }
+
+    .founder-profile .role-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: var(--space-2) var(--space-4);
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: var(--space-4);
+      backdrop-filter: blur(10px);
+    }
+
+    .founder-profile p {
+      font-size: 1.125rem;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.95;
+    }
+
+    .founder-hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+      align-items: center;
+      margin-top: var(--space-8);
+    }
+
+    .founder-image-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .founder-image-container img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      border: 4px solid white;
+    }
+
+    .founder-intro-text {
+      text-align: left;
+      color: var(--color-text);
+    }
+
+    .founder-intro-text p {
+      text-align: left;
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: var(--space-4);
+      color: var(--color-text);
+    }
+
+    .passion-quote {
+      background: rgba(255, 255, 255, 0.15);
+      padding: var(--space-4) var(--space-6);
+      border-left: 4px solid white;
+      border-radius: var(--radius-md);
+      font-style: italic;
+      font-size: 1.125rem;
+      line-height: 1.6;
+      margin: var(--space-6) 0;
+    }
+
+    .profile-section {
+      padding: var(--space-12) 0;
+      border-bottom: 1px solid var(--color-gray-200);
+      color: var(--color-text);
+    }
+
+    .profile-section:last-child {
+      border-bottom: none;
+    }
+
+    .profile-section h2 {
+      font-size: 2rem;
+      margin-bottom: var(--space-6);
+      color: var(--hroc-magenta);
+    }
+
+    .profile-section p {
+      color: var(--color-text);
+    }
+
+    .profile-section ul li {
+      color: var(--color-text);
+    }
+
+    .leadership-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-6);
+      margin: var(--space-6) 0;
+    }
+
+    .highlight-card {
+      background: white;
+      padding: var(--space-6);
+      border-radius: var(--radius-md);
+      border: 2px solid var(--color-gray-200);
+      transition: all 0.3s ease;
+    }
+
+    .highlight-card:hover {
+      border-color: var(--hroc-magenta);
+      box-shadow: 0 8px 24px rgba(233, 30, 140, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .highlight-icon {
+      font-size: 2.5rem;
+      margin-bottom: var(--space-3);
+    }
+
+    .highlight-card h3 {
+      font-size: 1.125rem;
+      color: var(--hroc-magenta);
+      margin-bottom: var(--space-2);
+    }
+
+    .highlight-card p {
+      color: var(--color-text);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .founder-bio-extended {
+      background: #f8f9fa;
+      padding: var(--space-8);
+      border-radius: var(--radius-md);
+      margin: var(--space-6) 0;
+      border-left: 4px solid var(--hroc-magenta);
+    }
+
+    .founder-bio-extended h3 {
+      color: var(--hroc-magenta);
+      margin-bottom: var(--space-4);
+    }
+
+    .founder-bio-extended p {
+      line-height: 1.8;
+      color: var(--color-text);
+      margin-bottom: var(--space-3);
+    }
+
+    .founder-contact-card {
+      background: linear-gradient(135deg, #E91E8C 0%, #00D4E8 100%);
+      color: white;
+      padding: var(--space-6);
+      border-radius: var(--radius-md);
+      text-align: center;
+      margin: var(--space-8) 0;
+    }
+
+    .founder-contact-card h3 {
+      color: white;
+      margin-bottom: var(--space-3);
+    }
+
+    .founder-contact-card a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      margin: 0 var(--space-2);
+    }
+
+    .founder-contact-card a:hover {
+      background: rgba(255, 255, 255, 0.3);
+      text-decoration: underline;
+    }
+
+    .founder-nav {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-4);
+      margin: var(--space-8) 0;
+      flex-wrap: wrap;
+    }
+
+    .founder-nav a {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-5);
+      border: 2px solid var(--hroc-magenta);
+      color: var(--hroc-magenta);
+      background: white;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .founder-nav a:hover {
+      background: var(--hroc-magenta);
+      color: white;
+    }
+
+    .founder-nav a.active {
+      background: var(--hroc-magenta);
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .founder-hero-content {
+        grid-template-columns: 1fr;
+      }
+
+      .founder-intro-text {
+        text-align: center;
+      }
+
+      .founder-intro-text p {
+        text-align: center;
+      }
+
+      .founder-profile h1 {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Crisis Banner -->
+  <div class="crisis-banner" role="banner">
+    <div class="container">
+      <div class="crisis-content">
+        <span class="crisis-icon">🚨</span>
+        <p class="crisis-text"><strong>Need help now?</strong> Call or text us</p>
+        <div class="crisis-actions">
+          <a href="tel:+12538817377" class="crisis-btn crisis-btn-call">📞 Call</a>
+          <a href="sms:+12538817377" class="crisis-btn crisis-btn-text">💬 Text</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <header class="main-header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo-wrapper">
+          <div class="logo">🌱</div>
+          <div class="org-info">
+            <h1 class="org-name">Healing Roots Outreach Collective</h1>
+            <p class="org-tagline">Indigenous-Led Mobile Harm Reduction</p>
+          </div>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+          <span class="hamburger"></span>
+        </button>
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#impact">Impact</a></li>
+            <li><a href="documents.html">Documents</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="index.html#donate" class="nav-btn-donate">Donate</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Founder Profile Hero -->
+  <section class="founder-profile">
+    <div class="container">
+      <span class="role-badge">🔐 Secretary & Co-Founder</span>
+      <h1>Meet Bri</h1>
+      <p>Visionary leader bringing decades of lived experience in harm reduction and Indigenous community organizing to every aspect of HROC's work.</p>
+    </div>
+  </section>
+
+  <!-- Founder Navigation -->
+  <section class="section">
+    <div class="container">
+      <nav class="founder-nav">
+        <a href="bri.html" class="active">👋 Bri</a>
+        <a href="lilly.html">👋 Lilly</a>
+        <a href="jonathan.html">👋 Jonathan</a>
+        <a href="index.html#about">← Back to Team</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero with Image -->
+    <section class="profile-section">
+      <div class="container">
+        <div class="founder-hero-content">
+          <div class="founder-image-container">
+            <picture>
+              <source srcset="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/b/b_fluxmulti_01.webp" type="image/webp">
+              <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/b/b_fluxmulti_01.png" alt="Bri - HROC Secretary">
+            </picture>
+          </div>
+          <div class="founder-intro-text">
+            <p>
+              🌱 <strong>Bri brings decades of lived experience in harm reduction and Indigenous community organizing to HROC's mission.</strong> With unwavering commitment to peer-led approaches, Bri leads our vision to center Indigenous wisdom, trauma-informed care, and the voices of those most impacted by the overdose crisis.
+            </p>
+            <div class="passion-quote">
+              "Our work is sacred. Every person deserves dignity, healing, and community. 💙"
+            </div>
+            <p>
+              As Secretary, Bri ensures that every decision we make is grounded in the lived experience of the people we serve. Bri's leadership style centers collective wisdom, honors traditional practices, and maintains accountability to community.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership Highlights -->
+    <section class="profile-section">
+      <div class="container">
+        <h2>🔥 Leadership Highlights</h2>
+        <div class="leadership-highlights">
+          <div class="highlight-card">
+            <div class="highlight-icon">🌍</div>
+            <h3>Indigenous Wisdom</h3>
+            <p>Brings traditional knowledge and cultural practices to every program, centering Indigenous approaches to healing and community care.</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">🤝</div>
+            <h3>Lived Experience</h3>
+            <p>Decades of personal experience in harm reduction and community organizing informs authentic, peer-centered approaches.</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">❤️</div>
+            <h3>Trauma-Informed Care</h3>
+            <p>Deeply understands intergenerational trauma and its impact, creating healing-centered organizational practices.</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">👥</div>
+            <h3>Community Accountability</h3>
+            <p>Maintains strong connections to community members and ensures HROC stays true to its grassroots mission.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Extended Biography -->
+    <section class="profile-section">
+      <div class="container">
+        <h2>📖 Bri's Story & Vision</h2>
+
+        <div class="founder-bio-extended">
+          <h3>A Life in Service</h3>
+          <p>
+            Bri's journey in harm reduction spans decades, rooted in deep personal and community experience. With a profound commitment to Indigenous sovereignty and community healing, Bri has dedicated their life to creating safer, more dignified spaces for marginalized communities.
+          </p>
+          <p>
+            Before co-founding HROC, Bri worked extensively in harm reduction, peer support, and community organizing - always centered on the principle that those most impacted by policies should be at the center of creating solutions.
+          </p>
+        </div>
+
+        <div class="founder-bio-extended">
+          <h3>🌱 Core Values in Action</h3>
+          <p>
+            <strong>Peer-Led Approaches:</strong> Bri believes in the power of lived experience. Every program at HROC is designed with and led by people with direct experience of substance use, homelessness, and harm reduction.
+          </p>
+          <p>
+            <strong>Indigenous Wisdom:</strong> Rather than importing outside models, Bri centers Indigenous knowledge systems, cultural healing practices, and traditional approaches to community care.
+          </p>
+          <p>
+            <strong>Dignity First:</strong> Every interaction is approached with respect for the inherent dignity and worth of every person. This shapes everything from outreach practices to governance structures.
+          </p>
+        </div>
+
+        <div class="founder-bio-extended">
+          <h3>🔥 Leadership Approach</h3>
+          <p>
+            As Secretary, Bri balances visionary thinking with practical implementation. Bri is known for:
+          </p>
+          <ul style="margin-left: 1.5rem; line-height: 1.8;">
+            <li>🎯 Maintaining focus on mission during growth and scaling</li>
+            <li>👥 Building culture that honors both efficiency and relationships</li>
+            <li>🌍 Centering voices of community members and peer staff</li>
+            <li>💚 Creating healing-centered organizational practices</li>
+            <li>📊 Balancing data-driven decisions with trust in community wisdom</li>
+          </ul>
+        </div>
+
+        <div class="founder-bio-extended">
+          <h3>💙 Vision for HROC</h3>
+          <p>
+            Bri envisions HROC as a model for Indigenous-led, community-centered harm reduction that proves another way is possible. By demonstrating that peer-led, culturally-grounded services create the best outcomes, HROC can inspire change in how health and social services are delivered across the region.
+          </p>
+          <p>
+            "We're not just providing services - we're modeling what it looks like when communities care for themselves with dignity, respect, and the resources they deserve."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Connect with Bri -->
+    <section class="profile-section">
+      <div class="container">
+        <h2>📧 Connect with Bri</h2>
+        <div class="founder-contact-card">
+          <h3>Get In Touch</h3>
+          <p style="margin-bottom: var(--space-4); color: white;">Have questions? Want to learn more about our mission? Bri would love to hear from you.</p>
+          <div>
+            <a href="mailto:Bri.Bear@hrocinc.org">📧 Email Bri</a>
+            <a href="tel:+12538817377">📞 Call HROC</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Back to Team -->
+    <section class="profile-section">
+      <div class="container" style="text-align: center;">
+        <h2>Learn About Our Other Leaders</h2>
+        <div class="founder-nav">
+          <a href="lilly.html">👋 Meet Lilly</a>
+          <a href="jonathan.html">👋 Meet Jonathan</a>
+          <a href="index.html#about">← Back to Full Team</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Healing Roots Outreach Collective</h3>
+          <p>Indigenous-led, trauma-informed mobile harm reduction services in King & Pierce Counties, Washington.</p>
+          <p class="footer-tagline">🌱 Rooted in community. Growing toward healing. 💙</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#impact">Impact</a></li>
+            <li><a href="index.html#donate">Donate</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Team</h3>
+          <ul class="footer-links">
+            <li><a href="bri.html">Bri</a></li>
+            <li><a href="lilly.html">Lilly</a></li>
+            <li><a href="jonathan.html">Jonathan</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Legal</h3>
+          <p><strong>501(c)(3) Tax-Exempt Organization</strong></p>
+          <p>EIN: 39-3295288</p>
+          <p>WA Charity Reg: 2011817</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Healing Roots Outreach Collective. All rights reserved.</p>
+        <p class="footer-disclaimer">
+          Healing Roots Outreach Collective is registered with the Washington Secretary of State's
+          Charities Program. Registration does not imply endorsement.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Action Buttons -->
+  <div class="fab-container">
+    <a href="tel:+12538817377" class="fab fab-call">📞</a>
+    <a href="sms:+12538817377" class="fab fab-text">💬</a>
+    <a href="index.html#about" class="fab fab-services">👥</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

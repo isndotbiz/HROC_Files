@@ -1,0 +1,54 @@
+{
+  "priority5-buttons": {
+    "name": "Priority 5: CTA Buttons (300x80 & 200x60)",
+    "prompts": [
+      {
+        "id": "button-primary-donate",
+        "description": "Primary donate button",
+        "prompt": "Professional rounded button design with text \"Donate Now\", background gradient from #E91E8C to #C10066 (dark magenta), white text #FFFFFF in bold Poppins font, subtle drop shadow, modern web design style, call-to-action button",
+        "negative_prompt": "photorealistic, 3d, cluttered, messy, low quality, pixelated",
+        "filename": "button-primary-donate.png"
+      },
+      {
+        "id": "button-secondary-services",
+        "description": "Secondary services button",
+        "prompt": "Professional outline button design with text \"Our Services\", 2px border in color #00D4E8 (cyan), transparent background, cyan text #00D4E8 in Poppins font, modern web design style, secondary call-to-action button",
+        "negative_prompt": "photorealistic, 3d, cluttered, messy, filled background, low quality",
+        "filename": "button-secondary-services.png"
+      },
+      {
+        "id": "button-emergency-call",
+        "description": "Emergency call button",
+        "prompt": "Urgent rounded button design with text \"Call Now\" and phone icon, red-orange background #FF4500, white text #FFFFFF in bold font, modern emergency call-to-action button",
+        "negative_prompt": "photorealistic, 3d, cluttered, messy, low quality, small, pixelated",
+        "filename": "button-emergency-call.png"
+      }
+    ]
+  },
+  "priority5-icons": {
+    "name": "Priority 5: Small UI Icons (80x80)",
+    "prompts": [
+      {
+        "id": "icon-download",
+        "description": "Download icon",
+        "prompt": "Modern flat-design download arrow icon in circular button, color #00D4E8 (cyan), white background #FFFFFF, minimalistic clean design, suitable for document downloads",
+        "negative_prompt": "photorealistic, 3d, shadow, gradient, complex, messy, cluttered, dark background",
+        "filename": "icon-download.png"
+      },
+      {
+        "id": "icon-share",
+        "description": "Share icon",
+        "prompt": "Modern flat-design share icon with connected nodes, color #E91E8C (magenta), white background #FFFFFF, minimalistic vector style, social sharing icon",
+        "negative_prompt": "photorealistic, 3d, shadow, gradient, complex, messy, cluttered, dark background",
+        "filename": "icon-share.png"
+      },
+      {
+        "id": "icon-location",
+        "description": "Location pin icon",
+        "prompt": "Modern flat-design location pin with heart inside, color #C8E800 (lime), white background #FFFFFF, minimalistic clean design, community location icon",
+        "negative_prompt": "photorealistic, 3d, shadow, gradient, complex, messy, cluttered, dark background",
+        "filename": "icon-location.png"
+      }
+    ]
+  }
+}

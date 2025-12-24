@@ -1,0 +1,24 @@
+Day 0-7
+- Board meeting to fix officers (Brianna Chair/President, Jonathan Secretary, Lilly Treasurer).
+- Update WA Annual Report and WA Charitable Registration with corrected officers and 501(c)(3) status.
+- Collect IRS CP-575 and signed Form 1023/1023-EZ; add to 04_IRS.
+- Standardize policy signatures and titles; re-save PDFs in 02_Policies.
+
+Day 8-30
+- Build and file a 12-month budget and cash forecast into 05_Financial_Plans.
+- Open nonprofit bank account; capture resolution if bank requires; file in 01_Governance and 05_Financial_Plans.
+- Set up donation acceptance and acknowledgment workflow; store templates in 09_Checklists_ToDos.
+- Define 990-N/990-EZ workflow and reminders; store in 09_Checklists_ToDos.
+- Confirm fiscal sponsor/partner MOUs and place in 06_Operations_Plans.
+
+Day 31-60
+- Complete SPV LLC compliance (annual report, license renewal, insurance) and update 07_SPV.
+- Add RV lease/insurance documents to 07_SPV.
+- Establish program metrics log (naloxone, outreach, referrals) and place in 06_Operations_Plans.
+- Create board calendar and standing agenda templates; store in 01_Governance.
+
+Day 61-90
+- Prepare grant pipeline tracker and attach in 05_Financial_Plans.
+- Run first quarterly board meeting under new officer structure; file minutes in 01_Governance.
+- Review and refresh all policies; ensure dates and officer titles align; keep in 02_Policies.
+- Validate recurring compliance reminders (state, IRS, board cadence) are on calendar.

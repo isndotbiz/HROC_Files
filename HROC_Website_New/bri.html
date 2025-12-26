@@ -263,6 +263,261 @@
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     }
 
+    /* Alternating Image-Text Layout */
+    .image-text-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+      align-items: center;
+      margin-bottom: var(--space-8);
+      padding: var(--space-6);
+      border-radius: var(--radius-lg);
+      transition: transform 0.3s ease;
+    }
+
+    .image-text-row:hover {
+      transform: translateY(-4px);
+    }
+
+    .image-text-row img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .text-content h3 {
+      font-size: 1.75rem;
+      color: var(--hroc-magenta);
+      margin-bottom: var(--space-4);
+    }
+
+    .text-content p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: var(--space-3);
+      color: var(--color-text);
+    }
+
+    .follow-up-text {
+      margin-top: var(--space-6);
+      padding: var(--space-6);
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(233, 30, 140, 0.03) 0%, rgba(0, 212, 232, 0.03) 100%);
+    }
+
+    .follow-up-text p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: var(--space-4);
+    }
+
+    /* Enhanced Alternating Image-Text Layout */
+    /* Row 1, 3, 5 - Text Left, Image Right */
+    .image-text-row:nth-child(odd) {
+      background: linear-gradient(135deg, rgba(233, 30, 140, 0.03) 0%, rgba(0, 212, 232, 0.08) 100%);
+      border-left: 4px solid var(--hroc-magenta);
+      box-shadow:
+        0 4px 16px rgba(233, 30, 140, 0.08),
+        0 8px 32px rgba(0, 0, 0, 0.05);
+      opacity: 0.95;
+    }
+
+    .image-text-row:nth-child(odd):hover {
+      box-shadow:
+        0 8px 24px rgba(233, 30, 140, 0.15),
+        0 16px 48px rgba(0, 0, 0, 0.1);
+      opacity: 1;
+      border-left-width: 6px;
+    }
+
+    /* Row 2, 4, 6 - Image Left, Text Right (Reverse) */
+    .image-text-row.reverse {
+      grid-template-columns: 1fr 1fr;
+      background: linear-gradient(135deg, rgba(0, 212, 232, 0.03) 0%, rgba(233, 30, 140, 0.08) 100%);
+      border-right: 4px solid var(--hroc-cyan);
+      border-left: none;
+      box-shadow:
+        0 4px 16px rgba(0, 212, 232, 0.08),
+        0 8px 32px rgba(0, 0, 0, 0.05);
+      opacity: 0.9;
+    }
+
+    .image-text-row.reverse:hover {
+      box-shadow:
+        0 8px 24px rgba(0, 212, 232, 0.15),
+        0 16px 48px rgba(0, 0, 0, 0.1);
+      opacity: 1;
+      border-right-width: 6px;
+    }
+
+    .image-text-row.reverse .image-content {
+      order: -1; /* Move image to left side */
+    }
+
+    .image-text-row.reverse .text-content {
+      order: 1; /* Move text to right side */
+    }
+
+    /* Text Content Styling */
+    .text-content {
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    .text-content h3 {
+      font-size: clamp(1.5rem, 3vw, 1.75rem);
+      color: var(--hroc-magenta);
+      margin-bottom: var(--space-4);
+      font-weight: 700;
+      position: relative;
+      padding-bottom: var(--space-2);
+    }
+
+    .text-content h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--hroc-magenta) 0%, var(--hroc-cyan) 100%);
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+
+    .image-text-row:hover .text-content h3::after {
+      width: 100px;
+    }
+
+    .text-content p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: var(--space-3);
+      color: var(--color-text);
+      opacity: 0.9;
+    }
+
+    .text-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Image Content Styling */
+    .image-content {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15),
+        0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .image-content::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(233, 30, 140, 0.1) 0%, rgba(0, 212, 232, 0.1) 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .image-content:hover::before {
+      opacity: 1;
+    }
+
+    .image-content img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      display: block;
+    }
+
+    .image-content:hover img {
+      transform: scale(1.05);
+    }
+
+    .image-text-row:hover .image-content {
+      box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.2),
+        0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Follow-up Text Enhanced Styling */
+    .follow-up-text {
+      margin-top: var(--space-6);
+      padding: var(--space-6);
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(233, 30, 140, 0.03) 0%, rgba(0, 212, 232, 0.05) 100%);
+      border-left: 3px solid var(--hroc-cyan);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      transition: all 0.3s ease;
+      opacity: 0.85;
+    }
+
+    .follow-up-text:hover {
+      background: linear-gradient(135deg, rgba(233, 30, 140, 0.05) 0%, rgba(0, 212, 232, 0.08) 100%);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      opacity: 1;
+      border-left-width: 4px;
+    }
+
+    .follow-up-text p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: var(--space-4);
+      color: var(--color-text);
+    }
+
+    .follow-up-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Smooth Transitions */
+    .image-text-row,
+    .image-content,
+    .text-content,
+    .follow-up-text {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Animation Keyframes */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Accessibility - Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      .image-text-row,
+      .image-content,
+      .text-content,
+      .follow-up-text,
+      .image-content img {
+        transition: none;
+        animation: none;
+      }
+
+      .image-text-row:hover,
+      .image-content:hover img {
+        transform: none;
+      }
+    }
+
     /* Mobile Optimization */
     @media (max-width: 768px) {
       .section-image-float-right,
@@ -271,6 +526,16 @@
         max-width: 100%;
         margin: var(--space-4) auto;
         display: block;
+      }
+
+      .image-text-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+        padding: var(--space-4);
+      }
+
+      .image-text-row.reverse {
+        grid-template-columns: 1fr;
       }
 
       .founder-hero-content {
@@ -563,61 +828,101 @@
       </div>
     </section>
 
-    <!-- Extended Biography -->
+    <!-- Bri's Journey & Impact -->
     <section class="profile-section">
       <div class="container">
-        <h2>📖 Bri's Story & Vision</h2>
+        <h2>📖 Bri's Journey & Impact</h2>
 
-        <div class="founder-bio-extended">
-          <h3>A Life in Service</h3>
-          <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/b/bri_professional_01_2.webp" alt="Bri working in the community" class="section-image-float-right">
-          <p>
-            Bri's journey in harm reduction spans decades, rooted in deep personal and community experience. With a profound commitment to Indigenous sovereignty and community healing, Bri has dedicated their life to creating safer, more dignified spaces for marginalized communities.
-          </p>
-          <p>
-            Before co-founding HROC, Bri worked extensively in harm reduction, peer support, and community organizing - always centered on the principle that those most impacted by policies should be at the center of creating solutions.
-          </p>
+        <!-- Row 1: Text Left, Image Right -->
+        <div class="image-text-row" style="background: linear-gradient(135deg, rgba(233, 30, 140, 0.05) 0%, rgba(0, 212, 232, 0.05) 100%); border-left: 4px solid var(--hroc-magenta);">
+          <div class="text-content">
+            <h3>💙 24/7 Community Dedication</h3>
+            <p>Bri doesn't keep office hours because crisis doesn't keep office hours. When someone overdoses at 3 AM, Bri is there with naloxone and a steady hand. When the shelter turns people away in the rain, Bri shows up with tarps, blankets, and the kind of presence that says: you matter, you belong, I'm not leaving.</p>
+          </div>
+          <div class="image-content">
+            <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/b/qwen_bri_01_professional_office_laptop.webp" alt="Bri in professional office setting" style="box-shadow: 0 12px 32px rgba(233, 30, 140, 0.25);">
+          </div>
+        </div>
+        <div class="follow-up-text" style="border: 2px solid var(--hroc-magenta); opacity: 0.95;">
+          <p>Last winter, Bri spent 72 hours straight on the streets during the ice storm while agencies closed their doors. She moved between encampments with hand warmers, propane, and hot food—checking pulses, preventing frostbite, making sure everyone had a plan to survive the night. When others said it was too dangerous to go out, Bri said our relatives were already out there and that's exactly where she needed to be. She didn't sleep until every single person she'd checked on had made it through.</p>
+          <p>This isn't burnout waiting to happen—this is love in action. Bri's community knows that when everyone else disappears, Bri will be there. That knowledge alone has saved lives, has kept people from giving up, has proven that somebody actually gives a damn. That's not a service model. That's family.</p>
         </div>
 
-        <div class="founder-bio-extended">
-          <h3>🌱 Core Values in Action</h3>
-          <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/b/qwen_bri_07_modern_office_desk.webp" alt="Bri demonstrating HROC values" class="section-image-float-left">
-          <p>
-            <strong>Peer-Led Approaches:</strong> Bri believes in the power of lived experience. Every program at HROC is designed with and led by people with direct experience of substance use, homelessness, and harm reduction.
-          </p>
-          <p>
-            <strong>Indigenous Wisdom:</strong> Rather than importing outside models, Bri centers Indigenous knowledge systems, cultural healing practices, and traditional approaches to community care.
-          </p>
-          <p>
-            <strong>Dignity First:</strong> Every interaction is approached with respect for the inherent dignity and worth of every person. This shapes everything from outreach practices to governance structures.
-          </p>
+        <!-- Row 2: Image Left, Text Right -->
+        <div class="image-text-row reverse" style="background: linear-gradient(135deg, rgba(0, 212, 232, 0.05) 0%, rgba(233, 30, 140, 0.05) 100%); border-right: 4px solid var(--hroc-cyan);">
+          <div class="image-content">
+            <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/b/qwen_bri_02_business_casual_outdoor.webp" alt="Bri in business casual outdoor setting" style="box-shadow: 0 12px 32px rgba(0, 212, 232, 0.25);">
+          </div>
+          <div class="text-content">
+            <h3>🌱 Indigenous Wisdom & Healing</h3>
+            <p>Bri brings ceremony into the streets, not as performance but as practice. Sage bundles and tobacco offerings aren't add-ons to harm reduction—they ARE harm reduction, reconnecting people to land, to ancestors, to the parts of themselves that colonization and addiction tried to destroy. Bri knows that healing isn't just about staying alive. It's about remembering who you are.</p>
+          </div>
+        </div>
+        <div class="follow-up-text" style="border: 2px solid var(--hroc-cyan); opacity: 0.9;">
+          <p>Every month, Bri hosts talking circles at encampments where community members share stories, grief, and hope around a sacred fire. These aren't therapy sessions run by outsiders—they're Indigenous-led spaces where people practice traditional ways of being together. Bri teaches younger community members how to prepare medicines, how to smudge, how to carry teachings forward. When someone says they feel disconnected from their heritage, Bri doesn't refer them somewhere else. She sits with them, shares what she knows, and helps them find their way back to belonging.</p>
+          <p>Bri understands that addiction often fills the hole left by cultural genocide. By weaving traditional practices into every aspect of her work, she offers people a path to healing that honors who they are and where they come from. This isn't culture as decoration. This is culture as medicine, as resistance, as survival.</p>
         </div>
 
-        <div class="founder-bio-extended">
-          <h3>🔥 Leadership Approach</h3>
-          <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/b/bri_set2_professional_10_2.webp" alt="Bri's leadership style" class="section-image-float-right">
-          <p>
-            As Secretary, Bri balances visionary thinking with practical implementation. Bri is known for:
-          </p>
-          <ul style="margin-left: 1.5rem; line-height: 1.8;">
-            <li>🎯 Maintaining focus on mission during growth and scaling</li>
-            <li>👥 Building culture that honors both efficiency and relationships</li>
-            <li>🌍 Centering voices of community members and peer staff</li>
-            <li>💚 Creating healing-centered organizational practices</li>
-            <li>📊 Balancing data-driven decisions with trust in community wisdom</li>
-          </ul>
+        <!-- Row 3: Text Left, Image Right -->
+        <div class="image-text-row" style="background: linear-gradient(135deg, rgba(233, 30, 140, 0.08) 0%, rgba(0, 212, 232, 0.08) 100%); border-left: 4px solid var(--hroc-magenta);">
+          <div class="text-content">
+            <h3>🤝 Peer-Led Leadership</h3>
+            <p>Bri's lived experience isn't a credential she lists on a resume—it's the foundation of every relationship she builds. People trust Bri because she's been there, because she knows what it's like to be written off, to be invisible, to fight like hell for another day. When Bri says "I see you," people believe it. Because she does.</p>
+          </div>
+          <div class="image-content">
+            <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/b/bri_professional_01_2.webp" alt="Bri working in the community" style="box-shadow: 0 12px 32px rgba(233, 30, 140, 0.3);">
+          </div>
+        </div>
+        <div class="follow-up-text" style="border: 2px solid var(--hroc-magenta); opacity: 1.0;">
+          <p>There's a woman named Sarah who wouldn't talk to any outreach worker for months—until Bri showed up. Bri didn't have a clipboard or an intake form. She had snacks, clean socks, and a story about her own journey that made Sarah cry and then laugh. Within weeks, Sarah was attending peer support groups, helping distribute supplies, and telling others: "Bri gets it." That trust didn't come from training or credentials. It came from Bri showing up as her whole self, scars and strength and all, and saying: we heal together or not at all.</p>
+          <p>Bri doesn't lead from above—she leads from beside, from within, from the knowledge that we're all just trying to make it through. That kind of leadership transforms people because it reminds them they were never broken. They were always whole, always worthy, always enough.</p>
         </div>
 
-        <div class="founder-bio-extended">
-          <h3>💙 Vision for HROC</h3>
-          <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/b/bri_professional_08_2.webp" alt="Bri's vision for HROC" class="section-image-float-left">
-          <p>
-            Bri envisions HROC as a model for Indigenous-led, community-centered harm reduction that proves another way is possible. By demonstrating that peer-led, culturally-grounded services create the best outcomes, HROC can inspire change in how health and social services are delivered across the region.
-          </p>
-          <p>
-            "We're not just providing services - we're modeling what it looks like when communities care for themselves with dignity, respect, and the resources they deserve."
-          </p>
+        <!-- Row 4: Image Left, Text Right -->
+        <div class="image-text-row reverse" style="background: linear-gradient(135deg, rgba(0, 212, 232, 0.08) 0%, rgba(233, 30, 140, 0.08) 100%); border-right: 4px solid var(--hroc-cyan);">
+          <div class="image-content">
+            <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/b/qwen_bri_07_modern_office_desk.webp" alt="Bri in modern office setting" style="box-shadow: 0 12px 32px rgba(0, 212, 232, 0.3);">
+          </div>
+          <div class="text-content">
+            <h3>❤️ Fighting for Dignity</h3>
+            <p>Bri doesn't just advocate—she fights, fiercely and fearlessly, in city council chambers and funder meetings and anywhere people try to reduce her community to statistics or problems to be managed. When policymakers talk about "cleaning up" encampments, Bri makes them say the quiet part loud: you mean displacing human beings. When funders ask for "evidence-based" models, Bri reminds them that Indigenous peoples have been practicing harm reduction for thousands of years.</p>
+          </div>
         </div>
+        <div class="follow-up-text" style="border: 2px solid var(--hroc-cyan); opacity: 0.95;">
+          <p>At a recent city council meeting, officials proposed sweeping encampments with 24-hour notice. Bri stood up and named every single person who would be displaced—their stories, their struggles, their humanity. She brought photos of the community, of people laughing and supporting each other, of makeshift homes that represented safety in a world that offered none. "These aren't problems," Bri said, her voice steady but shaking with rage and love. "These are your neighbors. These are my relatives. And if you sweep them, you're not solving anything—you're just making them invisible again." The policy was tabled.</p>
+          <p>Bri's advocacy isn't about being polite or palatable. It's about refusing to let anyone forget that these are lives, not issues. Every time Bri speaks truth to power, she's saying: my community deserves dignity, deserves respect, deserves a seat at every table where decisions are made about our lives.</p>
+        </div>
+
+        <!-- Row 5: Text Left, Image Right -->
+        <div class="image-text-row" style="background: linear-gradient(135deg, rgba(233, 30, 140, 0.1) 0%, rgba(0, 212, 232, 0.1) 100%); border-left: 4px solid var(--hroc-magenta);">
+          <div class="text-content">
+            <h3>🌍 Building Trust Through Action</h3>
+            <p>Trust isn't given—it's earned through showing up, again and again, when words fail and systems collapse. Bri has earned trust by being consistent, by following through, by never making promises she can't keep and always keeping the promises she makes. Her word is gold because her actions back it up every single time.</p>
+          </div>
+          <div class="image-content">
+            <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/b/bri_set2_professional_10_2.webp" alt="Bri demonstrating leadership" style="box-shadow: 0 12px 32px rgba(233, 30, 140, 0.35);">
+          </div>
+        </div>
+        <div class="follow-up-text" style="border: 2px solid var(--hroc-magenta); opacity: 0.9;">
+          <p>When Bri told the community she'd fight to get a safe consumption site established, people were skeptical—they'd heard promises before. But Bri didn't just write letters or attend meetings. She organized community members to testify, she built coalitions with unlikely allies, she camped outside government offices until someone listened. Two years later, when the site opened, Bri made sure community members weren't just clients—they were staff, decision-makers, leaders. People saw that Bri doesn't just talk about community-led solutions. She makes them happen, no matter how hard the fight.</p>
+          <p>Every time Bri shows up with supplies she said she'd bring, every time she checks in on someone she promised to check on, every time she fights a battle she said she'd fight—trust deepens. That trust is the bedrock of everything else. Without it, there's no healing, no hope, no change.</p>
+        </div>
+
+        <!-- Row 6: Image Left, Text Right -->
+        <div class="image-text-row reverse" style="background: linear-gradient(135deg, rgba(0, 212, 232, 0.1) 0%, rgba(233, 30, 140, 0.1) 100%); border-right: 4px solid var(--hroc-cyan);">
+          <div class="image-content">
+            <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/b/bri_professional_08_2.webp" alt="Bri's vision for HROC" style="box-shadow: 0 12px 32px rgba(0, 212, 232, 0.35);">
+          </div>
+          <div class="text-content">
+            <h3>✨ Vision of Collective Healing</h3>
+            <p>Bri dreams of a world where communities don't just survive—they thrive, where Indigenous wisdom guides collective care, where people in pain are met with compassion instead of criminalization. She's not waiting for that world to be handed to her. She's building it, one relationship, one ceremony, one act of radical love at a time.</p>
+          </div>
+        </div>
+        <div class="follow-up-text" style="border: 2px solid var(--hroc-cyan); opacity: 1.0;">
+          <p>Bri talks about creating healing spaces run entirely by and for the community—places where people can access traditional medicines alongside harm reduction supplies, where elders teach and youth learn, where everyone has a role and everyone belongs. She envisions peer-led teams fanning out across the city, carrying naloxone and hope and the message that no one is disposable. She sees a future where funding goes directly to community members, where policies are written by those most impacted, where healing happens on our terms, in our ways.</p>
+          <p>This vision isn't abstract or far-off. Bri is living it into reality every day, proving that transformation is possible when communities lead their own healing. She knows it won't be easy, but she also knows it's necessary—because her community deserves more than survival. They deserve joy, belonging, and a future where everyone makes it home.</p>
+        </div>
+
       </div>
     </section>
 

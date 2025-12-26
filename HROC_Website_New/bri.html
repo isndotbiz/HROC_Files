@@ -238,7 +238,39 @@
       color: white;
     }
 
+    .section-image {
+      width: 100%;
+      max-width: 500px;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      margin: var(--space-6) auto;
+      display: block;
+    }
+
+    .section-image-float-right {
+      float: right;
+      margin: 0 0 var(--space-4) var(--space-6);
+      max-width: 350px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .section-image-float-left {
+      float: left;
+      margin: 0 var(--space-6) var(--space-4) 0;
+      max-width: 350px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
     @media (max-width: 768px) {
+      .section-image-float-right,
+      .section-image-float-left {
+        float: none;
+        max-width: 100%;
+        margin: var(--space-4) auto;
+        display: block;
+      }
       .founder-hero-content {
         grid-template-columns: 1fr;
       }
@@ -331,10 +363,7 @@
       <div class="container">
         <div class="founder-hero-content">
           <div class="founder-image-container">
-            <picture>
-              <source srcset="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/b/b_fluxmulti_01.webp" type="image/webp">
-              <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/b/b_fluxmulti_01.png" alt="Bri - HROC Secretary">
-            </picture>
+            <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/b/qwen_bri_01_professional_office_laptop.webp" alt="Bri - HROC Secretary" class="section-image">
           </div>
           <div class="founder-intro-text">
             <p>
@@ -355,6 +384,7 @@
     <section class="profile-section">
       <div class="container">
         <h2>🔥 Leadership Highlights</h2>
+        <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/b/qwen_bri_02_business_casual_outdoor.webp" alt="Bri in professional setting" class="section-image">
         <div class="leadership-highlights">
           <div class="highlight-card">
             <div class="highlight-icon">🌍</div>
@@ -387,6 +417,7 @@
 
         <div class="founder-bio-extended">
           <h3>A Life in Service</h3>
+          <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/b/bri_professional_01_2.webp" alt="Bri working in the community" class="section-image-float-right">
           <p>
             Bri's journey in harm reduction spans decades, rooted in deep personal and community experience. With a profound commitment to Indigenous sovereignty and community healing, Bri has dedicated their life to creating safer, more dignified spaces for marginalized communities.
           </p>
@@ -397,6 +428,7 @@
 
         <div class="founder-bio-extended">
           <h3>🌱 Core Values in Action</h3>
+          <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/b/qwen_bri_07_modern_office_desk.webp" alt="Bri demonstrating HROC values" class="section-image-float-left">
           <p>
             <strong>Peer-Led Approaches:</strong> Bri believes in the power of lived experience. Every program at HROC is designed with and led by people with direct experience of substance use, homelessness, and harm reduction.
           </p>
@@ -410,6 +442,7 @@
 
         <div class="founder-bio-extended">
           <h3>🔥 Leadership Approach</h3>
+          <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/b/bri_set2_professional_10_2.webp" alt="Bri's leadership style" class="section-image-float-right">
           <p>
             As Secretary, Bri balances visionary thinking with practical implementation. Bri is known for:
           </p>
@@ -424,6 +457,7 @@
 
         <div class="founder-bio-extended">
           <h3>💙 Vision for HROC</h3>
+          <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/b/bri_professional_08_2.webp" alt="Bri's vision for HROC" class="section-image-float-left">
           <p>
             Bri envisions HROC as a model for Indigenous-led, community-centered harm reduction that proves another way is possible. By demonstrating that peer-led, culturally-grounded services create the best outcomes, HROC can inspire change in how health and social services are delivered across the region.
           </p>

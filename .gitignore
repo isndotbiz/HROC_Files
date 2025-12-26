@@ -1,16 +1,33 @@
-# Training and Generated Data - NOT for production
+# ⚠️ LOCAL GENERATED CONTENT - NEVER SYNC TO GIT
+# These directories contain locally-generated images and should never be deleted by git operations
+
+# Generated Images (locally created AI images)
 Generated_Images/
-!HROC_Website_New/generated_images/
+/Generated_Images/
+**/Generated_Images/
+
+# LoRA Training (local scripts and model files)
 HROC_Website_New/lora_training/
 HROC_Website_New/lora_models/
-HROC_Website_New/generate_images.py
+**/lora_training/
+**/lora_models/
+
+# Local image copies and assets
+HROC_Website_New/images/
+**/images/founders/
+**/images/generated/
+
+# Training scripts (local development only)
 train_*.py
 **/train_*.py
+HROC_Website_New/generate_images.py
+
+# EXCEPTION: Website deployment images ARE tracked
+!HROC_Website_New/generated_images/
 
 # Project assets and templates - development only
 Project_Assets/
 HROC_Website_New/cloudflare-tunnel-setup.sh
-HROC_Website_New/generate_images.py
 HROC_Website_New/nginx.conf
 
 # Temporary and build files

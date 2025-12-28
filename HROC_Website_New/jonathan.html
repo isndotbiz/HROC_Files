@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Meet Jonathan - HROC Chairman & Co-Founder. Discover Jonathan's vision for scaling peer-led harm reduction with operational excellence.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Meet Jonathan - HROC Chairman & Co-Founder. Discover Jonathan's vision for scaling peer-led harm reduction through technology, systems thinking, and data-driven innovation.">
+  <meta name="theme-color" content="#E91E8C">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Jonathan - HROC Chairman & Co-Founder | Healing Roots Outreach Collective</title>
 
   <!-- Fonts -->
@@ -17,6 +21,29 @@
   <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23E91E8C'/><text x='50' y='60' font-size='60' text-anchor='middle' fill='white' font-weight='bold'>🌱</text></svg>">
 
   <style>
+    /* Mobile-First Base Styles */
+    * {
+      -webkit-tap-highlight-color: rgba(233, 30, 140, 0.2);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
     /* Founder Profile Specific Styles */
     .founder-profile {
       background: linear-gradient(135deg, #E91E8C 0%, #00D4E8 100%);
@@ -175,15 +202,6 @@
       margin-bottom: var(--space-3);
     }
 
-    .founder-bio-extended ul {
-      margin-left: 1.5rem;
-      line-height: 1.8;
-    }
-
-    .founder-bio-extended li {
-      margin-bottom: var(--space-2);
-    }
-
     .founder-contact-card {
       background: linear-gradient(135deg, #E91E8C 0%, #00D4E8 100%);
       color: white;
@@ -247,21 +265,494 @@
       color: white;
     }
 
+    .section-image {
+      width: 100%;
+      max-width: 500px;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      margin: var(--space-6) auto;
+      display: block;
+    }
+
+    .section-image-float-right {
+      float: right;
+      margin: 0 0 var(--space-4) var(--space-6);
+      max-width: 350px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .section-image-float-left {
+      float: left;
+      margin: 0 var(--space-6) var(--space-4) 0;
+      max-width: 350px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Alternating Image-Text Layout */
+    .image-text-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+      align-items: center;
+      margin-bottom: var(--space-8);
+      padding: var(--space-6);
+      border-radius: var(--radius-lg);
+      transition: transform 0.3s ease;
+    }
+
+    .image-text-row:hover {
+      transform: translateY(-4px);
+    }
+
+    .image-text-row img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .text-content h3 {
+      font-size: 1.75rem;
+      color: var(--hroc-magenta);
+      margin-bottom: var(--space-4);
+    }
+
+    .text-content p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: var(--space-3);
+      color: var(--color-text);
+    }
+
+    .follow-up-text {
+      margin-top: var(--space-6);
+      padding: var(--space-6);
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(233, 30, 140, 0.03) 0%, rgba(0, 212, 232, 0.03) 100%);
+    }
+
+    .follow-up-text p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: var(--space-4);
+    }
+
+    /* Enhanced Alternating Image-Text Layout */
+    /* Row 1, 3, 5 - Text Left, Image Right */
+    .image-text-row:nth-child(odd) {
+      background: linear-gradient(135deg, rgba(233, 30, 140, 0.03) 0%, rgba(0, 212, 232, 0.08) 100%);
+      border-left: 4px solid var(--hroc-magenta);
+      box-shadow:
+        0 4px 16px rgba(233, 30, 140, 0.08),
+        0 8px 32px rgba(0, 0, 0, 0.05);
+      opacity: 0.95;
+    }
+
+    .image-text-row:nth-child(odd):hover {
+      box-shadow:
+        0 8px 24px rgba(233, 30, 140, 0.15),
+        0 16px 48px rgba(0, 0, 0, 0.1);
+      opacity: 1;
+      border-left-width: 6px;
+    }
+
+    /* Row 2, 4, 6 - Image Left, Text Right (Reverse) */
+    .image-text-row.reverse {
+      grid-template-columns: 1fr 1fr;
+      background: linear-gradient(135deg, rgba(0, 212, 232, 0.03) 0%, rgba(233, 30, 140, 0.08) 100%);
+      border-right: 4px solid var(--hroc-cyan);
+      border-left: none;
+      box-shadow:
+        0 4px 16px rgba(0, 212, 232, 0.08),
+        0 8px 32px rgba(0, 0, 0, 0.05);
+      opacity: 0.9;
+    }
+
+    .image-text-row.reverse:hover {
+      box-shadow:
+        0 8px 24px rgba(0, 212, 232, 0.15),
+        0 16px 48px rgba(0, 0, 0, 0.1);
+      opacity: 1;
+      border-right-width: 6px;
+    }
+
+    .image-text-row.reverse .image-content {
+      order: -1; /* Move image to left side */
+    }
+
+    .image-text-row.reverse .text-content {
+      order: 1; /* Move text to right side */
+    }
+
+    /* Text Content Styling */
+    .text-content {
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    .text-content h3 {
+      font-size: clamp(1.5rem, 3vw, 1.75rem);
+      color: var(--hroc-magenta);
+      margin-bottom: var(--space-4);
+      font-weight: 700;
+      position: relative;
+      padding-bottom: var(--space-2);
+    }
+
+    .text-content h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--hroc-magenta) 0%, var(--hroc-cyan) 100%);
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+
+    .image-text-row:hover .text-content h3::after {
+      width: 100px;
+    }
+
+    .text-content p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: var(--space-3);
+      color: var(--color-text);
+      opacity: 0.9;
+    }
+
+    .text-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Image Content Styling */
+    .image-content {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15),
+        0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .image-content::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(233, 30, 140, 0.1) 0%, rgba(0, 212, 232, 0.1) 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .image-content:hover::before {
+      opacity: 1;
+    }
+
+    .image-content img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      display: block;
+    }
+
+    .image-content:hover img {
+      transform: scale(1.05);
+    }
+
+    .image-text-row:hover .image-content {
+      box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.2),
+        0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Follow-up Text Enhanced Styling */
+    .follow-up-text {
+      margin-top: var(--space-6);
+      padding: var(--space-6);
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(233, 30, 140, 0.03) 0%, rgba(0, 212, 232, 0.05) 100%);
+      border-left: 3px solid var(--hroc-cyan);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      transition: all 0.3s ease;
+      opacity: 0.85;
+    }
+
+    .follow-up-text:hover {
+      background: linear-gradient(135deg, rgba(233, 30, 140, 0.05) 0%, rgba(0, 212, 232, 0.08) 100%);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      opacity: 1;
+      border-left-width: 4px;
+    }
+
+    .follow-up-text p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: var(--space-4);
+      color: var(--color-text);
+    }
+
+    .follow-up-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Smooth Transitions */
+    .image-text-row,
+    .image-content,
+    .text-content,
+    .follow-up-text {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Animation Keyframes */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Accessibility - Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      .image-text-row,
+      .image-content,
+      .text-content,
+      .follow-up-text,
+      .image-content img {
+        transition: none;
+        animation: none;
+      }
+
+      .image-text-row:hover,
+      .image-content:hover img {
+        transform: none;
+      }
+    }
+
+    /* Mobile Optimization */
     @media (max-width: 768px) {
-      .founder-hero-content {
+      .section-image-float-right,
+      .section-image-float-left {
+        float: none;
+        max-width: 100%;
+        margin: var(--space-4) auto;
+        display: block;
+      }
+
+      .image-text-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+        padding: var(--space-4);
+      }
+
+      .image-text-row.reverse {
         grid-template-columns: 1fr;
       }
 
+      .founder-hero-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+      }
+
       .founder-intro-text {
-        text-align: center;
+        text-align: left;
+        padding: 0 var(--space-4);
       }
 
       .founder-intro-text p {
-        text-align: center;
+        text-align: left;
+        font-size: 1.05rem;
+        line-height: 1.7;
       }
 
       .founder-profile h1 {
-        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-size: clamp(2rem, 5vw, 2.75rem);
+        line-height: 1.2;
+        padding: 0 var(--space-2);
+      }
+
+      .founder-profile p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        padding: 0 var(--space-4);
+      }
+
+      .passion-quote {
+        font-size: 1.05rem;
+        padding: var(--space-4);
+        margin: var(--space-4) 0;
+      }
+
+      .leadership-highlights {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+      }
+
+      .highlight-card {
+        padding: var(--space-5);
+      }
+
+      .founder-bio-extended {
+        padding: var(--space-6);
+        margin: var(--space-4) 0;
+      }
+
+      .founder-bio-extended h3 {
+        font-size: 1.4rem;
+      }
+
+      .founder-bio-extended p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+      }
+
+      .profile-section {
+        padding: var(--space-8) 0;
+      }
+
+      .profile-section h2 {
+        font-size: 1.75rem;
+        padding: 0 var(--space-4);
+      }
+
+      .section-image {
+        max-width: 100%;
+        margin: var(--space-4) 0;
+      }
+
+      /* Enhanced Mobile Styles */
+      .text-content {
+        padding: var(--space-4);
+      }
+
+      .text-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: var(--space-3);
+      }
+
+      .text-content p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+
+      .follow-up-text {
+        padding: var(--space-5);
+        margin-top: var(--space-4);
+      }
+
+      .follow-up-text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: var(--space-3);
+      }
+
+      .image-content {
+        margin-bottom: var(--space-4);
+      }
+
+      .image-text-row.reverse .image-content {
+        order: 0;
+      }
+
+      .image-text-row.reverse .text-content {
+        order: 1;
+      }
+
+      /* Ensure container has proper padding on mobile */
+      .container {
+        padding-left: var(--space-4);
+        padding-right: var(--space-4);
+      }
+
+      /* Make stats cards more readable on mobile */
+      .highlight-card h3 {
+        font-size: 2rem;
+      }
+
+      .highlight-card p {
+        font-size: 1rem;
+      }
+
+      /* Founder nav buttons - make them stack and full width */
+      .founder-nav {
+        flex-direction: column;
+        gap: var(--space-3);
+      }
+
+      .founder-nav a {
+        width: 100%;
+        justify-content: center;
+        padding: var(--space-4);
+        font-size: 1.1rem;
+      }
+
+      /* Contact card on mobile */
+      .founder-contact-card a {
+        display: block;
+        margin: var(--space-2) 0;
+        padding: var(--space-3);
+        font-size: 1.1rem;
+      }
+
+      /* Role badge */
+      .role-badge {
+        font-size: 1rem;
+        padding: var(--space-2) var(--space-4);
+      }
+
+      /* Reduce section spacing on mobile for better flow */
+      h2 {
+        font-size: 1.75rem;
+        margin-bottom: var(--space-6);
+      }
+    }
+
+    /* Extra small mobile phones */
+    @media (max-width: 480px) {
+      .founder-profile h1 {
+        font-size: 1.75rem;
+      }
+
+      .founder-profile p {
+        font-size: 1rem;
+      }
+
+      .text-content h3 {
+        font-size: 1.35rem;
+      }
+
+      .text-content p,
+      .follow-up-text p {
+        font-size: 1.05rem;
+      }
+
+      .passion-quote {
+        font-size: 1rem;
+        padding: var(--space-3);
+      }
+
+      .image-text-row {
+        padding: var(--space-3);
+      }
+
+      .follow-up-text {
+        padding: var(--space-4);
       }
     }
   </style>
@@ -317,7 +808,7 @@
     <div class="container">
       <span class="role-badge">🏛️ Chairman & Co-Founder</span>
       <h1>Meet Jonathan</h1>
-      <p>Strategic visionary bringing operational excellence to scaling peer-led harm reduction with commitment to community partnership and systemic change.</p>
+      <p class="hero-subtitle">A systems architect and technology visionary who bridges innovation with community impact, transforming data into healing, infrastructure into hope, and strategic vision into sustainable change that centers dignity and human connection.</p>
     </div>
   </section>
 
@@ -338,134 +829,121 @@
     <!-- Hero with Image -->
     <section class="profile-section">
       <div class="container">
-        <div class="founder-hero-content">
-          <div class="founder-image-container">
-            <picture>
-              <source srcset="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/j/j_fluxmulti_01.webp" type="image/webp">
-              <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/j/j_fluxmulti_01.png" alt="Jonathan - HROC Chairman">
-            </picture>
-          </div>
-          <div class="founder-intro-text">
+        <div class="image-text-row" style="background: linear-gradient(135deg, rgba(233, 30, 140, 0.03) 0%, rgba(0, 212, 232, 0.05) 100%); border-left: 4px solid var(--hroc-magenta);">
+          <div class="text-content">
             <p>
-              🤝 <strong>Jonathan brings strategic vision and operational excellence to HROC's mission.</strong> With commitment to scaling peer-led harm reduction, Jonathan builds the systems and partnerships that allow HROC to serve more people with quality, dignity, and impact.
+              💻 <strong>Jonathan brings a rare combination of technical expertise and deep commitment to community-driven solutions.</strong> With a background in systems architecture, data science, and strategic innovation, Jonathan translates complex technological possibilities into practical tools that amplify peer-led harm reduction and center lived experience.
             </p>
-            <div class="passion-quote">
-              "We can't do this alone. Collaboration, partnership, and community drive everything. 🤝"
-            </div>
             <p>
-              As Chairman, Jonathan focuses on sustainable systems, strategic partnerships, and operational infrastructure that allows HROC's peer leaders and community members to do their best work.
+              As Chairman, Jonathan ensures that HROC's infrastructure - from data systems to operational processes - serves the mission rather than constraining it. Every technological decision, every strategic partnership, every data point is filtered through one fundamental question: Does this honor the humanity and dignity of the people we serve?
             </p>
           </div>
+          <div class="image-content">
+            <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/j/qwen_jonathan_02_business_casual_outdoor.webp" alt="Jonathan - HROC Chairman">
+          </div>
+        </div>
+        <div class="follow-up-text" style="border: 2px solid var(--hroc-magenta); opacity: 0.95;">
+          <p><strong>Jonathan doesn't just build systems - he builds bridges.</strong> Between technology and humanity. Between data and stories. Between innovation and tradition. He understands that the most sophisticated algorithm means nothing if it doesn't translate into someone getting the help they need, when they need it, in a way that honors their worth.</p>
+          <p>"Technology should serve people, not the other way around. When we center community wisdom and lived experience, innovation becomes a tool for liberation, not control. That's what drives everything I do." 🚀</p>
         </div>
       </div>
     </section>
 
-    <!-- Leadership Highlights -->
+    <!-- Jonathan's Journey & Impact -->
     <section class="profile-section">
       <div class="container">
-        <h2>🏛️ Leadership Highlights</h2>
-        <div class="leadership-highlights">
-          <div class="highlight-card">
-            <div class="highlight-icon">🎯</div>
-            <h3>Strategic Vision</h3>
-            <p>Develops long-term strategies for scaling impact while maintaining fidelity to peer-led, community-centered principles.</p>
+        <h2>📖 Jonathan's Journey & Impact</h2>
+
+        <!-- Row 1: Image Left, Text Right -->
+        <div class="image-text-row reverse" style="background: linear-gradient(135deg, rgba(0, 212, 232, 0.05) 0%, rgba(233, 30, 140, 0.05) 100%); border-right: 4px solid var(--hroc-cyan);">
+          <div class="image-content">
+            <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/j/jonathan_professional_09_2.webp" alt="Jonathan in professional setting" style="box-shadow: 0 12px 32px rgba(0, 212, 232, 0.25);">
           </div>
-          <div class="highlight-card">
-            <div class="highlight-icon">🤝</div>
-            <h3>Partnership Building</h3>
-            <p>Cultivates collaborations with funders, partners, and community organizations to amplify HROC's reach and impact.</p>
-          </div>
-          <div class="highlight-card">
-            <div class="highlight-icon">⚙️</div>
-            <h3>Operational Excellence</h3>
-            <p>Builds efficient systems that enable peer leaders and community members to focus on service delivery and community connection.</p>
-          </div>
-          <div class="highlight-card">
-            <div class="highlight-icon">📊</div>
-            <h3>Data-Driven Impact</h3>
-            <p>Uses data and evidence to demonstrate effectiveness while maintaining community accountability and transparency.</p>
+          <div class="text-content">
+            <h3>💻 Technology as Liberation</h3>
+            <p>Jonathan sees technology not as a replacement for human connection, but as a force multiplier for community impact. He's built custom systems that help peer workers track supplies without invasive surveillance, data dashboards that tell stories rather than reduce lives to numbers, and communication tools that preserve anonymity while fostering belonging.</p>
+            <p>When a funding agency demanded granular tracking of who received what services, Jonathan pushed back. He built a system that demonstrated impact through aggregate data while protecting individual privacy - proving you don't have to sacrifice dignity for accountability.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Extended Biography -->
-    <section class="profile-section">
-      <div class="container">
-        <h2>📖 Jonathan's Story & Vision</h2>
-
-        <div class="founder-bio-extended">
-          <h3>From Vision to Systems</h3>
-          <p>
-            Jonathan's career reflects commitment to turning visionary ideas into sustainable, scalable systems that serve communities. Understanding that great missions require great operations, Jonathan combines strategic thinking with practical implementation.
-          </p>
-          <p>
-            Jonathan believes that peer-led harm reduction works best when supported by strong systems - clear processes, strategic partnerships, reliable funding, and operational infrastructure that enables community members to do their best work.
-          </p>
+        <div class="follow-up-text" style="border: 2px solid var(--hroc-cyan); opacity: 0.9;">
+          <p>When a funding agency demanded granular tracking of who received what services, Jonathan pushed back hard. Instead of complying with dehumanizing surveillance, he built a revolutionary system that demonstrated impact through carefully designed aggregate data while fiercely protecting individual privacy and autonomy. He proved that you don't have to sacrifice dignity for accountability - and that better technology creates better outcomes for everyone.</p>
+          <p>Jonathan's approach to technology is rooted in a simple but radical principle: tools should empower communities, not extract data from them. Every line of code, every database design, every interface carries this commitment. Technology becomes liberation when it's designed with - not for - the people it serves.</p>
         </div>
 
-        <div class="founder-bio-extended">
-          <h3>🤝 Core Principles</h3>
-          <p>
-            <strong>Community Partnership:</strong> Jonathan works with - not for - communities. All strategic decisions incorporate community wisdom and lived experience.
-          </p>
-          <p>
-            <strong>Scalable Impact:</strong> Rather than scaling services through top-down models, Jonathan works to scale the principles of peer-led, community-centered harm reduction.
-          </p>
-          <p>
-            <strong>Collaborative Leadership:</strong> Jonathan sees leadership as facilitation. The goal is enabling others - especially peer leaders and community members - to lead.
-          </p>
+        <!-- Row 2: Text Left, Image Right -->
+        <div class="image-text-row" style="background: linear-gradient(135deg, rgba(233, 30, 140, 0.08) 0%, rgba(0, 212, 232, 0.08) 100%); border-left: 4px solid var(--hroc-magenta);">
+          <div class="text-content">
+            <h3>🌱 Systems Thinking for Sustainable Change</h3>
+            <p>Jonathan doesn't just solve immediate problems - he redesigns systems to prevent problems from recurring. When HROC struggled with supply chain bottlenecks, Jonathan didn't just order more naloxone. He mapped the entire ecosystem, identified leverage points, built partnerships with manufacturers, and created predictive models that anticipate needs before crises hit.</p>
+            <p>This systems-level thinking extends to everything. From streamlining volunteer onboarding to designing funding strategies that reduce administrative burden, Jonathan constantly asks: How can we make this easier, more sustainable, more aligned with our values?</p>
+          </div>
+          <div class="image-content">
+            <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/j/jonathan_urban_outdoor_2.webp" alt="Jonathan strategizing outdoors" style="box-shadow: 0 12px 32px rgba(233, 30, 140, 0.3);">
+          </div>
+        </div>
+        <div class="follow-up-text" style="border: 2px solid var(--hroc-magenta); opacity: 1.0;">
+          <p>This systems-level thinking extends to everything HROC does. From streamlining volunteer onboarding processes to designing innovative funding strategies that dramatically reduce administrative burden, Jonathan constantly asks the transformative question: How can we make this easier, more sustainable, more efficient, and more deeply aligned with our core values of dignity and community empowerment?</p>
+          <p>Jonathan believes that sustainable change requires more than good intentions - it requires intelligent design, thoughtful infrastructure, and systems that work with human nature rather than against it. When systems are designed well, people can focus on what matters most: showing up for each other with compassion, consistency, and care.</p>
         </div>
 
-        <div class="founder-bio-extended">
-          <h3>🏛️ Operational Leadership</h3>
-          <p>
-            As Chairman, Jonathan focuses on:
-          </p>
-          <ul>
-            <li>📋 Clear organizational governance rooted in community accountability</li>
-            <li>💼 Strategic partnerships with funders, medical systems, and community organizations</li>
-            <li>⚙️ Operational systems that support peer leaders and front-line staff</li>
-            <li>📊 Data collection and reporting that demonstrates impact</li>
-            <li>🌱 Sustainable funding models that support long-term mission</li>
-            <li>🚀 Growth strategies that maintain peer-led, community-centered principles</li>
-          </ul>
+        <!-- Row 3: Image Left, Text Right -->
+        <div class="image-text-row reverse" style="background: linear-gradient(135deg, rgba(0, 212, 232, 0.08) 0%, rgba(233, 30, 140, 0.08) 100%); border-right: 4px solid var(--hroc-cyan);">
+          <div class="image-content">
+            <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/j/qwen_jonathan_05_casual_professional_workspace.webp" alt="Jonathan in workspace environment" style="box-shadow: 0 12px 32px rgba(0, 212, 232, 0.3);">
+          </div>
+          <div class="text-content">
+            <h3>📊 Data That Tells Stories, Not Just Statistics</h3>
+            <p>Jonathan transforms cold numbers into compelling narratives of hope and transformation. He's pioneered data visualization approaches that honor complexity while remaining accessible - showing funders not just "lives saved" but pathways to healing, community connections forged, barriers dismantled, and futures reclaimed.</p>
+            <p>At a recent board meeting, Jonathan presented an impact dashboard that brought a foundation officer to tears. It wasn't because of impressive statistics - it was because every data point connected to a human story, every metric reflected community-defined success, every chart honored the reality that healing isn't linear.</p>
+          </div>
+        </div>
+        <div class="follow-up-text" style="border: 2px solid var(--hroc-cyan); opacity: 0.95;">
+          <p>At a recent board meeting, Jonathan presented a revolutionary impact dashboard that brought a typically stoic foundation officer to tears. It wasn't because of impressive statistics or fancy graphics - it was because every carefully chosen data point connected directly to a human story of resilience, every metric reflected community-defined measures of success, and every chart honored the profound truth that healing isn't linear, predictable, or reducible to simple numbers.</p>
+          <p>Jonathan's data philosophy is simple but transformative: numbers should serve stories, not replace them. When we measure what communities actually value - connection, dignity, autonomy, hope - rather than what's easy to count, data becomes a tool for advocacy and transformation rather than surveillance and control.</p>
         </div>
 
-        <div class="founder-bio-extended">
-          <h3>🌐 Building Partnerships</h3>
-          <p>
-            Jonathan is passionate about strategic partnerships that expand HROC's reach:
-          </p>
-          <ul>
-            <li>🏥 Healthcare systems that provide medically-supported detoxification and treatment</li>
-            <li>🏛️ Government agencies working on harm reduction and public health</li>
-            <li>🤝 Community organizations addressing housing, food security, and social services</li>
-            <li>💰 Foundations and donors aligned with peer-led harm reduction</li>
-            <li>🔬 Research institutions documenting effectiveness and impact</li>
-            <li>🌍 National harm reduction networks advancing policy change</li>
-          </ul>
+        <!-- Row 4: Text Left, Image Right -->
+        <div class="image-text-row" style="background: linear-gradient(135deg, rgba(233, 30, 140, 0.1) 0%, rgba(0, 212, 232, 0.1) 100%); border-left: 4px solid var(--hroc-magenta);">
+          <div class="text-content">
+            <h3>🚀 Strategic Vision Meets Practical Action</h3>
+            <p>Jonathan dreams big - mobile harm reduction teams in every county, peer-led training academies, technology platforms that connect isolated communities to life-saving resources - but he also knows how to break audacious visions into achievable steps. He creates roadmaps that inspire while remaining grounded in reality, budgets that stretch resources without cutting corners on dignity, and partnerships that advance the mission without compromising values.</p>
+            <p>When someone tells Jonathan something can't be done, he doesn't argue. He builds a prototype, demonstrates feasibility, and turns skeptics into champions. That's how HROC launched its first mobile unit on a shoestring budget - Jonathan found creative solutions where others saw only obstacles.</p>
+          </div>
+          <div class="image-content">
+            <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/j/qwen_jonathan_06_outdoor_professional.webp" alt="Jonathan demonstrating leadership vision" style="box-shadow: 0 12px 32px rgba(233, 30, 140, 0.35);">
+          </div>
+        </div>
+        <div class="follow-up-text" style="border: 2px solid var(--hroc-magenta); opacity: 0.9;">
+          <p>When someone tells Jonathan something can't be done - whether it's launching a mobile unit without traditional funding, building technology without venture capital, or scaling peer-led services without sacrificing quality - he doesn't waste time arguing. He quietly builds a working prototype, systematically demonstrates feasibility through evidence, and methodically turns skeptics into enthusiastic champions and partners in the work.</p>
+          <p>That's exactly how HROC launched its transformative first mobile unit on what most would consider an impossible shoestring budget. Jonathan found creative, unconventional solutions where others saw only insurmountable obstacles. He believes that constraints breed creativity, and that the best innovations come from communities solving their own problems with limited resources but unlimited imagination and determination.</p>
         </div>
 
-        <div class="founder-bio-extended">
-          <h3>🚀 Vision for Scale & Impact</h3>
-          <p>
-            Jonathan envisions HROC as a model that proves peer-led, community-centered harm reduction can be scaled, sustained, and replicated.
-          </p>
-          <p>
-            "Great operations serve great missions. By building systems that work, we can demonstrate that community-centered harm reduction isn't just morally right - it's sustainable and scalable. That changes everything."
-          </p>
+        <!-- Row 5: Image Left, Text Right -->
+        <div class="image-text-row reverse" style="background: linear-gradient(135deg, rgba(0, 212, 232, 0.1) 0%, rgba(233, 30, 140, 0.1) 100%); border-right: 4px solid var(--hroc-cyan);">
+          <div class="image-content">
+            <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/j/jonathan_professional_09_2.webp" alt="Jonathan's collaborative leadership approach" style="box-shadow: 0 12px 32px rgba(0, 212, 232, 0.35);">
+          </div>
+          <div class="text-content">
+            <h3>✨ Building Infrastructure for Hope</h3>
+            <p>Jonathan understands that hope requires infrastructure. It's not enough to want better outcomes - you need reliable systems, sustainable funding, trained teams, accessible technology, and operational excellence. He's built all of it from the ground up, creating the invisible scaffolding that allows peer workers to focus on connection rather than administration, that lets community members access services without navigating bureaucratic mazes.</p>
+            <p>Jonathan envisions a future where every community has the infrastructure to support peer-led harm reduction - not as charity, but as basic social infrastructure like roads, schools, and hospitals. Where data flows freely to inform better interventions, where technology amplifies community wisdom, where funding supports rather than constrains mission-aligned work.</p>
+          </div>
         </div>
+        <div class="follow-up-text" style="border: 2px solid var(--hroc-cyan); opacity: 1.0;">
+          <p>Jonathan talks passionately about creating sustainable infrastructure that outlasts any individual leader - systems so well-designed they become nearly invisible, funding models so robust they weather economic storms, partnerships so deep they become family. He envisions a revolutionary future where every community has comprehensive infrastructure to support peer-led harm reduction - not as temporary charity or pilot projects, but as fundamental social infrastructure like roads, schools, hospitals, and fire departments.</p>
+          <p>This vision isn't abstract or distant. Jonathan is building it right now, one system at a time, one partnership at a time, one innovation at a time. He knows that transformation happens through patient, persistent work - and that the infrastructure we build today determines what's possible tomorrow. When we invest in systems that work, we invest in hope that lasts.</p>
+        </div>
+
       </div>
     </section>
 
     <!-- Connect with Jonathan -->
     <section class="profile-section">
-      <div class="container">
+      <div class="container" style="text-align: center;">
         <h2>📧 Connect with Jonathan</h2>
         <div class="founder-contact-card">
           <h3>Get In Touch</h3>
-          <p style="margin-bottom: var(--space-4); color: white;">Interested in partnership, funding, or collaborating on scaling peer-led harm reduction?</p>
+          <p style="margin-bottom: var(--space-4); color: white;">Interested in partnership, technology collaboration, or strategic innovation in harm reduction? Jonathan would love to hear from you.</p>
           <div>
             <a href="mailto:Jonathan.Mallinger@hrocinc.org">📧 Email Jonathan</a>
             <a href="tel:+12538817377">📞 Call HROC</a>

@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Meet Lilly - HROC Treasurer & Co-Founder. Explore Lilly's commitment to Indigenous-informed healing and cultural wellness in harm reduction.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Meet Lilly - HROC Treasurer & Co-Founder. Learn about Lilly's vision for Indigenous healing, cultural reclamation, and community wellness.">
+  <meta name="theme-color" content="#E91E8C">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Lilly - HROC Treasurer & Co-Founder | Healing Roots Outreach Collective</title>
 
   <!-- Fonts -->
@@ -17,6 +21,29 @@
   <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23E91E8C'/><text x='50' y='60' font-size='60' text-anchor='middle' fill='white' font-weight='bold'>🌱</text></svg>">
 
   <style>
+    /* Mobile-First Base Styles */
+    * {
+      -webkit-tap-highlight-color: rgba(233, 30, 140, 0.2);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
     /* Founder Profile Specific Styles */
     .founder-profile {
       background: linear-gradient(135deg, #E91E8C 0%, #00D4E8 100%);
@@ -175,15 +202,6 @@
       margin-bottom: var(--space-3);
     }
 
-    .founder-bio-extended ul {
-      margin-left: 1.5rem;
-      line-height: 1.8;
-    }
-
-    .founder-bio-extended li {
-      margin-bottom: var(--space-2);
-    }
-
     .founder-contact-card {
       background: linear-gradient(135deg, #E91E8C 0%, #00D4E8 100%);
       color: white;
@@ -247,21 +265,494 @@
       color: white;
     }
 
+    .section-image {
+      width: 100%;
+      max-width: 500px;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      margin: var(--space-6) auto;
+      display: block;
+    }
+
+    .section-image-float-right {
+      float: right;
+      margin: 0 0 var(--space-4) var(--space-6);
+      max-width: 350px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .section-image-float-left {
+      float: left;
+      margin: 0 var(--space-6) var(--space-4) 0;
+      max-width: 350px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Alternating Image-Text Layout */
+    .image-text-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+      align-items: center;
+      margin-bottom: var(--space-8);
+      padding: var(--space-6);
+      border-radius: var(--radius-lg);
+      transition: transform 0.3s ease;
+    }
+
+    .image-text-row:hover {
+      transform: translateY(-4px);
+    }
+
+    .image-text-row img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .text-content h3 {
+      font-size: 1.75rem;
+      color: var(--hroc-magenta);
+      margin-bottom: var(--space-4);
+    }
+
+    .text-content p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: var(--space-3);
+      color: var(--color-text);
+    }
+
+    .follow-up-text {
+      margin-top: var(--space-6);
+      padding: var(--space-6);
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(233, 30, 140, 0.03) 0%, rgba(0, 212, 232, 0.03) 100%);
+    }
+
+    .follow-up-text p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: var(--space-4);
+    }
+
+    /* Enhanced Alternating Image-Text Layout */
+    /* Row 1, 3, 5 - Text Left, Image Right */
+    .image-text-row:nth-child(odd) {
+      background: linear-gradient(135deg, rgba(233, 30, 140, 0.03) 0%, rgba(0, 212, 232, 0.08) 100%);
+      border-left: 4px solid var(--hroc-magenta);
+      box-shadow:
+        0 4px 16px rgba(233, 30, 140, 0.08),
+        0 8px 32px rgba(0, 0, 0, 0.05);
+      opacity: 0.95;
+    }
+
+    .image-text-row:nth-child(odd):hover {
+      box-shadow:
+        0 8px 24px rgba(233, 30, 140, 0.15),
+        0 16px 48px rgba(0, 0, 0, 0.1);
+      opacity: 1;
+      border-left-width: 6px;
+    }
+
+    /* Row 2, 4, 6 - Image Left, Text Right (Reverse) */
+    .image-text-row.reverse {
+      grid-template-columns: 1fr 1fr;
+      background: linear-gradient(135deg, rgba(0, 212, 232, 0.03) 0%, rgba(233, 30, 140, 0.08) 100%);
+      border-right: 4px solid var(--hroc-cyan);
+      border-left: none;
+      box-shadow:
+        0 4px 16px rgba(0, 212, 232, 0.08),
+        0 8px 32px rgba(0, 0, 0, 0.05);
+      opacity: 0.9;
+    }
+
+    .image-text-row.reverse:hover {
+      box-shadow:
+        0 8px 24px rgba(0, 212, 232, 0.15),
+        0 16px 48px rgba(0, 0, 0, 0.1);
+      opacity: 1;
+      border-right-width: 6px;
+    }
+
+    .image-text-row.reverse .image-content {
+      order: -1; /* Move image to left side */
+    }
+
+    .image-text-row.reverse .text-content {
+      order: 1; /* Move text to right side */
+    }
+
+    /* Text Content Styling */
+    .text-content {
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    .text-content h3 {
+      font-size: clamp(1.5rem, 3vw, 1.75rem);
+      color: var(--hroc-magenta);
+      margin-bottom: var(--space-4);
+      font-weight: 700;
+      position: relative;
+      padding-bottom: var(--space-2);
+    }
+
+    .text-content h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--hroc-magenta) 0%, var(--hroc-cyan) 100%);
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+
+    .image-text-row:hover .text-content h3::after {
+      width: 100px;
+    }
+
+    .text-content p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: var(--space-3);
+      color: var(--color-text);
+      opacity: 0.9;
+    }
+
+    .text-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Image Content Styling */
+    .image-content {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15),
+        0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .image-content::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(233, 30, 140, 0.1) 0%, rgba(0, 212, 232, 0.1) 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .image-content:hover::before {
+      opacity: 1;
+    }
+
+    .image-content img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      display: block;
+    }
+
+    .image-content:hover img {
+      transform: scale(1.05);
+    }
+
+    .image-text-row:hover .image-content {
+      box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.2),
+        0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Follow-up Text Enhanced Styling */
+    .follow-up-text {
+      margin-top: var(--space-6);
+      padding: var(--space-6);
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(233, 30, 140, 0.03) 0%, rgba(0, 212, 232, 0.05) 100%);
+      border-left: 3px solid var(--hroc-cyan);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      transition: all 0.3s ease;
+      opacity: 0.85;
+    }
+
+    .follow-up-text:hover {
+      background: linear-gradient(135deg, rgba(233, 30, 140, 0.05) 0%, rgba(0, 212, 232, 0.08) 100%);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      opacity: 1;
+      border-left-width: 4px;
+    }
+
+    .follow-up-text p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: var(--space-4);
+      color: var(--color-text);
+    }
+
+    .follow-up-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Smooth Transitions */
+    .image-text-row,
+    .image-content,
+    .text-content,
+    .follow-up-text {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Animation Keyframes */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Accessibility - Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      .image-text-row,
+      .image-content,
+      .text-content,
+      .follow-up-text,
+      .image-content img {
+        transition: none;
+        animation: none;
+      }
+
+      .image-text-row:hover,
+      .image-content:hover img {
+        transform: none;
+      }
+    }
+
+    /* Mobile Optimization */
     @media (max-width: 768px) {
-      .founder-hero-content {
+      .section-image-float-right,
+      .section-image-float-left {
+        float: none;
+        max-width: 100%;
+        margin: var(--space-4) auto;
+        display: block;
+      }
+
+      .image-text-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+        padding: var(--space-4);
+      }
+
+      .image-text-row.reverse {
         grid-template-columns: 1fr;
       }
 
+      .founder-hero-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+      }
+
       .founder-intro-text {
-        text-align: center;
+        text-align: left;
+        padding: 0 var(--space-4);
       }
 
       .founder-intro-text p {
-        text-align: center;
+        text-align: left;
+        font-size: 1.05rem;
+        line-height: 1.7;
       }
 
       .founder-profile h1 {
-        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-size: clamp(2rem, 5vw, 2.75rem);
+        line-height: 1.2;
+        padding: 0 var(--space-2);
+      }
+
+      .founder-profile p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        padding: 0 var(--space-4);
+      }
+
+      .passion-quote {
+        font-size: 1.05rem;
+        padding: var(--space-4);
+        margin: var(--space-4) 0;
+      }
+
+      .leadership-highlights {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+      }
+
+      .highlight-card {
+        padding: var(--space-5);
+      }
+
+      .founder-bio-extended {
+        padding: var(--space-6);
+        margin: var(--space-4) 0;
+      }
+
+      .founder-bio-extended h3 {
+        font-size: 1.4rem;
+      }
+
+      .founder-bio-extended p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+      }
+
+      .profile-section {
+        padding: var(--space-8) 0;
+      }
+
+      .profile-section h2 {
+        font-size: 1.75rem;
+        padding: 0 var(--space-4);
+      }
+
+      .section-image {
+        max-width: 100%;
+        margin: var(--space-4) 0;
+      }
+
+      /* Enhanced Mobile Styles */
+      .text-content {
+        padding: var(--space-4);
+      }
+
+      .text-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: var(--space-3);
+      }
+
+      .text-content p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+
+      .follow-up-text {
+        padding: var(--space-5);
+        margin-top: var(--space-4);
+      }
+
+      .follow-up-text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: var(--space-3);
+      }
+
+      .image-content {
+        margin-bottom: var(--space-4);
+      }
+
+      .image-text-row.reverse .image-content {
+        order: 0;
+      }
+
+      .image-text-row.reverse .text-content {
+        order: 1;
+      }
+
+      /* Ensure container has proper padding on mobile */
+      .container {
+        padding-left: var(--space-4);
+        padding-right: var(--space-4);
+      }
+
+      /* Make stats cards more readable on mobile */
+      .highlight-card h3 {
+        font-size: 2rem;
+      }
+
+      .highlight-card p {
+        font-size: 1rem;
+      }
+
+      /* Founder nav buttons - make them stack and full width */
+      .founder-nav {
+        flex-direction: column;
+        gap: var(--space-3);
+      }
+
+      .founder-nav a {
+        width: 100%;
+        justify-content: center;
+        padding: var(--space-4);
+        font-size: 1.1rem;
+      }
+
+      /* Contact card on mobile */
+      .founder-contact-card a {
+        display: block;
+        margin: var(--space-2) 0;
+        padding: var(--space-3);
+        font-size: 1.1rem;
+      }
+
+      /* Role badge */
+      .role-badge {
+        font-size: 1rem;
+        padding: var(--space-2) var(--space-4);
+      }
+
+      /* Reduce section spacing on mobile for better flow */
+      h2 {
+        font-size: 1.75rem;
+        margin-bottom: var(--space-6);
+      }
+    }
+
+    /* Extra small mobile phones */
+    @media (max-width: 480px) {
+      .founder-profile h1 {
+        font-size: 1.75rem;
+      }
+
+      .founder-profile p {
+        font-size: 1rem;
+      }
+
+      .text-content h3 {
+        font-size: 1.35rem;
+      }
+
+      .text-content p,
+      .follow-up-text p {
+        font-size: 1.05rem;
+      }
+
+      .passion-quote {
+        font-size: 1rem;
+        padding: var(--space-3);
+      }
+
+      .image-text-row {
+        padding: var(--space-3);
+      }
+
+      .follow-up-text {
+        padding: var(--space-4);
       }
     }
   </style>
@@ -317,7 +808,7 @@
     <div class="container">
       <span class="role-badge">💰 Treasurer & Co-Founder</span>
       <h1>Meet Lilly</h1>
-      <p>Fierce advocate for Indigenous-informed healing practices and community wellness with deep roots in cultural organizing and peer support.</p>
+      <p class="hero-subtitle">A visionary leader weaving Indigenous wisdom, financial stewardship, and holistic wellness into every thread of HROC's work—proving that cultural healing and community resilience are the most powerful medicines we have.</p>
     </div>
   </section>
 
@@ -338,132 +829,121 @@
     <!-- Hero with Image -->
     <section class="profile-section">
       <div class="container">
-        <div class="founder-hero-content">
-          <div class="founder-image-container">
-            <picture>
-              <source srcset="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/l/l1.webp" type="image/webp">
-              <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/l/l1.png" alt="Lilly - HROC Treasurer">
-            </picture>
-          </div>
-          <div class="founder-intro-text">
+        <div class="image-text-row" style="background: linear-gradient(135deg, rgba(233, 30, 140, 0.03) 0%, rgba(0, 212, 232, 0.05) 100%); border-left: 4px solid var(--hroc-magenta);">
+          <div class="text-content">
             <p>
-              🌱 <strong>Lilly is a fierce advocate for Indigenous-informed healing practices and community wellness.</strong> With deep roots in cultural organizing and peer support, Lilly ensures that every interaction at HROC honors Indigenous knowledge, celebrates cultural resilience, and fosters genuine healing.
+              🌱 <strong>Lilly brings profound cultural wisdom and financial integrity to HROC's mission.</strong> With deep roots in Indigenous healing practices and a fierce commitment to community wellness, Lilly ensures that every dollar we steward and every service we provide honors the sacred interconnection between culture, healing, and collective liberation.
             </p>
-            <div class="passion-quote">
-              "Healing is possible. Culture is medicine. Community is power. 💙"
-            </div>
             <p>
-              As Treasurer, Lilly brings financial wisdom and stewardship to HROC's resources, ensuring every dollar supports our mission of accessible, dignified harm reduction services.
+              As Treasurer, Lilly manages HROC's resources with the same care we give our community members—transparently, accountably, and always in service to our shared vision. But Lilly's leadership extends far beyond spreadsheets. Lilly weaves traditional healing practices into modern harm reduction, creating spaces where cultural reclamation and community care are inseparable from survival and thriving.
             </p>
           </div>
+          <div class="image-content">
+            <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/l/qwen_lilly_01_professional_office_laptop.webp" alt="Lilly - HROC Treasurer">
+          </div>
+        </div>
+        <div class="follow-up-text" style="border: 2px solid var(--hroc-magenta); opacity: 0.95;">
+          <p><strong>Lilly doesn't separate financial stewardship from cultural healing—they're one and the same.</strong> Every budget decision reflects our values. Every program investment honors our ancestors and empowers our future. This isn't just accounting. This is sacred responsibility to community.</p>
+          <p>"Our people have always known how to heal. My work is about creating the conditions—financial, cultural, spiritual—where that healing can flourish. When we honor our traditions while fighting for our future, transformation becomes inevitable." 🌍</p>
         </div>
       </div>
     </section>
 
-    <!-- Leadership Highlights -->
+    <!-- Lilly's Journey & Impact -->
     <section class="profile-section">
       <div class="container">
-        <h2>💙 Leadership Highlights</h2>
-        <div class="leadership-highlights">
-          <div class="highlight-card">
-            <div class="highlight-icon">🎋</div>
-            <h3>Cultural Healer</h3>
-            <p>Integrates Indigenous healing practices and cultural wisdom into every aspect of program design and implementation.</p>
+        <h2>📖 Lilly's Journey & Impact</h2>
+
+        <!-- Row 1: Image Left, Text Right -->
+        <div class="image-text-row reverse" style="background: linear-gradient(135deg, rgba(0, 212, 232, 0.05) 0%, rgba(233, 30, 140, 0.05) 100%); border-right: 4px solid var(--hroc-cyan);">
+          <div class="image-content">
+            <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/l/qwen_lilly_02_business_casual_outdoor.webp" alt="Lilly outdoors embodying cultural connection" style="box-shadow: 0 12px 32px rgba(0, 212, 232, 0.25);">
           </div>
-          <div class="highlight-card">
-            <div class="highlight-icon">💪</div>
-            <h3>Community Resilience</h3>
-            <p>Celebrates and strengthens the inherent resilience and wisdom of communities most impacted by substance use and systemic inequality.</p>
-          </div>
-          <div class="highlight-card">
-            <div class="highlight-icon">💰</div>
-            <h3>Financial Stewardship</h3>
-            <p>Manages HROC's resources with integrity and wisdom, ensuring financial practices reflect our values and mission.</p>
-          </div>
-          <div class="highlight-card">
-            <div class="highlight-icon">🌿</div>
-            <h3>Wellness Integration</h3>
-            <p>Brings holistic wellness approaches that honor mind, body, spirit, and community in healing-centered services.</p>
+          <div class="text-content">
+            <h3>🌍 Cultural Healing & Indigenous Wisdom</h3>
+            <p>Lilly understands that cultural disconnection isn't just painful—it's deadly. When colonization severs people from their roots, substances often fill the void where belonging and ceremony used to be. Lilly's work reclaims that sacred ground, weaving Indigenous practices back into the fabric of community care.</p>
+            <p>Every wellness circle Lilly facilitates becomes a space where people reconnect with traditional medicines, learn songs their grandparents sang, and remember that they come from lineages of survivors and healers. This isn't symbolic. This is lifesaving medicine.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Extended Biography -->
-    <section class="profile-section">
-      <div class="container">
-        <h2>📖 Lilly's Story & Vision</h2>
-
-        <div class="founder-bio-extended">
-          <h3>Rooted in Community & Culture</h3>
-          <p>
-            Lilly's journey reflects deep commitment to Indigenous sovereignty, cultural preservation, and community-centered healing. With extensive experience in cultural organizing, peer support, and wellness advocacy, Lilly brings holistic perspectives to HROC's work.
-          </p>
-          <p>
-            Lilly understands that healing from trauma - including the collective trauma of colonization, systemic racism, and marginalization - requires cultural wisdom, community connection, and respect for Indigenous knowledge systems.
-          </p>
+        <div class="follow-up-text" style="border: 2px solid var(--hroc-cyan); opacity: 0.9;">
+          <p>Lilly teaches community members how to gather medicines from the land, how to prepare traditional remedies, how to hold space for grief and joy in ways our ancestors practiced for millennia. When someone walks into HROC feeling broken and walks out remembering they're sacred—that's Lilly's influence. That's cultural healing in action.</p>
+          <p>This work honors what colonization tried to destroy: the knowledge that our cultures hold wisdom about healing that Western medicine is only beginning to understand. Lilly doesn't just talk about decolonization—Lilly lives it, teaches it, embodies it in every interaction.</p>
         </div>
 
-        <div class="founder-bio-extended">
-          <h3>🌿 Core Beliefs</h3>
-          <p>
-            <strong>Culture as Medicine:</strong> Lilly believes that cultural practices, spiritual connection, and community healing are as essential as medical interventions. HROC's programs intentionally weave traditional practices into harm reduction services.
-          </p>
-          <p>
-            <strong>Community Resilience:</strong> Rather than viewing communities as broken, Lilly sees deep resilience and strength. Services at HROC build on and celebrate existing community wisdom and power.
-          </p>
-          <p>
-            <strong>Holistic Wellness:</strong> Health isn't just physical - it includes spiritual, emotional, relational, and community dimensions. HROC addresses all of these through culturally-grounded services.
-          </p>
+        <!-- Row 3: Text Left, Image Right -->
+        <div class="image-text-row" style="background: linear-gradient(135deg, rgba(233, 30, 140, 0.08) 0%, rgba(0, 212, 232, 0.08) 100%); border-left: 4px solid var(--hroc-magenta);">
+          <div class="text-content">
+            <h3>💰 Financial Stewardship & Transparency</h3>
+            <p>In a world where nonprofits often prioritize optics over impact, Lilly brings radical financial transparency. Every dollar HROC receives is tracked, accounted for, and deployed with surgical precision toward our mission. No executive salaries. No wasteful overhead. Just resources flowing directly to community.</p>
+            <p>Lilly built financial systems that reflect our values: peer leaders paid fairly for their expertise, community members compensated for their time, Indigenous practices funded as essential services—not afterthoughts. When funders question why we pay people with lived experience professional wages, Lilly doesn't flinch: "Because their knowledge is priceless, and we refuse to extract it for free."</p>
+          </div>
+          <div class="image-content">
+            <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/l/qwen_lilly_03_conference_room.webp" alt="Lilly demonstrating financial leadership" style="box-shadow: 0 12px 32px rgba(233, 30, 140, 0.3);">
+          </div>
+        </div>
+        <div class="follow-up-text" style="border: 2px solid var(--hroc-magenta); opacity: 1.0;">
+          <p>Lilly publishes quarterly financial reports that community members can actually understand—no jargon, no hiding. When a community member asks where their donation went, Lilly shows them: supplies distributed, peer leaders trained, cultural events hosted, lives saved. This level of transparency builds trust that no mission statement ever could.</p>
+          <p>For Lilly, financial stewardship isn't just about compliance or efficiency. It's about honoring the sacred trust people place in us when they contribute their resources. It's about proving that Indigenous-led organizations can meet the highest standards while staying true to community values. Every balanced budget is an act of resistance against narratives that say we can't govern ourselves.</p>
         </div>
 
-        <div class="founder-bio-extended">
-          <h3>💰 Financial Leadership</h3>
-          <p>
-            As Treasurer, Lilly ensures HROC's financial management reflects organizational values:
-          </p>
-          <ul>
-            <li>💚 Every dollar spent in service to our mission and community</li>
-            <li>🤝 Transparent accounting and community accountability</li>
-            <li>🌱 Strategic investments in peer leader compensation and development</li>
-            <li>📊 Data-driven decisions about resource allocation</li>
-            <li>🏛️ Compliance with nonprofit standards while maintaining community focus</li>
-          </ul>
+        <!-- Row 4: Image Left, Text Right -->
+        <div class="image-text-row reverse" style="background: linear-gradient(135deg, rgba(0, 212, 232, 0.08) 0%, rgba(233, 30, 140, 0.08) 100%); border-right: 4px solid var(--hroc-cyan);">
+          <div class="image-content">
+            <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/l/qwen_lilly_06_outdoor_professional.webp" alt="Lilly embodying wellness and resilience" style="box-shadow: 0 12px 32px rgba(0, 212, 232, 0.3);">
+          </div>
+          <div class="text-content">
+            <h3>🌿 Wellness & Holistic Approaches</h3>
+            <p>Lilly rejects the false binary between physical health and spiritual wellness. When someone comes to HROC, they don't just get naloxone—they get connection to a wellness network that includes traditional healers, mental health support, cultural programming, and peer mentorship. Healing isn't linear. It's holistic.</p>
+            <p>Lilly designed programs where people can access acupuncture, smudging, yoga, nutritional support, and trauma counseling—all rooted in Indigenous frameworks that honor the whole person. When traditional Western approaches failed someone, Lilly's holistic model often succeeds because it treats root causes, not just symptoms.</p>
+          </div>
+        </div>
+        <div class="follow-up-text" style="border: 2px solid var(--hroc-cyan); opacity: 0.95;">
+          <p>There's a young person named Marcus who tried every treatment program in the county and relapsed every time—until he met Lilly. Lilly didn't offer him another 12-step meeting. She offered him a sweat lodge, connection to elders, and traditional medicines his ancestors used for healing. Six months later, Marcus is sober, leading wellness circles, and teaching others that recovery doesn't have to look like what the dominant culture prescribes.</p>
+          <p>Lilly's approach acknowledges that colonization, trauma, and systemic oppression create the conditions where substances become survival strategies. Real healing requires addressing those root causes—not through shame or coercion, but through reconnection, cultural pride, and community care that honors people's full humanity.</p>
         </div>
 
-        <div class="founder-bio-extended">
-          <h3>🎋 Weaving Indigenous Practices</h3>
-          <p>
-            Lilly is passionate about integrating Indigenous healing practices into HROC's work:
-          </p>
-          <ul>
-            <li>🌍 Healing circles that honor traditional gathering practices</li>
-            <li>🎋 Cultural ceremonies and spiritual practices in safe spaces</li>
-            <li>🌿 Connection to land and natural healing substances</li>
-            <li>👥 Community care models rooted in collective responsibility</li>
-            <li>🔮 Wisdom traditions that guide ethical decision-making</li>
-          </ul>
+        <!-- Row 5: Text Left, Image Right -->
+        <div class="image-text-row" style="background: linear-gradient(135deg, rgba(233, 30, 140, 0.1) 0%, rgba(0, 212, 232, 0.1) 100%); border-left: 4px solid var(--hroc-magenta);">
+          <div class="text-content">
+            <h3>💪 Community Resilience</h3>
+            <p>Lilly sees what others miss: communities aren't broken—they're under attack by systems designed to harm them. The work isn't to "fix" people; it's to amplify the resilience and wisdom already present, while dismantling the structures that force people into survival mode.</p>
+            <p>When a neighborhood lost funding for a community center, Lilly didn't mourn—she mobilized. Within weeks, HROC hosted pop-up wellness events, peer support groups, and cultural gatherings in the same spaces the city abandoned. The message was clear: our community takes care of its own, with or without institutional support.</p>
+          </div>
+          <div class="image-content">
+            <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/l/qwen_lilly_07_modern_office_desk.webp" alt="Lilly building community resilience" style="box-shadow: 0 12px 32px rgba(233, 30, 140, 0.35);">
+          </div>
+        </div>
+        <div class="follow-up-text" style="border: 2px solid var(--hroc-magenta); opacity: 0.9;">
+          <p>Lilly trains peer leaders to become community organizers, teaching them how to navigate funding systems, advocate for policy changes, and build sustainable programs from the ground up. She believes that investing in leadership development isn't a nice-to-have—it's the only way systemic change happens. When communities lead their own healing, transformation becomes unstoppable.</p>
+          <p>Every skill-share workshop, every leadership training, every community meeting Lilly facilitates is an act of capacity-building. She's not creating dependency on HROC—she's cultivating a movement of healers, organizers, and culture-keepers who will continue this work long after any grant expires. That's real resilience.</p>
         </div>
 
-        <div class="founder-bio-extended">
-          <h3>💙 Vision for Healing</h3>
-          <p>
-            Lilly envisions HROC as a beacon of what becomes possible when communities reclaim their power, honor their culture, and center healing in all interactions.
-          </p>
-          <p>
-            "We're not just providing services - we're reclaiming the right of communities to define and create their own healing. That's revolutionary. That's sacred."
-          </p>
+        <!-- Row 6: Image Left, Text Right -->
+        <div class="image-text-row reverse" style="background: linear-gradient(135deg, rgba(0, 212, 232, 0.1) 0%, rgba(233, 30, 140, 0.1) 100%); border-right: 4px solid var(--hroc-cyan);">
+          <div class="image-content">
+            <img src="https://hroc-outreach-assets-1765630540.s3.us-west-2.amazonaws.com/images/founders/l/qwen_lilly_10_community_engagement.webp" alt="Lilly's vision for cultural reclamation" style="box-shadow: 0 12px 32px rgba(0, 212, 232, 0.35);">
+          </div>
+          <div class="text-content">
+            <h3>✨ Vision for Cultural Reclamation</h3>
+            <p>Lilly envisions a future where Indigenous practices aren't add-ons to Western systems—they're the foundation. Where traditional healers are compensated like the experts they are. Where every harm reduction program centers cultural healing because that's what actually works.</p>
+            <p>She dreams of HROC-owned land where people can gather for ceremony, grow traditional medicines, and build intergenerational healing spaces free from surveillance and criminalization. A place where elders teach, youth lead, and everyone belongs—not in spite of their struggles, but because of their inherent worth.</p>
+          </div>
         </div>
+        <div class="follow-up-text" style="border: 2px solid var(--hroc-cyan); opacity: 1.0;">
+          <p>Lilly talks about creating healing economies where resources flow within communities instead of being extracted by institutions. Where peer leaders earn living wages. Where cultural practitioners receive grants and recognition. Where financial systems reflect Indigenous values of reciprocity, collective abundance, and seven-generation thinking.</p>
+          <p>This vision isn't utopian—it's practical, necessary, and already taking root. Every budget Lilly balances, every cultural practice she revives, every community member she empowers brings that future closer. She knows the road is long, but she also knows her people have survived worse. And survival isn't enough anymore. It's time to thrive. 🔥</p>
+        </div>
+
       </div>
     </section>
 
     <!-- Connect with Lilly -->
     <section class="profile-section">
-      <div class="container">
+      <div class="container" style="text-align: center;">
         <h2>📧 Connect with Lilly</h2>
         <div class="founder-contact-card">
           <h3>Get In Touch</h3>
-          <p style="margin-bottom: var(--space-4); color: white;">Interested in learning more about cultural healing, wellness programs, or community partnerships?</p>
+          <p style="margin-bottom: var(--space-4); color: white;">Interested in learning more about cultural healing, wellness programs, or community partnerships? Lilly would love to hear from you.</p>
           <div>
             <a href="mailto:Lilly.Fedas@hrocinc.org">📧 Email Lilly</a>
             <a href="tel:+12538817377">📞 Call HROC</a>

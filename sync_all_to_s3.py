@@ -13,8 +13,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 BASE_DIR = Path(__file__).parent / 'HROC_Website_New'
-S3_BUCKET = 'hroc-outreach-assets-1765630540'
-AWS_REGION = 'us-west-2'
+S3_BUCKET = 'hroc-website-20251230043930'
+AWS_REGION = 'us-east-1'
 
 def run_command(cmd, description):
     """Execute shell command with error handling"""

@@ -2197,18 +2197,20 @@ legend {
 
 .community-row {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: var(--space-8);
-  align-items: center;
-  background: white;
-  border-radius: var(--radius-xl);
-  padding: var(--space-6);
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--color-border);
+  grid-template-columns: 160px 1fr;
+  gap: var(--space-6);
+  align-items: start;
+  background: transparent;
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.community-row:last-child {
+  border-bottom: none;
 }
 
 .community-row-reverse {
-  grid-template-columns: 1fr 280px;
+  grid-template-columns: 1fr 160px;
 }
 
 .community-row-reverse .community-photo {
@@ -2224,13 +2226,11 @@ legend {
 }
 
 .community-photo img {
-  width: 100%;
-  max-width: 280px;
-  height: auto;
-  aspect-ratio: 1 / 1;
+  width: 160px;
+  height: 160px;
   object-fit: cover;
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .community-photo figcaption {
@@ -2263,7 +2263,7 @@ legend {
   .community-row,
   .community-row-reverse {
     grid-template-columns: 1fr;
-    text-align: center;
+    gap: var(--space-4);
   }
 
   .community-row-reverse .community-photo,
@@ -2278,11 +2278,16 @@ legend {
   }
 
   .community-photo img {
-    max-width: 200px;
+    width: 120px;
+    height: 120px;
   }
 
   .community-text {
     text-align: left;
+  }
+
+  .community-photo figcaption {
+    display: none;
   }
 }
 

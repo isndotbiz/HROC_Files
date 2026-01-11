@@ -12,7 +12,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    name: Deploy to TrueNAS and S3
+    name: Deploy to S3 (TrueNAS requires local network)
 
     steps:
       - name: Checkout code
@@ -53,33 +53,37 @@ jobs:
             --cache-control "max-age=31536000" \
             --delete
 
-      - name: Setup SSH key
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.TRUENAS_SSH_KEY }}
-        run: |
-          mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -H 10.0.0.89 >> ~/.ssh/known_hosts
+      # NOTE: TrueNAS deployment skipped - server is on local network (10.0.0.89)
+      # GitHub Actions runners cannot access local network IPs
+      # To deploy to TrueNAS, run from local network: ./deploy.sh
 
-      - name: Deploy to TrueNAS
-        run: |
-          # Create backup
-          ssh root@10.0.0.89 "tar -czf /mnt/tank/backups/hrocinc-backup-$(date +%Y%m%d-%H%M%S).tar.gz -C /mnt/tank/websites/kusanagi/web hrocinc.org"
+      # - name: Setup SSH key
+      #   env:
+      #     SSH_PRIVATE_KEY: ${{ secrets.TRUENAS_SSH_KEY }}
+      #   run: |
+      #     mkdir -p ~/.ssh
+      #     echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+      #     chmod 600 ~/.ssh/id_ed25519
+      #     ssh-keyscan -H 10.0.0.89 >> ~/.ssh/known_hosts
 
-          # Sync files
-          rsync -avz --delete \
-            --exclude '.git' \
-            --exclude 'node_modules' \
-            --exclude '.DS_Store' \
-            --exclude 'lora_training' \
-            --exclude 'image-generator' \
-            --exclude 'lora_models' \
-            HROC_Website_New/ \
-            root@10.0.0.89:/mnt/tank/websites/kusanagi/web/hrocinc.org/
-
-          # Fix permissions
-          ssh root@10.0.0.89 "chown -R 33:33 /mnt/tank/websites/kusanagi/web/hrocinc.org && chmod -R 755 /mnt/tank/websites/kusanagi/web/hrocinc.org"
+      # - name: Deploy to TrueNAS
+      #   run: |
+      #     # Create backup
+      #     ssh root@10.0.0.89 "tar -czf /mnt/tank/backups/hrocinc-backup-$(date +%Y%m%d-%H%M%S).tar.gz -C /mnt/tank/websites/kusanagi/web hrocinc.org"
+      #
+      #     # Sync files
+      #     rsync -avz --delete \
+      #       --exclude '.git' \
+      #       --exclude 'node_modules' \
+      #       --exclude '.DS_Store' \
+      #       --exclude 'lora_training' \
+      #       --exclude 'image-generator' \
+      #       --exclude 'lora_models' \
+      #       HROC_Website_New/ \
+      #       root@10.0.0.89:/mnt/tank/websites/kusanagi/web/hrocinc.org/
+      #
+      #     # Fix permissions
+      #     ssh root@10.0.0.89 "chown -R 33:33 /mnt/tank/websites/kusanagi/web/hrocinc.org && chmod -R 755 /mnt/tank/websites/kusanagi/web/hrocinc.org"
 
       - name: Verify deployment
         run: |

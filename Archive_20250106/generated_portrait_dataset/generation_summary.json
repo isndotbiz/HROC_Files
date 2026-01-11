@@ -1,0 +1,469 @@
+{
+  "generated_at": "2025-12-20T10:39:22.328005",
+  "total_images": 60,
+  "failed_images": 0,
+  "sources": {
+    "j1.webp": {
+      "source": "./j1.webp",
+      "generated_at": "2025-12-20T10:39:22.328024",
+      "shots": {
+        "close_ups": [
+          {
+            "id": 1,
+            "prompt": "Close-up portrait focusing on natural smile and eyes. Professional photography, studio lighting, clear facial details.",
+            "filename": "j1_close_ups_1.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 2,
+            "prompt": "Close-up portrait focusing on serious expression with piercing eyes. Professional photography, studio lighting, clear facial details.",
+            "filename": "j1_close_ups_2.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 3,
+            "prompt": "Close-up portrait focusing on contemplative look with detailed facial features. Professional photography, studio lighting, clear facial details.",
+            "filename": "j1_close_ups_3.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 4,
+            "prompt": "Close-up portrait focusing on genuine warmth with focus on smile. Professional photography, studio lighting, clear facial details.",
+            "filename": "j1_close_ups_4.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 5,
+            "prompt": "Close-up portrait focusing on dramatic expression highlighting facial structure. Professional photography, studio lighting, clear facial details.",
+            "filename": "j1_close_ups_5.webp",
+            "status": "success",
+            "error": null
+          }
+        ],
+        "upper_body": [
+          {
+            "id": 1,
+            "prompt": "Upper body portrait shot. Professional styling and posture. Focus on confident standing pose with professional attire. Studio photography.",
+            "filename": "j1_upper_body_1.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 2,
+            "prompt": "Upper body portrait shot. Professional styling and posture. Focus on relaxed posture with casual styling. Studio photography.",
+            "filename": "j1_upper_body_2.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 3,
+            "prompt": "Upper body portrait shot. Professional styling and posture. Focus on dynamic pose showing movement and energy. Studio photography.",
+            "filename": "j1_upper_body_3.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 4,
+            "prompt": "Upper body portrait shot. Professional styling and posture. Focus on elegant pose with sophisticated styling. Studio photography.",
+            "filename": "j1_upper_body_4.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 5,
+            "prompt": "Upper body portrait shot. Professional styling and posture. Focus on approachable pose with friendly demeanor. Studio photography.",
+            "filename": "j1_upper_body_5.webp",
+            "status": "success",
+            "error": null
+          }
+        ],
+        "multiple_angles": [
+          {
+            "id": 1,
+            "prompt": "Create a left profile view view of the person. Professional portrait lighting, clear facial features.",
+            "filename": "j1_multiple_angles_1.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 2,
+            "prompt": "Create a three-quarter front-left angle view of the person. Professional portrait lighting, clear facial features.",
+            "filename": "j1_multiple_angles_2.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 3,
+            "prompt": "Create a straight front view view of the person. Professional portrait lighting, clear facial features.",
+            "filename": "j1_multiple_angles_3.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 4,
+            "prompt": "Create a three-quarter front-right angle view of the person. Professional portrait lighting, clear facial features.",
+            "filename": "j1_multiple_angles_4.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 5,
+            "prompt": "Create a right profile view view of the person. Professional portrait lighting, clear facial features.",
+            "filename": "j1_multiple_angles_5.webp",
+            "status": "success",
+            "error": null
+          }
+        ],
+        "full_body": [
+          {
+            "id": 1,
+            "prompt": "Full-body portrait. Standing straight, neutral expression, formal outfit overall silhouette and style visible. Professional photography.",
+            "filename": "j1_full_body_1.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 2,
+            "prompt": "Full-body portrait. Dynamic standing pose, engaging expression, casual styling overall silhouette and style visible. Professional photography.",
+            "filename": "j1_full_body_2.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 3,
+            "prompt": "Full-body portrait. Seated pose, relaxed demeanor, contemporary outfit overall silhouette and style visible. Professional photography.",
+            "filename": "j1_full_body_3.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 4,
+            "prompt": "Full-body portrait. Standing with slight lean, confident expression, business casual overall silhouette and style visible. Professional photography.",
+            "filename": "j1_full_body_4.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 5,
+            "prompt": "Full-body portrait. Full-length standing, professional stance, elegant styling overall silhouette and style visible. Professional photography.",
+            "filename": "j1_full_body_5.webp",
+            "status": "success",
+            "error": null
+          }
+        ]
+      }
+    },
+    "l1.webp": {
+      "source": "./l1.webp",
+      "generated_at": "2025-12-20T10:42:40.915746",
+      "shots": {
+        "close_ups": [
+          {
+            "id": 1,
+            "prompt": "Close-up portrait focusing on natural smile and eyes. Professional photography, studio lighting, clear facial details.",
+            "filename": "l1_close_ups_1.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 2,
+            "prompt": "Close-up portrait focusing on serious expression with piercing eyes. Professional photography, studio lighting, clear facial details.",
+            "filename": "l1_close_ups_2.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 3,
+            "prompt": "Close-up portrait focusing on contemplative look with detailed facial features. Professional photography, studio lighting, clear facial details.",
+            "filename": "l1_close_ups_3.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 4,
+            "prompt": "Close-up portrait focusing on genuine warmth with focus on smile. Professional photography, studio lighting, clear facial details.",
+            "filename": "l1_close_ups_4.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 5,
+            "prompt": "Close-up portrait focusing on dramatic expression highlighting facial structure. Professional photography, studio lighting, clear facial details.",
+            "filename": "l1_close_ups_5.webp",
+            "status": "success",
+            "error": null
+          }
+        ],
+        "upper_body": [
+          {
+            "id": 1,
+            "prompt": "Upper body portrait shot. Professional styling and posture. Focus on confident standing pose with professional attire. Studio photography.",
+            "filename": "l1_upper_body_1.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 2,
+            "prompt": "Upper body portrait shot. Professional styling and posture. Focus on relaxed posture with casual styling. Studio photography.",
+            "filename": "l1_upper_body_2.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 3,
+            "prompt": "Upper body portrait shot. Professional styling and posture. Focus on dynamic pose showing movement and energy. Studio photography.",
+            "filename": "l1_upper_body_3.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 4,
+            "prompt": "Upper body portrait shot. Professional styling and posture. Focus on elegant pose with sophisticated styling. Studio photography.",
+            "filename": "l1_upper_body_4.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 5,
+            "prompt": "Upper body portrait shot. Professional styling and posture. Focus on approachable pose with friendly demeanor. Studio photography.",
+            "filename": "l1_upper_body_5.webp",
+            "status": "success",
+            "error": null
+          }
+        ],
+        "multiple_angles": [
+          {
+            "id": 1,
+            "prompt": "Create a left profile view view of the person. Professional portrait lighting, clear facial features.",
+            "filename": "l1_multiple_angles_1.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 2,
+            "prompt": "Create a three-quarter front-left angle view of the person. Professional portrait lighting, clear facial features.",
+            "filename": "l1_multiple_angles_2.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 3,
+            "prompt": "Create a straight front view view of the person. Professional portrait lighting, clear facial features.",
+            "filename": "l1_multiple_angles_3.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 4,
+            "prompt": "Create a three-quarter front-right angle view of the person. Professional portrait lighting, clear facial features.",
+            "filename": "l1_multiple_angles_4.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 5,
+            "prompt": "Create a right profile view view of the person. Professional portrait lighting, clear facial features.",
+            "filename": "l1_multiple_angles_5.webp",
+            "status": "success",
+            "error": null
+          }
+        ],
+        "full_body": [
+          {
+            "id": 1,
+            "prompt": "Full-body portrait. Standing straight, neutral expression, formal outfit overall silhouette and style visible. Professional photography.",
+            "filename": "l1_full_body_1.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 2,
+            "prompt": "Full-body portrait. Dynamic standing pose, engaging expression, casual styling overall silhouette and style visible. Professional photography.",
+            "filename": "l1_full_body_2.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 3,
+            "prompt": "Full-body portrait. Seated pose, relaxed demeanor, contemporary outfit overall silhouette and style visible. Professional photography.",
+            "filename": "l1_full_body_3.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 4,
+            "prompt": "Full-body portrait. Standing with slight lean, confident expression, business casual overall silhouette and style visible. Professional photography.",
+            "filename": "l1_full_body_4.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 5,
+            "prompt": "Full-body portrait. Full-length standing, professional stance, elegant styling overall silhouette and style visible. Professional photography.",
+            "filename": "l1_full_body_5.webp",
+            "status": "success",
+            "error": null
+          }
+        ]
+      }
+    },
+    "b1.webp": {
+      "source": "./b1.webp",
+      "generated_at": "2025-12-20T10:45:18.247898",
+      "shots": {
+        "close_ups": [
+          {
+            "id": 1,
+            "prompt": "Close-up portrait focusing on natural smile and eyes. Professional photography, studio lighting, clear facial details.",
+            "filename": "b1_close_ups_1.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 2,
+            "prompt": "Close-up portrait focusing on serious expression with piercing eyes. Professional photography, studio lighting, clear facial details.",
+            "filename": "b1_close_ups_2.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 3,
+            "prompt": "Close-up portrait focusing on contemplative look with detailed facial features. Professional photography, studio lighting, clear facial details.",
+            "filename": "b1_close_ups_3.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 4,
+            "prompt": "Close-up portrait focusing on genuine warmth with focus on smile. Professional photography, studio lighting, clear facial details.",
+            "filename": "b1_close_ups_4.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 5,
+            "prompt": "Close-up portrait focusing on dramatic expression highlighting facial structure. Professional photography, studio lighting, clear facial details.",
+            "filename": "b1_close_ups_5.webp",
+            "status": "success",
+            "error": null
+          }
+        ],
+        "upper_body": [
+          {
+            "id": 1,
+            "prompt": "Upper body portrait shot. Professional styling and posture. Focus on confident standing pose with professional attire. Studio photography.",
+            "filename": "b1_upper_body_1.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 2,
+            "prompt": "Upper body portrait shot. Professional styling and posture. Focus on relaxed posture with casual styling. Studio photography.",
+            "filename": "b1_upper_body_2.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 3,
+            "prompt": "Upper body portrait shot. Professional styling and posture. Focus on dynamic pose showing movement and energy. Studio photography.",
+            "filename": "b1_upper_body_3.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 4,
+            "prompt": "Upper body portrait shot. Professional styling and posture. Focus on elegant pose with sophisticated styling. Studio photography.",
+            "filename": "b1_upper_body_4.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 5,
+            "prompt": "Upper body portrait shot. Professional styling and posture. Focus on approachable pose with friendly demeanor. Studio photography.",
+            "filename": "b1_upper_body_5.webp",
+            "status": "success",
+            "error": null
+          }
+        ],
+        "multiple_angles": [
+          {
+            "id": 1,
+            "prompt": "Create a left profile view view of the person. Professional portrait lighting, clear facial features.",
+            "filename": "b1_multiple_angles_1.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 2,
+            "prompt": "Create a three-quarter front-left angle view of the person. Professional portrait lighting, clear facial features.",
+            "filename": "b1_multiple_angles_2.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 3,
+            "prompt": "Create a straight front view view of the person. Professional portrait lighting, clear facial features.",
+            "filename": "b1_multiple_angles_3.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 4,
+            "prompt": "Create a three-quarter front-right angle view of the person. Professional portrait lighting, clear facial features.",
+            "filename": "b1_multiple_angles_4.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 5,
+            "prompt": "Create a right profile view view of the person. Professional portrait lighting, clear facial features.",
+            "filename": "b1_multiple_angles_5.webp",
+            "status": "success",
+            "error": null
+          }
+        ],
+        "full_body": [
+          {
+            "id": 1,
+            "prompt": "Full-body portrait. Standing straight, neutral expression, formal outfit overall silhouette and style visible. Professional photography.",
+            "filename": "b1_full_body_1.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 2,
+            "prompt": "Full-body portrait. Dynamic standing pose, engaging expression, casual styling overall silhouette and style visible. Professional photography.",
+            "filename": "b1_full_body_2.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 3,
+            "prompt": "Full-body portrait. Seated pose, relaxed demeanor, contemporary outfit overall silhouette and style visible. Professional photography.",
+            "filename": "b1_full_body_3.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 4,
+            "prompt": "Full-body portrait. Standing with slight lean, confident expression, business casual overall silhouette and style visible. Professional photography.",
+            "filename": "b1_full_body_4.webp",
+            "status": "success",
+            "error": null
+          },
+          {
+            "id": 5,
+            "prompt": "Full-body portrait. Full-length standing, professional stance, elegant styling overall silhouette and style visible. Professional photography.",
+            "filename": "b1_full_body_5.webp",
+            "status": "success",
+            "error": null
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+LILLY LORA MODEL - SET 2
+============================================================
+
+LoRA Model URL: https://v3b.fal.media/files/b/0a85bd0c/dmK9_kjZYycIoag-9zGi0_pytorch_lora_weights.safetensors
+Trigger Word: LILLYHROC2
+Training Steps: 1000
+Training Images: 14
+
+Generated Images:
+  1. /Users/jonathanmallinger/Documents/HROC_Files/Generated_Images/Founders/Lilly_Set2/lilly_professional_01.png
+  2. /Users/jonathanmallinger/Documents/HROC_Files/Generated_Images/Founders/Lilly_Set2/lilly_professional_02.png
+  3. /Users/jonathanmallinger/Documents/HROC_Files/Generated_Images/Founders/Lilly_Set2/lilly_professional_03.png
+  4. /Users/jonathanmallinger/Documents/HROC_Files/Generated_Images/Founders/Lilly_Set2/lilly_professional_04.png
+  5. /Users/jonathanmallinger/Documents/HROC_Files/Generated_Images/Founders/Lilly_Set2/lilly_professional_05.png
+  6. /Users/jonathanmallinger/Documents/HROC_Files/Generated_Images/Founders/Lilly_Set2/lilly_professional_06.png
+  7. /Users/jonathanmallinger/Documents/HROC_Files/Generated_Images/Founders/Lilly_Set2/lilly_professional_07.png
+  8. /Users/jonathanmallinger/Documents/HROC_Files/Generated_Images/Founders/Lilly_Set2/lilly_professional_08.png
+  9. /Users/jonathanmallinger/Documents/HROC_Files/Generated_Images/Founders/Lilly_Set2/lilly_professional_09.png
+  10. /Users/jonathanmallinger/Documents/HROC_Files/Generated_Images/Founders/Lilly_Set2/lilly_professional_10.png

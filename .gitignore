@@ -40,6 +40,13 @@ __pycache__/
 .env
 .env.local
 
+# Scripts with hardcoded credentials (deprecated - use deploy.sh instead)
+sync_to_new_s3.py
+create_s3_bucket.py
+group/upload_jonathan_images.py
+group/upload_lilly_images.py
+**/upload_*_images.py
+
 # IDE and editor files
 .vscode/
 .idea/
@@ -62,6 +69,8 @@ Archive/disposal_logs/*.csv
 Archive/legacy_raw/**/*
 Archive/website_backups/**
 Archive_backup_*.zip
+Archive_*/lora.zip
+**/lora.zip
 
 # Node modules (if ever used)
 node_modules/

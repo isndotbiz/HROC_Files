@@ -1,154 +1,229 @@
 #!/bin/bash
+set -euo pipefail
 
 # HROC Website Deployment Script
-# This script automates GitHub push and NAS server deployment
+# Uses 1Password CLI for secure credential management
 
-set -e  # Exit on error
-
-echo "=========================================="
-echo "🚀 HROC Website Deployment Script"
-echo "=========================================="
-echo ""
-
-# Color codes for output
-GREEN='\033[0;32m'
-BLUE='\033[0;34m'
-YELLOW='\033[1;33m'
+# Color output
 RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${BLUE}  HROC Website Deployment Script${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo ""
+
+# Check if 1Password CLI is installed
+if ! command -v op &> /dev/null; then
+    echo -e "${RED}✗ 1Password CLI not found${NC}"
+    echo "Please install it: brew install 1password-cli"
+    exit 1
+fi
+
+# Check if signed into 1Password
+if ! op account list &> /dev/null; then
+    echo -e "${YELLOW}⚠ Not signed into 1Password CLI${NC}"
+    echo "Please run: eval \$(op signin)"
+    exit 1
+fi
+
+echo -e "${GREEN}✓ 1Password CLI ready${NC}"
+
 # Configuration
-REPO_DIR="/Users/jonathanmallinger/Documents/HROC_Files"
-GITHUB_REPO="https://github.com/isndotbiz/HROC_Files.git"
-NAS_SERVER="${NAS_SERVER:-10.0.0.89}"
-NAS_USER="${NAS_USER:-root}"
-NAS_PATH="${NAS_PATH:-/var/www/hroc}"
-NAS_PORT="${NAS_PORT:-22}"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+WEBSITE_DIR="${SCRIPT_DIR}/HROC_Website_New"
+SERVER_USER="root"
+SERVER_IP="10.0.0.89"
+SERVER_PATH="/mnt/tank/websites/kusanagi/web/hrocinc.org/"
+BACKUP_DIR="/mnt/tank/backups"
+BUCKET_NAME="hroc-website-20251230043930"
+AWS_REGION="us-east-1"
 
-# Step 1: Verify we're in the right directory
-echo -e "${BLUE}Step 1: Verifying repository directory...${NC}"
-if [ ! -d "$REPO_DIR" ]; then
-    echo -e "${RED}Error: Repository directory not found at $REPO_DIR${NC}"
+# Deployment options
+DEPLOY_TO_S3="${DEPLOY_S3:-true}"
+DEPLOY_TO_SERVER="${DEPLOY_SERVER:-true}"
+DRY_RUN="${DRY_RUN:-false}"
+
+# Get AWS credentials from 1Password
+echo ""
+echo -e "${BLUE}[1/4] Retrieving credentials from 1Password...${NC}"
+AWS_ACCESS_KEY=$(op item get "AWS Access Key" --fields credential 2>/dev/null)
+AWS_SECRET_KEY=$(op item get "Aws Secret Access" --fields credential 2>/dev/null)
+
+if [ -z "$AWS_ACCESS_KEY" ] || [ -z "$AWS_SECRET_KEY" ]; then
+    echo -e "${RED}✗ Failed to retrieve AWS credentials from 1Password${NC}"
     exit 1
 fi
 
-cd "$REPO_DIR"
-echo -e "${GREEN}✓ Found repository at $REPO_DIR${NC}"
-echo ""
+echo -e "${GREEN}✓ AWS credentials retrieved${NC}"
 
-# Step 2: Check git status
-echo -e "${BLUE}Step 2: Checking git status...${NC}"
-git_status=$(git status --porcelain HROC_Website_New/index.html HROC_Website_New/styles.css 2>/dev/null || echo "")
-if [ -z "$git_status" ]; then
-    echo -e "${GREEN}✓ Website files are committed${NC}"
-else
-    echo -e "${YELLOW}⚠ Uncommitted changes detected. Please commit first.${NC}"
-    exit 1
-fi
+# Export AWS credentials for boto3 and aws CLI
+export AWS_ACCESS_KEY_ID="$AWS_ACCESS_KEY"
+export AWS_SECRET_ACCESS_KEY="$AWS_SECRET_KEY"
+export AWS_REGION="$AWS_REGION"
 
-# Get commit info
-COMMIT_HASH=$(git rev-parse --short HEAD)
-COMMIT_MSG=$(git log -1 --format=%B | head -1)
-echo -e "${GREEN}✓ Latest commit: $COMMIT_HASH - $COMMIT_MSG${NC}"
-echo ""
+# Step 1: Deploy to S3
+if [ "$DEPLOY_TO_S3" = "true" ]; then
+    echo ""
+    echo -e "${BLUE}[2/4] Syncing assets to S3 bucket: ${BUCKET_NAME}...${NC}"
 
-# Step 3: Push to GitHub
-echo -e "${BLUE}Step 3: Pushing to GitHub...${NC}"
-echo "Repository: $GITHUB_REPO"
-echo "Branch: main"
-echo ""
-
-read -p "Proceed with GitHub push? (y/n) " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    # Try to push
-    if git push origin main 2>/dev/null; then
-        echo -e "${GREEN}✓ Successfully pushed to GitHub!${NC}"
-    else
-        echo -e "${YELLOW}⚠ GitHub push requires authentication${NC}"
-        echo "Please authenticate with:"
-        echo "  1. Personal Access Token (recommended)"
-        echo "  2. GitHub CLI (gh auth login)"
-        echo "  3. SSH key (ssh-add ~/.ssh/id_ed25519)"
-        echo ""
-        echo "Then try: git push origin main"
-        echo "Continuing with NAS deployment..."
+    if [ "$DRY_RUN" = "true" ]; then
+        echo -e "${YELLOW}  (DRY RUN MODE)${NC}"
     fi
-else
-    echo "Skipping GitHub push"
-fi
-echo ""
 
-# Step 4: Deploy to NAS Server
-echo -e "${BLUE}Step 4: Deploying to NAS Server...${NC}"
-echo "Server: $NAS_USER@$NAS_SERVER:$NAS_PATH"
-echo "Port: $NAS_PORT"
-echo ""
+    # Check if aws CLI is installed
+    if ! command -v aws &> /dev/null; then
+        echo -e "${YELLOW}⚠ AWS CLI not found, installing...${NC}"
+        brew install awscli
+    fi
 
-read -p "Proceed with NAS server deployment? (y/n) " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    echo "Testing SSH connection to NAS server..."
-
-    if timeout 5 ssh -p $NAS_PORT -o ConnectTimeout=5 -o StrictHostKeyChecking=no $NAS_USER@$NAS_SERVER "whoami" &>/dev/null; then
-        echo -e "${GREEN}✓ SSH connection successful!${NC}"
-        echo ""
-
-        echo "Deploying files using rsync..."
-        rsync -avz -e "ssh -p $NAS_PORT" --delete \
-            HROC_Website_New/ \
-            $NAS_USER@$NAS_SERVER:$NAS_PATH/ 2>/dev/null || \
-        echo -e "${YELLOW}Note: Some files may not have synced. Check permissions.${NC}"
-
-        echo -e "${GREEN}✓ Files deployed to NAS server!${NC}"
-        echo ""
-
-        # Step 5: Restart services on NAS server
-        echo -e "${BLUE}Step 5: Restarting web services on NAS server...${NC}"
-
-        read -p "Restart Nginx on the server? (y/n) " -n 1 -r
-        echo
-        if [[ $REPLY =~ ^[Yy]$ ]]; then
-            ssh -p $NAS_PORT $NAS_USER@$NAS_SERVER \
-                "sudo systemctl restart nginx && echo 'Nginx restarted successfully'" \
-                2>/dev/null || \
-            ssh -p $NAS_PORT $NAS_USER@$NAS_SERVER \
-                "sudo systemctl restart apache2 && echo 'Apache restarted successfully'" \
-                2>/dev/null || \
-            echo -e "${YELLOW}⚠ Could not restart web server. Check permissions.${NC}"
-
-            echo -e "${GREEN}✓ Web server restarted!${NC}"
+    # Sync images to S3
+    if [ -d "${WEBSITE_DIR}/images" ]; then
+        if [ "$DRY_RUN" = "true" ]; then
+            aws s3 sync "${WEBSITE_DIR}/images" "s3://${BUCKET_NAME}/images" --dryrun
+        else
+            aws s3 sync "${WEBSITE_DIR}/images" "s3://${BUCKET_NAME}/images" \
+                --content-type "image/webp" \
+                --cache-control "max-age=31536000" \
+                --delete
         fi
-        echo ""
+        echo -e "${GREEN}  ✓ Images synced${NC}"
+    fi
 
-    else
-        echo -e "${RED}✗ Cannot connect to NAS server${NC}"
-        echo "Troubleshooting:"
-        echo "  1. Verify SSH access: ssh -p $NAS_PORT $NAS_USER@$NAS_SERVER"
-        echo "  2. Register SSH key: ssh-copy-id -p $NAS_PORT $NAS_USER@$NAS_SERVER"
-        echo "  3. Check firewall: Is port $NAS_PORT open?"
+    # Sync generated images to S3
+    if [ -d "${WEBSITE_DIR}/generated_images" ]; then
+        if [ "$DRY_RUN" = "true" ]; then
+            aws s3 sync "${WEBSITE_DIR}/generated_images" "s3://${BUCKET_NAME}/generated_images" --dryrun
+        else
+            aws s3 sync "${WEBSITE_DIR}/generated_images" "s3://${BUCKET_NAME}/generated_images" \
+                --content-type "image/webp" \
+                --cache-control "max-age=31536000" \
+                --delete
+        fi
+        echo -e "${GREEN}  ✓ Generated images synced${NC}"
+    fi
+
+    # Sync PDFs to S3
+    if [ -d "${WEBSITE_DIR}/pdfs" ]; then
+        if [ "$DRY_RUN" = "true" ]; then
+            aws s3 sync "${WEBSITE_DIR}/pdfs" "s3://${BUCKET_NAME}/pdfs" --dryrun
+        else
+            aws s3 sync "${WEBSITE_DIR}/pdfs" "s3://${BUCKET_NAME}/pdfs" \
+                --content-type "application/pdf" \
+                --cache-control "max-age=31536000" \
+                --delete
+        fi
+        echo -e "${GREEN}  ✓ PDFs synced${NC}"
+    fi
+
+    echo -e "${GREEN}✓ S3 sync complete${NC}"
+else
+    echo -e "${YELLOW}[2/4] Skipping S3 deployment (DEPLOY_S3=false)${NC}"
+fi
+
+# Step 2: Deploy to TrueNAS server
+if [ "$DEPLOY_TO_SERVER" = "true" ]; then
+    echo ""
+    echo -e "${BLUE}[3/4] Deploying to TrueNAS server...${NC}"
+
+    # Test SSH connection
+    echo "  Testing SSH connection to ${SERVER_USER}@${SERVER_IP}..."
+    if ! ssh -o ConnectTimeout=5 "${SERVER_USER}@${SERVER_IP}" "echo 'SSH connection successful'" &> /dev/null; then
+        echo -e "${RED}✗ SSH connection failed${NC}"
+        echo "Please ensure:"
+        echo "  1. SSH key is set up: ssh-copy-id ${SERVER_USER}@${SERVER_IP}"
+        echo "  2. Server is reachable: ping ${SERVER_IP}"
         exit 1
     fi
-else
-    echo "Skipping NAS deployment"
-fi
-echo ""
+    echo -e "${GREEN}  ✓ SSH connection verified${NC}"
 
-# Step 6: Deployment Summary
-echo "=========================================="
-echo -e "${GREEN}✓ Deployment Complete!${NC}"
-echo "=========================================="
+    # Create backup on server
+    if [ "$DRY_RUN" = "false" ]; then
+        BACKUP_TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+        echo "  Creating backup on server..."
+        ssh "${SERVER_USER}@${SERVER_IP}" \
+            "tar -czf ${BACKUP_DIR}/hrocinc-backup-${BACKUP_TIMESTAMP}.tar.gz -C /mnt/tank/websites/kusanagi/web hrocinc.org" \
+            && echo -e "${GREEN}  ✓ Backup created: ${BACKUP_DIR}/hrocinc-backup-${BACKUP_TIMESTAMP}.tar.gz${NC}"
+    fi
+
+    # Sync files to server
+    echo "  Syncing website files..."
+    if [ "$DRY_RUN" = "true" ]; then
+        echo -e "${YELLOW}  (DRY RUN MODE)${NC}"
+        rsync -avzn --progress --delete \
+            --exclude '.git' \
+            --exclude 'node_modules' \
+            --exclude '.DS_Store' \
+            --exclude 'lora_training' \
+            --exclude 'image-generator' \
+            --exclude 'lora_models' \
+            "${WEBSITE_DIR}/" \
+            "${SERVER_USER}@${SERVER_IP}:${SERVER_PATH}"
+    else
+        rsync -avz --progress --delete \
+            --exclude '.git' \
+            --exclude 'node_modules' \
+            --exclude '.DS_Store' \
+            --exclude 'lora_training' \
+            --exclude 'image-generator' \
+            --exclude 'lora_models' \
+            "${WEBSITE_DIR}/" \
+            "${SERVER_USER}@${SERVER_IP}:${SERVER_PATH}"
+    fi
+    echo -e "${GREEN}  ✓ Files synced${NC}"
+
+    # Fix permissions
+    if [ "$DRY_RUN" = "false" ]; then
+        echo "  Setting correct permissions..."
+        ssh "${SERVER_USER}@${SERVER_IP}" \
+            "chown -R 33:33 ${SERVER_PATH} && chmod -R 755 ${SERVER_PATH}" \
+            && echo -e "${GREEN}  ✓ Permissions set${NC}"
+    fi
+
+    echo -e "${GREEN}✓ Server deployment complete${NC}"
+else
+    echo -e "${YELLOW}[3/4] Skipping server deployment (DEPLOY_SERVER=false)${NC}"
+fi
+
+# Step 3: Verification
 echo ""
-echo "🎉 Your HROC website has been deployed!"
+echo -e "${BLUE}[4/4] Verifying deployment...${NC}"
+
+# Verify server deployment
+if [ "$DEPLOY_TO_SERVER" = "true" ] && [ "$DRY_RUN" = "false" ]; then
+    FILE_COUNT=$(ssh "${SERVER_USER}@${SERVER_IP}" "find ${SERVER_PATH} -type f | wc -l")
+    TOTAL_SIZE=$(ssh "${SERVER_USER}@${SERVER_IP}" "du -sh ${SERVER_PATH}" | cut -f1)
+    echo -e "${GREEN}  ✓ Server files: ${FILE_COUNT} files, ${TOTAL_SIZE}${NC}"
+fi
+
+# Test website
+echo "  Testing website..."
+if curl -s -I https://hrocinc.org | grep -q "200 OK"; then
+    echo -e "${GREEN}  ✓ Website is responding${NC}"
+else
+    echo -e "${YELLOW}  ⚠ Website check inconclusive${NC}"
+fi
+
+echo ""
+echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${GREEN}  Deployment Complete!${NC}"
+echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
 echo "Next steps:"
-echo "  1. Visit https://hrocinc.org to verify deployment"
-echo "  2. Test founder section, gallery images, and responsive design"
-echo "  3. Check all images are loading correctly"
-echo "  4. Verify crisis buttons are functional"
+echo "  1. Visit https://hrocinc.org to verify"
+echo "  2. Check browser console for any errors"
+echo "  3. Test on mobile devices"
 echo ""
-echo "Commit Hash: $COMMIT_HASH"
-echo "GitHub: https://github.com/isndotbiz/HROC_Files/commits/main"
-echo "Website: https://hrocinc.org"
-echo "NAS Server: http://$NAS_SERVER:8081"
+echo "Usage examples:"
+echo "  ${YELLOW}# Dry run (test without deploying)${NC}"
+echo "  DRY_RUN=true ./deploy.sh"
+echo ""
+echo "  ${YELLOW}# Deploy only to S3${NC}"
+echo "  DEPLOY_SERVER=false ./deploy.sh"
+echo ""
+echo "  ${YELLOW}# Deploy only to server${NC}"
+echo "  DEPLOY_S3=false ./deploy.sh"
 echo ""

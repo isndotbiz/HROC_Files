@@ -1,0 +1,93 @@
+name: Deploy HROC Website
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'HROC_Website_New/**'
+      - '.github/workflows/deploy.yml'
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy to TrueNAS and S3
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Install AWS CLI
+        run: |
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install --update
+          aws --version
+
+      - name: Sync images to S3
+        run: |
+          aws s3 sync HROC_Website_New/images s3://hroc-website-20251230043930/images \
+            --content-type "image/webp" \
+            --cache-control "max-age=31536000" \
+            --delete
+
+      - name: Sync generated images to S3
+        run: |
+          aws s3 sync HROC_Website_New/generated_images s3://hroc-website-20251230043930/generated_images \
+            --content-type "image/webp" \
+            --cache-control "max-age=31536000" \
+            --delete
+
+      - name: Sync PDFs to S3
+        run: |
+          aws s3 sync HROC_Website_New/pdfs s3://hroc-website-20251230043930/pdfs \
+            --content-type "application/pdf" \
+            --cache-control "max-age=31536000" \
+            --delete
+
+      - name: Setup SSH key
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.TRUENAS_SSH_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H 10.0.0.89 >> ~/.ssh/known_hosts
+
+      - name: Deploy to TrueNAS
+        run: |
+          # Create backup
+          ssh root@10.0.0.89 "tar -czf /mnt/tank/backups/hrocinc-backup-$(date +%Y%m%d-%H%M%S).tar.gz -C /mnt/tank/websites/kusanagi/web hrocinc.org"
+
+          # Sync files
+          rsync -avz --delete \
+            --exclude '.git' \
+            --exclude 'node_modules' \
+            --exclude '.DS_Store' \
+            --exclude 'lora_training' \
+            --exclude 'image-generator' \
+            --exclude 'lora_models' \
+            HROC_Website_New/ \
+            root@10.0.0.89:/mnt/tank/websites/kusanagi/web/hrocinc.org/
+
+          # Fix permissions
+          ssh root@10.0.0.89 "chown -R 33:33 /mnt/tank/websites/kusanagi/web/hrocinc.org && chmod -R 755 /mnt/tank/websites/kusanagi/web/hrocinc.org"
+
+      - name: Verify deployment
+        run: |
+          echo "Checking website status..."
+          curl -I https://hrocinc.org || echo "Website check failed"
+
+      - name: Notify deployment success
+        run: |
+          echo "✓ Deployment complete!"
+          echo "S3 bucket: hroc-website-20251230043930"
+          echo "Website: https://hrocinc.org"

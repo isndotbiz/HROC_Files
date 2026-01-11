@@ -46,8 +46,8 @@
   --color-warning: var(--hroc-yellow);
   --color-warning-dark: #ccb800;
 
-  --color-text: var(--hroc-black);
-  --color-text-muted: var(--hroc-gray-500);
+  --color-text: #111111;
+  --color-text-muted: #404040;
   --color-text-light: var(--hroc-gray-300);
 
   --color-bg: var(--hroc-white);
@@ -221,6 +221,15 @@ img[loading="lazy"].loaded {
   opacity: 1;
 }
 
+/* Constrain images to never be full width in larger screens */
+@media (min-width: 768px) {
+  .community-photo img,
+  .founder-row-photo img,
+  .founder-photo img {
+    max-width: 100%;
+  }
+}
+
 /* Lists */
 ul, ol {
   margin-left: var(--space-6);
@@ -369,7 +378,8 @@ li {
   max-width: 700px;
   margin: 0 auto var(--space-12);
   font-size: var(--font-size-lg);
-  color: var(--color-text-muted);
+  color: #2a2a2a;
+  font-weight: 500;
 }
 
 /* ============================================
@@ -882,13 +892,16 @@ li {
 }
 
 .service-card {
-  background: white;
-  border: 2px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 2px solid rgba(255, 255, 255, 0.4);
   border-radius: var(--radius-xl);
   padding: var(--space-8);
   transition: all var(--transition-base);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 .service-card::before {
@@ -938,9 +951,10 @@ li {
 }
 
 .service-description {
-  color: var(--color-text-muted);
+  color: #2a2a2a;
   margin-bottom: var(--space-4);
   line-height: 1.6;
+  font-weight: 500;
 }
 
 .service-list {
@@ -1062,12 +1076,15 @@ li {
 }
 
 .team-member {
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-radius: var(--radius-2xl);
   overflow: hidden;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   transition: all var(--transition-base);
   position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.4);
 }
 
 .team-member:hover {
@@ -1194,10 +1211,13 @@ li {
 .value-card {
   text-align: center;
   padding: var(--space-6);
-  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-secondary-light) 100%);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-radius: var(--radius-lg);
-  border: 2px solid transparent;
+  border: 2px solid rgba(233, 30, 140, 0.2);
   transition: all var(--transition-base);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 .value-card:hover {
@@ -1218,8 +1238,9 @@ li {
 
 .value-card p {
   font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
+  color: #2a2a2a;
   margin: 0;
+  font-weight: 500;
 }
 
 .about-sidebar {
@@ -1229,11 +1250,14 @@ li {
 }
 
 .info-box {
-  background: white;
-  border: 2px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 2px solid rgba(255, 255, 255, 0.4);
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   transition: all var(--transition-base);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 .info-box:hover {
@@ -1292,11 +1316,15 @@ li {
 }
 
 .impact-item {
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-left: 4px solid var(--color-secondary);
+  border: 2px solid rgba(255, 255, 255, 0.4);
   padding: var(--space-6);
   border-radius: var(--radius-md);
   transition: all var(--transition-fast);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 .impact-item:hover {
@@ -1313,16 +1341,19 @@ li {
 }
 
 .impact-description {
-  color: var(--color-text-muted);
+  color: #2a2a2a;
   font-size: var(--font-size-base);
+  font-weight: 500;
 }
 
 .donate-form-wrapper {
-  background: white;
-  border: 2px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 2px solid rgba(255, 255, 255, 0.4);
   border-radius: var(--radius-xl);
   padding: var(--space-8);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 @media (min-width: 768px) {
@@ -1541,11 +1572,13 @@ legend {
 }
 
 .contact-form-wrapper {
-  background: white;
-  border: 2px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 2px solid rgba(255, 255, 255, 0.4);
   border-radius: var(--radius-xl);
   padding: var(--space-8);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 @media (min-width: 768px) {
@@ -1726,11 +1759,14 @@ legend {
    ============================================ */
 
 .card {
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-radius: var(--radius-xl);
   padding: var(--space-8);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   transition: all var(--transition-base);
+  border: 2px solid rgba(255, 255, 255, 0.4);
 }
 
 .card:hover {
@@ -1840,14 +1876,16 @@ legend {
 }
 
 .founder-member {
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-radius: var(--radius-2xl);
   overflow: hidden;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   transition: all var(--transition-base);
   display: flex;
   flex-direction: column;
-  border: 2px solid transparent;
+  border: 2px solid rgba(255, 255, 255, 0.4);
 }
 
 .founder-member:hover {
@@ -1902,10 +1940,11 @@ legend {
 
 .founder-bio {
   font-size: var(--font-size-sm);
-  color: var(--color-text);
+  color: #111111;
   line-height: 1.7;
   margin-bottom: var(--space-4);
   flex: 1;
+  font-weight: 500;
 }
 
 .founder-info a {
@@ -1959,11 +1998,14 @@ legend {
   align-items: start;
   text-decoration: none;
   color: inherit;
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   padding: var(--space-4);
   border-radius: var(--radius-lg);
-  border: 2px solid var(--color-border);
+  border: 2px solid rgba(255, 255, 255, 0.4);
   transition: all var(--transition-base);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 .founder-row-card:hover {
@@ -2068,12 +2110,15 @@ legend {
 }
 
 .principle-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   padding: var(--space-6);
   border-radius: var(--radius-lg);
   text-align: center;
   transition: all var(--transition-base);
-  border: 2px solid transparent;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 .principle-card:hover {
@@ -2095,9 +2140,10 @@ legend {
 
 .principle-card p {
   font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
+  color: #2a2a2a;
   margin: 0;
   line-height: 1.6;
+  font-weight: 500;
 }
 
 /* Team Roles Section */
@@ -2133,12 +2179,15 @@ legend {
 }
 
 .role-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   padding: var(--space-6);
   border-radius: var(--radius-lg);
   border-left: 4px solid var(--color-primary);
+  border: 2px solid rgba(255, 255, 255, 0.4);
   transition: all var(--transition-base);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   text-align: center;
 }
 
@@ -2161,9 +2210,10 @@ legend {
 
 .role-card p {
   font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
+  color: #2a2a2a;
   margin: 0;
   line-height: 1.6;
+  font-weight: 500;
 }
 
 /* ============================================
@@ -2342,9 +2392,12 @@ legend {
 .gallery-summary {
   text-align: center;
   padding: var(--space-12);
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-radius: var(--radius-xl);
-  border: 2px solid var(--color-border);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 .gallery-summary h3 {
@@ -2355,9 +2408,10 @@ legend {
 .gallery-summary p {
   max-width: 700px;
   margin: 0 auto;
-  color: var(--color-text-muted);
+  color: #2a2a2a;
   font-size: var(--font-size-base);
   line-height: 1.7;
+  font-weight: 500;
 }
 
 /* ============================================
@@ -2374,11 +2428,11 @@ legend {
 
 .community-row {
   display: grid;
-  grid-template-columns: 160px 1fr;
-  gap: var(--space-6);
-  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
   background: transparent;
-  padding: var(--space-4) 0;
+  padding: var(--space-8) 0;
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -2387,7 +2441,7 @@ legend {
 }
 
 .community-row-reverse {
-  grid-template-columns: 1fr 160px;
+  grid-template-columns: 1fr 1fr;
 }
 
 .community-row-reverse .community-photo {
@@ -2400,22 +2454,25 @@ legend {
 
 .community-photo {
   margin: 0;
+  max-width: 100%;
 }
 
 .community-photo img {
-  width: 160px;
-  height: 160px;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
   object-fit: cover;
-  border-radius: var(--radius-lg);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
 .community-photo figcaption {
   text-align: center;
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
-  margin-top: var(--space-2);
-  font-weight: 500;
+  margin-top: var(--space-3);
+  font-weight: 600;
 }
 
 .community-text {
@@ -2426,9 +2483,16 @@ legend {
 
 .community-text p {
   font-size: var(--font-size-base);
-  line-height: 1.7;
+  line-height: 1.8;
   color: var(--color-text);
   margin: 0;
+  padding: var(--space-6);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 .community-text p:first-child {

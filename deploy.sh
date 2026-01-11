@@ -50,8 +50,8 @@ DRY_RUN="${DRY_RUN:-false}"
 # Get AWS credentials from 1Password
 echo ""
 echo -e "${BLUE}[1/4] Retrieving credentials from 1Password...${NC}"
-AWS_ACCESS_KEY=$(op item get "AWS Access Key" --fields credential 2>/dev/null)
-AWS_SECRET_KEY=$(op item get "Aws Secret Access" --fields credential 2>/dev/null)
+AWS_ACCESS_KEY=$(op item get "AWS Access Key" --fields username 2>/dev/null)
+AWS_SECRET_KEY=$(op item get "AWS Access Key" --fields credential --reveal 2>/dev/null)
 
 if [ -z "$AWS_ACCESS_KEY" ] || [ -z "$AWS_SECRET_KEY" ]; then
     echo -e "${RED}✗ Failed to retrieve AWS credentials from 1Password${NC}"

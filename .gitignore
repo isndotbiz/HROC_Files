@@ -37,8 +37,21 @@ Temp/
 __pycache__/
 *.log
 *.tmp
+
+# Secrets and credentials (NEVER commit these)
 .env
-.env.local
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.cer
+*.crt
+*.der
+.pypirc
+.npmrc
+**/credentials
+**/config.json
 
 # Scripts with hardcoded credentials (deprecated - use deploy.sh instead)
 sync_to_new_s3.py

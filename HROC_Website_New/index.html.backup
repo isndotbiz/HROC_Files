@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free mobile harm reduction services in King & Pierce Counties. Get naloxone, peer support, and healthcare navigation. Indigenous-led, trauma-informed care.">
+  <meta name="keywords" content="harm reduction, naloxone, syringe exchange, peer support, Indigenous health, King County, Pierce County, mobile outreach">
+  <title>Healing Roots Outreach Collective | Mobile Harm Reduction Services</title>
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Fonts - loaded async for performance -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+  <link rel="stylesheet" href="styles.css?v=20251213-imgfix2">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23E91E8C'/><text x='50' y='60' font-size='60' text-anchor='middle' fill='white' font-weight='bold'>🌱</text></svg>">
+</head>
+<body>
+
+  <!-- Skip to main content for screen readers and keyboard users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Crisis Banner - Sticky at top -->
+  <div class="crisis-banner" role="banner" aria-label="Emergency contact information">
+    <div class="container">
+      <div class="crisis-content">
+        <span class="crisis-icon" aria-hidden="true">🚨</span>
+        <p class="crisis-text">
+          <strong>Need help now?</strong> Call or text us
+        </p>
+        <div class="crisis-actions">
+          <a href="tel:+12538817377" class="crisis-btn crisis-btn-call" aria-label="Call 253-881-7377">
+            <span aria-hidden="true">📞</span> Call
+          </a>
+          <a href="sms:+12538817377" class="crisis-btn crisis-btn-text" aria-label="Text 253-881-7377">
+            <span aria-hidden="true">💬</span> Text
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <header class="main-header" role="banner">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo-wrapper">
+          <div class="logo" style="width:50px; height:50px; background: linear-gradient(135deg, #E91E8C, #00D4E8); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 28px;">🌱</div>
+          <div class="org-info">
+            <h1 class="org-name">Healing Roots Outreach Collective</h1>
+            <p class="org-tagline">Indigenous-Led Mobile Harm Reduction</p>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+
+        <!-- Main Navigation -->
+        <nav id="main-nav" class="main-nav" role="navigation" aria-label="Main navigation">
+          <ul class="nav-list">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="documents.html">Documents</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#donate" class="nav-btn-donate">Donate</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with Background Image -->
+  <section class="hero hero-with-bg" role="region" aria-label="Welcome and main services" style="background: linear-gradient(135deg, #E91E8C 0%, #00D4E8 100%);">
+    <div class="container">
+      <div class="hero-content">
+        <h2 class="hero-title">
+          Peer-Led, Indigenous-Informed<br>
+          <span class="hero-highlight">Mobile Harm Reduction</span>
+        </h2>
+        <p class="hero-subtitle">
+          Free naloxone, syringe services, wound care, peer support, and healthcare navigation
+          in King & Pierce Counties, Washington
+        </p>
+
+        <div class="hero-actions">
+          <a href="#services" class="btn btn-primary btn-lg">
+            <span aria-hidden="true">🌱</span> Access Services
+          </a>
+          <a href="#donate" class="btn btn-secondary btn-lg">
+            <span aria-hidden="true">💙</span> Support Our Work
+          </a>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-icon" aria-hidden="true">📍</div>
+            <div class="stat-text">King & Pierce Counties</div>
+          </div>
+          <div class="stat">
+            <div class="stat-icon" aria-hidden="true">🚐</div>
+            <div class="stat-text">Mobile RV Outreach</div>
+          </div>
+          <div class="stat">
+            <div class="stat-icon" aria-hidden="true">💊</div>
+            <div class="stat-text">Free Naloxone Kits</div>
+          </div>
+          <div class="stat">
+            <div class="stat-icon" aria-hidden="true">🤝</div>
+            <div class="stat-text">Peer Support</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main id="main-content" role="main">
+
+    <!-- Services Section - 3x3 Grid with 9 Services -->
+    <section id="services" class="section section-services">
+      <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-intro">All services are free, confidential, and provided without judgment. We meet you where you are.</p>
+
+        <div class="services-grid services-grid-9">
+
+          <!-- Service Card 1 -->
+          <article class="service-card">
+            <div class="service-icon-img">
+              <img src="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/images/generated/service-overdose-prevention.png" alt="Overdose Prevention Icon" loading="lazy">
+            </div>
+            <h3 class="service-title">Overdose Prevention</h3>
+            <p class="service-description">
+              Free naloxone (Narcan) kits, fentanyl test strips, and overdose response training.
+              Life-saving supplies available anytime.
+            </p>
+            <ul class="service-list">
+              <li>Naloxone distribution</li>
+              <li>Fentanyl test strips</li>
+              <li>Overdose response education</li>
+              <li>Safer use supplies</li>
+            </ul>
+          </article>
+
+          <!-- Service Card 2 -->
+          <article class="service-card">
+            <div class="service-icon-img">
+              <img src="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/images/generated/service-syringe-exchange.png" alt="Syringe Exchange Icon" loading="lazy">
+            </div>
+            <h3 class="service-title">Syringe Exchange</h3>
+            <p class="service-description">
+              Sterile syringes, safer injection supplies, sharps disposal, and harm reduction education
+              to prevent disease transmission.
+            </p>
+            <ul class="service-list">
+              <li>Sterile syringe access</li>
+              <li>Safe disposal containers</li>
+              <li>Injection safety education</li>
+              <li>Safer sex supplies</li>
+            </ul>
+          </article>
+
+          <!-- Service Card 3 -->
+          <article class="service-card">
+            <div class="service-icon-img">
+              <img src="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/images/generated/service-wound-care.png" alt="Wound Care Icon" loading="lazy">
+            </div>
+            <h3 class="service-title">Wound Care</h3>
+            <p class="service-description">
+              Basic wound assessment, first aid supplies, wound care kits, and referrals to
+              medical care when needed.
+            </p>
+            <ul class="service-list">
+              <li>Wound assessment</li>
+              <li>First aid supplies</li>
+              <li>Wound care kits</li>
+              <li>Medical referrals</li>
+            </ul>
+          </article>
+
+          <!-- Service Card 4 -->
+          <article class="service-card">
+            <div class="service-icon-img">
+              <img src="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/images/generated/service-health-screening.png" alt="Health Screening Icon" loading="lazy">
+            </div>
+            <h3 class="service-title">Health Screening</h3>
+            <p class="service-description">
+              Blood pressure checks, glucose testing, HIV/HCV rapid testing coordination,
+              and linkage to healthcare services.
+            </p>
+            <ul class="service-list">
+              <li>Blood pressure screening</li>
+              <li>Glucose testing</li>
+              <li>HIV/HCV testing referrals</li>
+              <li>Primary care connection</li>
+            </ul>
+          </article>
+
+          <!-- Service Card 5 -->
+          <article class="service-card">
+            <div class="service-icon-img">
+              <img src="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/images/generated/service-peer-support.png" alt="Peer Support Icon" loading="lazy">
+            </div>
+            <h3 class="service-title">Peer Support</h3>
+            <p class="service-description">
+              One-on-one peer support from people with lived experience. Crisis de-escalation,
+              emotional support, and connection to resources.
+            </p>
+            <ul class="service-list">
+              <li>Peer-based support</li>
+              <li>Crisis navigation</li>
+              <li>Treatment referrals</li>
+              <li>Mental health linkage</li>
+            </ul>
+          </article>
+
+          <!-- Service Card 6 -->
+          <article class="service-card">
+            <div class="service-icon-img">
+              <img src="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/images/generated/service-housing-support.png" alt="Housing Support Icon" loading="lazy">
+            </div>
+            <h3 class="service-title">Housing & ID Support</h3>
+            <p class="service-description">
+              Housing navigation, shelter referrals, ID replacement assistance, and connection
+              to community resources.
+            </p>
+            <ul class="service-list">
+              <li>Housing navigation</li>
+              <li>Shelter referrals</li>
+              <li>ID replacement help</li>
+              <li>Resource connection</li>
+            </ul>
+          </article>
+
+          <!-- Service Card 7 -->
+          <article class="service-card">
+            <div class="service-icon-img">
+              <img src="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/images/generated/service-cultural-healing.png" alt="Cultural Healing Icon" loading="lazy">
+            </div>
+            <h3 class="service-title">Cultural Healing</h3>
+            <p class="service-description">
+              Indigenous-informed healing circles, culturally safe engagement, and traditional
+              wellness practices integrated into care.
+            </p>
+            <ul class="service-list">
+              <li>Healing circles</li>
+              <li>Cultural safety</li>
+              <li>Indigenous practices</li>
+              <li>Community connection</li>
+            </ul>
+          </article>
+
+          <!-- Service Card 8 - NEW -->
+          <article class="service-card">
+            <div class="service-icon-img">
+              <img src="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/images/generated/service-education-training.png" alt="Education & Training Icon" loading="lazy">
+            </div>
+            <h3 class="service-title">Education & Training</h3>
+            <p class="service-description">
+              Community overdose prevention training, harm reduction workshops, and education
+              on safer substance use practices.
+            </p>
+            <ul class="service-list">
+              <li>Naloxone training</li>
+              <li>Harm reduction education</li>
+              <li>Community workshops</li>
+              <li>Peer educator support</li>
+            </ul>
+          </article>
+
+          <!-- Service Card 9 - NEW -->
+          <article class="service-card">
+            <div class="service-icon-img">
+              <img src="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/images/generated/service-resource-navigation.png" alt="Resource Navigation Icon" loading="lazy">
+            </div>
+            <h3 class="service-title">Resource Navigation</h3>
+            <p class="service-description">
+              Connection to food banks, legal aid, employment services, and community resources
+              to support overall well-being.
+            </p>
+            <ul class="service-list">
+              <li>Food & clothing access</li>
+              <li>Legal aid referrals</li>
+              <li>Employment support</li>
+              <li>Benefits navigation</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Community in Action Section -->
+    <section class="section section-gallery">
+      <div class="container">
+        <h2 class="section-title">Community in Action</h2>
+        <p class="section-intro">Serving communities with dignity, compassion, and culturally-informed care</p>
+
+        <div class="community-showcase-simple">
+          <!-- Community Story 1 -->
+          <div class="community-story">
+            <figure class="community-photo-small">
+              <img src="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/generated_images/community_photos/community_01_diverse_group_smiling.webp" alt="Diverse group of community members smiling together" loading="lazy">
+            </figure>
+            <div class="community-text-simple">
+              <p>At Healing Roots, we believe that genuine connection is the foundation of healing. Our peer-led outreach creates safe spaces where community members feel seen, heard, and valued—regardless of where they are in their journey.</p>
+              <p>Through consistent presence and authentic relationship-building, we're breaking down barriers to care and fostering trust within communities that have historically been underserved and marginalized.</p>
+            </div>
+          </div>
+
+          <!-- Community Story 2 -->
+          <div class="community-story">
+            <figure class="community-photo-small">
+              <img src="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/generated_images/community_photos/community_02_peer_counselor_listening.webp" alt="Peer counselor listening with compassion" loading="lazy">
+            </figure>
+            <div class="community-text-simple">
+              <p>Our peer navigators bring lived experience to every interaction. They understand the challenges firsthand and offer judgment-free support that meets people exactly where they are—whether that's crisis intervention, treatment navigation, or simply a listening ear.</p>
+              <p>This peer-to-peer approach creates authentic connections that formal services often can't replicate, building bridges to resources and hope when they're needed most.</p>
+            </div>
+          </div>
+
+          <!-- Community Story 3 -->
+          <div class="community-story">
+            <figure class="community-photo-small">
+              <img src="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/generated_images/community_photos/community_03_elder_and_youth.webp" alt="Elder and youth together in intergenerational healing" loading="lazy">
+            </figure>
+            <div class="community-text-simple">
+              <p>Healing happens across generations. Our Indigenous-informed approach honors the wisdom of elders while empowering youth to become leaders in their own communities. This intergenerational exchange strengthens cultural identity and builds resilience.</p>
+              <p>By weaving together traditional knowledge and modern harm reduction practices, we create holistic pathways to wellness that respect the whole person—mind, body, spirit, and community.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Founders Section -->
+    <section id="founders" class="section section-founders">
+      <div class="container">
+        <h2 class="section-title">Our Founders</h2>
+
+        <div class="founders-alternating">
+          <div class="about-text">
+            <h3 class="about-subtitle">Our Mission</h3>
+            <p class="mission-statement">
+              Healing Roots Outreach Collective provides Indigenous-informed, peer-led mobile harm
+              reduction services to unhoused and street-involved individuals in King and Pierce
+              Counties, Washington.
+            </p>
+            <p>
+              We deliver life-saving naloxone distribution, sterile syringe services, wound care,
+              peer-based crisis navigation, and cultural wellness support directly to communities
+              with limited access to healthcare.
+            </p>
+            <p>
+              Our trauma-informed approach centers healing, recognizes historical and ongoing trauma,
+              and honors Indigenous knowledge and cultural practices.
+            </p>
+
+            <h3>Our Values</h3>
+            <div class="values-grid">
+              <div class="value-card">
+                <div class="value-icon" aria-hidden="true">❤️</div>
+                <h4>Trauma-Informed Care</h4>
+                <p>Every interaction centers healing and recognizes the impact of historical and ongoing trauma.</p>
+              </div>
+              <div class="value-card">
+                <div class="value-icon" aria-hidden="true">🌱</div>
+                <h4>Indigenous-Led</h4>
+                <p>Governance and program design honor Indigenous knowledge, cultural practices, and community wisdom.</p>
+              </div>
+              <div class="value-card">
+                <div class="value-icon" aria-hidden="true">🤲</div>
+                <h4>Harm Reduction</h4>
+                <p>We meet people where they are with compassion, practical support, and evidence-based services.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-sidebar">
+            <div class="info-box">
+              <h3>Service Areas</h3>
+              <ul class="service-areas-list">
+                <li>Seattle SODO District</li>
+                <li>Kent</li>
+                <li>Tacoma</li>
+                <li>Spanaway</li>
+                <li>Encampments throughout King & Pierce Counties</li>
+              </ul>
+            </div>
+
+            <div class="info-box">
+              <h3>Outreach Schedule</h3>
+              <p><strong>3-5 days per week</strong></p>
+              <p>10:00 AM - 6:00 PM</p>
+              <p>Year-round service</p>
+              <p class="schedule-note">
+                <a href="#contact">Contact us</a> for current location or to request a visit
+              </p>
+            </div>
+
+            <div class="info-box nonprofit-status">
+              <div class="nonprofit-badge" aria-hidden="true">🛡️</div>
+              <h3>501(c)(3) Nonprofit</h3>
+              <p><strong>EIN:</strong> 39-3295288</p>
+              <p><strong>WA Charity Reg:</strong> 2011817</p>
+              <p>All donations are tax-deductible</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Founders & Leadership Section -->
+        <div class="founders-section">
+          <h3 class="founders-title">Our Founders</h3>
+          <p class="founders-intro">Led by visionary Indigenous and community leaders with deep lived experience in harm reduction</p>
+
+          <div class="founders-simple-grid">
+            <!-- Bri -->
+            <a href="bri.html" class="founder-simple-card">
+              <div class="founder-simple-photo">
+                <img src="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/images/founders/bri_headshot.webp" alt="Bri - Secretary/COO" loading="lazy">
+              </div>
+              <div class="founder-simple-info">
+                <h4>Bri</h4>
+                <p class="founder-simple-role">Secretary / Chief Operations Officer</p>
+                <p class="founder-simple-email"><a href="mailto:Bri.Bear@hrocinc.org" onclick="event.stopPropagation();">Bri.Bear@hrocinc.org</a></p>
+              </div>
+            </a>
+
+            <!-- Lilly -->
+            <a href="lilly.html" class="founder-simple-card">
+              <div class="founder-simple-photo">
+                <img src="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/images/founders/lilly_headshot.webp" alt="Lilly - Treasurer/CFO" loading="lazy">
+              </div>
+              <div class="founder-simple-info">
+                <h4>Lilly</h4>
+                <p class="founder-simple-role">Treasurer / Chief Financial Officer</p>
+                <p class="founder-simple-email"><a href="mailto:Lilly.Fedas@hrocinc.org" onclick="event.stopPropagation();">Lilly.Fedas@hrocinc.org</a></p>
+              </div>
+            </a>
+
+            <!-- Jonathan -->
+            <a href="jonathan.html" class="founder-simple-card">
+              <div class="founder-simple-photo">
+                <img src="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/images/founders/jonathan_headshot.webp" alt="Jonathan - Chairman/CEO" loading="lazy">
+              </div>
+              <div class="founder-simple-info">
+                <h4>Jonathan</h4>
+                <p class="founder-simple-role">Chairman / Chief Executive Officer</p>
+                <p class="founder-simple-email"><a href="mailto:Jonathan.Mallinger@hrocinc.org" onclick="event.stopPropagation();">Jonathan.Mallinger@hrocinc.org</a></p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Team & Roles Section -->
+        <div class="team-section">
+          <h3 class="team-title">Our Team at Work</h3>
+          <p class="team-intro">Dedicated specialists and peer leaders providing compassionate, culturally-informed services</p>
+
+          <div class="team-roles-grid">
+            <div class="role-card">
+              <div class="role-icon" aria-hidden="true">🚐</div>
+              <h4>Mobile Outreach Specialists</h4>
+              <p>
+                Our outreach team takes our services directly to communities, building relationships
+                and providing harm reduction supplies with dignity and respect.
+              </p>
+            </div>
+            <div class="role-card">
+              <div class="role-icon" aria-hidden="true">💬</div>
+              <h4>Peer Navigators</h4>
+              <p>
+                Peer leaders with lived experience providing crisis support, treatment navigation,
+                and authentic connection to community members on their healing journey.
+              </p>
+            </div>
+            <div class="role-card">
+              <div class="role-icon" aria-hidden="true">🏥</div>
+              <h4>Health & Wellness Coordinators</h4>
+              <p>
+                Specialists providing health screening, wound care, and connections to medical
+                and mental health services.
+              </p>
+            </div>
+            <div class="role-card">
+              <div class="role-icon" aria-hidden="true">🎓</div>
+              <h4>Education & Training Leaders</h4>
+              <p>
+                Facilitators leading naloxone training, harm reduction workshops, and community
+                education to expand knowledge and access.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Donate Section -->
+    <section id="donate" class="section section-donate">
+      <div class="container">
+        <h2 class="section-title">Support Life-Saving Services</h2>
+        <p class="section-intro">Your donation provides naloxone kits, sterile supplies, peer support, and cultural healing that saves lives.</p>
+
+        <div class="donate-content">
+          <div class="donate-impact">
+            <h3>Your Impact</h3>
+            <div class="impact-grid">
+              <div class="impact-item">
+                <div class="impact-amount">$10/month</div>
+                <div class="impact-description">Hygiene kits for 5 individuals</div>
+              </div>
+              <div class="impact-item">
+                <div class="impact-amount">$25/month</div>
+                <div class="impact-description">Naloxone kits for 10 individuals</div>
+              </div>
+              <div class="impact-item">
+                <div class="impact-amount">$50/month</div>
+                <div class="impact-description">One full day of mobile outreach</div>
+              </div>
+              <div class="impact-item">
+                <div class="impact-amount">$100+/month</div>
+                <div class="impact-description">Comprehensive harm reduction services</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="donate-form-wrapper">
+            <form class="donate-form" action="#" method="post" aria-label="Donation form">
+              <h3>Make a Donation</h3>
+
+              <fieldset>
+                <legend>Donation Frequency</legend>
+                <div class="radio-group">
+                  <label class="radio-label">
+                    <input type="radio" name="frequency" value="monthly" checked>
+                    <span>Monthly</span>
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="frequency" value="one-time">
+                    <span>One-Time</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Donation Amount</legend>
+                <div class="amount-grid">
+                  <label class="amount-btn">
+                    <input type="radio" name="amount" value="10">
+                    <span>$10</span>
+                  </label>
+                  <label class="amount-btn">
+                    <input type="radio" name="amount" value="25" checked>
+                    <span>$25</span>
+                  </label>
+                  <label class="amount-btn">
+                    <input type="radio" name="amount" value="50">
+                    <span>$50</span>
+                  </label>
+                  <label class="amount-btn">
+                    <input type="radio" name="amount" value="100">
+                    <span>$100</span>
+                  </label>
+                  <label class="amount-btn amount-btn-custom">
+                    <input type="radio" name="amount" value="custom">
+                    <span>Custom</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="form-group">
+                <label for="custom-amount">Custom Amount</label>
+                <div class="input-with-prefix">
+                  <span class="input-prefix">$</span>
+                  <input type="number" id="custom-amount" name="custom-amount" min="1" step="1" placeholder="Enter amount">
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg btn-full">
+                <span aria-hidden="true">💙</span> Donate Now
+              </button>
+
+              <p class="form-note">
+                Healing Roots Outreach Collective is a 501(c)(3) tax-exempt organization.
+                Your contribution is tax-deductible. EIN: 39-3295288
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <!-- WA State Disclosure (Required) -->
+        <div class="legal-disclosure">
+          <h4>Washington State Disclosure</h4>
+          <p>
+            Healing Roots Outreach Collective is registered with the Washington State Secretary
+            of State's Charities Program (Registration #2011817). For information about the
+            Charities Program, contact: Washington Secretary of State, Charities Program,
+            PO Box 40234, Olympia WA 98504-0234, 1-800-332-4483,
+            <a href="https://www.sos.wa.gov/charities" target="_blank" rel="noopener">www.sos.wa.gov/charities</a>.
+            Registration with the Secretary of State does not imply endorsement.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-contact">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">📧</div>
+              <div class="contact-details">
+                <strong>Email</strong>
+                <a href="mailto:admin@hrocinc.org">admin@hrocinc.org</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">📞</div>
+              <div class="contact-details">
+                <strong>Phone</strong>
+                <a href="tel:+12538817377">253-881-7377</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">📬</div>
+              <div class="contact-details">
+                <strong>Mailing Address</strong>
+                <address style="font-style: normal;">
+                  2122 S 272ND ST APT B111<br>
+                  Kent, WA 98032
+                </address>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">📍</div>
+              <div class="contact-details">
+                <strong>Service Area</strong>
+                King and Pierce Counties, Washington
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-wrapper">
+            <form class="contact-form" action="#" method="post" aria-label="Contact form">
+              <h3>Send Us a Message</h3>
+
+              <div class="form-group">
+                <label for="name">Your Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required autocomplete="name">
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone (optional)</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel">
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message <span class="required">*</span></label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg btn-full">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Healing Roots Outreach Collective</h3>
+          <p>Indigenous-led, trauma-informed mobile harm reduction services in King & Pierce Counties, Washington.</p>
+          <p class="footer-tagline">Rooted in community. Growing toward healing.</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Legal</h3>
+          <p><strong>501(c)(3) Tax-Exempt Organization</strong></p>
+          <p>EIN: 39-3295288</p>
+          <p>WA UBI: 605 944 010</p>
+          <p>WA Charity Reg: 2011817</p>
+        </div>
+      </div>
+
+      <!-- Document Boxes Row -->
+      <div class="footer-docs-grid">
+        <div class="footer-doc-box">
+          <h4>Organizational Policies</h4>
+          <ul class="footer-doc-links">
+            <li><a href="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/pdfs/Policies/Code_of_Conduct_Policy.pdf" target="_blank">Code of Conduct</a></li>
+            <li><a href="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/pdfs/Policies/Conflict_of_Interest_Policy.pdf" target="_blank">Conflict of Interest</a></li>
+            <li><a href="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/pdfs/Policies/Financial_Controls_and_Reimbursement_Policy.pdf" target="_blank">Financial Controls</a></li>
+            <li><a href="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/pdfs/Policies/Whistleblower_Protection_Policy.pdf" target="_blank">Whistleblower Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-doc-box">
+          <h4>501(c)(3) & IRS Documents</h4>
+          <ul class="footer-doc-links">
+            <li><a href="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/pdfs/IRS/IRS_CP575_EIN_Letter_39-3295288.pdf" target="_blank">EIN Letter (CP-575)</a></li>
+            <li><a href="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/pdfs/IRS/IRS_Form_1023_Application_Signed.pdf" target="_blank">Form 1023 Application</a></li>
+            <li><a href="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/pdfs/IRS/IRS_Supplemental_Packet_2025-08-11_Filled.pdf" target="_blank">IRS Supplemental Packet</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-doc-box">
+          <h4>Registrations & Licenses</h4>
+          <ul class="footer-doc-links">
+            <li><a href="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/pdfs/Governance/Articles_of_Incorporation_0022584962.pdf" target="_blank">Articles of Incorporation</a></li>
+            <li><a href="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/pdfs/Registrations_Licenses/Business_License_My_DOR.pdf" target="_blank">Business License (WA DOR)</a></li>
+            <li><a href="https://hroc-website-20251230043930.s3.us-east-1.amazonaws.com/pdfs/Registrations_Licenses/Charitable_Organization_Registration_0000567751.pdf" target="_blank">Charity Registration</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-docs-link">
+        <a href="documents.html" class="btn btn-outline-light">View All Documents</a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Healing Roots Outreach Collective. All rights reserved.</p>
+        <p class="footer-disclaimer">
+          Healing Roots Outreach Collective is registered with the Washington Secretary of State's
+          Charities Program. Registration does not imply endorsement. For information:
+          WA Secretary of State, Charities Program, 1-800-332-4483,
+          <a href="https://www.sos.wa.gov/charities" target="_blank" rel="noopener">www.sos.wa.gov/charities</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Action Buttons (Mobile) -->
+  <div class="fab-container" role="group" aria-label="Quick actions">
+    <a href="tel:+12538817377" class="fab fab-call" aria-label="Call 253-881-7377">
+      <span aria-hidden="true">📞</span>
+    </a>
+    <a href="sms:+12538817377" class="fab fab-text" aria-label="Text 253-881-7377">
+      <span aria-hidden="true">💬</span>
+    </a>
+    <a href="#services" class="fab fab-services" aria-label="View services">
+      <span aria-hidden="true">🌱</span>
+    </a>
+  </div>
+
+  <script src="script.js?v=20251213-mobile1"></script>
+</body>
+</html>

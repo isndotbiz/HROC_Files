@@ -1978,6 +1978,119 @@ legend {
 }
 
 /* ============================================
+   FOUNDERS ALTERNATING LAYOUT
+   ============================================ */
+
+.section-founders {
+  background: var(--color-bg-alt);
+}
+
+.founders-alternating {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.founder-row {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--space-8);
+  align-items: start;
+  padding: var(--space-8);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: var(--radius-xl);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transition: all var(--transition-base);
+}
+
+.founder-row:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+.founder-row-reverse {
+  grid-template-columns: 1fr 300px;
+}
+
+.founder-row-reverse .founder-photo-col {
+  order: 2;
+}
+
+.founder-row-reverse .founder-text-col {
+  order: 1;
+}
+
+.founder-photo-col {
+  width: 100%;
+}
+
+.founder-photo-col img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.founder-text-col h3 {
+  font-size: var(--font-size-2xl);
+  color: var(--color-primary-dark);
+  margin: 0 0 var(--space-2) 0;
+  font-weight: 700;
+}
+
+.founder-title {
+  font-size: var(--font-size-sm);
+  color: var(--color-secondary-dark);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 var(--space-4) 0;
+}
+
+.founder-text-col p {
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+}
+
+.founder-link {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.founder-link:hover {
+  color: var(--color-secondary);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .founder-row,
+  .founder-row-reverse {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .founder-row-reverse .founder-photo-col,
+  .founder-row-reverse .founder-text-col {
+    order: unset;
+  }
+
+  .founder-photo-col {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}
+
+/* ============================================
    SIMPLIFIED FOUNDERS LAYOUT
    ============================================ */
 

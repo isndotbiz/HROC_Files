@@ -2653,7 +2653,7 @@ legend {
   gap: var(--space-12);
   margin-top: var(--space-8);
   margin-bottom: var(--space-12);
-  max-width: 900px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -2675,7 +2675,7 @@ legend {
 
 .community-photo-small {
   width: 100%;
-  max-width: 500px;
+  max-width: 700px;
   height: auto;
   aspect-ratio: 4/3;
   border-radius: var(--radius-xl);

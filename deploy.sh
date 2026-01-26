@@ -98,28 +98,28 @@ if [ "$DEPLOY_TO_S3" = "true" ]; then
         brew install awscli
     fi
 
-    # Sync images to S3
+    # Sync images to S3 (without --delete to preserve images in .gitignore)
     if [ -d "${WEBSITE_DIR}/images" ]; then
         if [ "$DRY_RUN" = "true" ]; then
             aws s3 sync "${WEBSITE_DIR}/images" "s3://${BUCKET_NAME}/images" --dryrun
         else
             aws s3 sync "${WEBSITE_DIR}/images" "s3://${BUCKET_NAME}/images" \
                 --content-type "image/webp" \
-                --cache-control "max-age=31536000" \
-                --delete
+                --cache-control "max-age=31536000"
         fi
         echo -e "${GREEN}  ✓ Images synced${NC}"
+    else
+        echo -e "${YELLOW}  ℹ Images directory not present locally (in .gitignore), skipping S3 image sync${NC}"
     fi
 
-    # Sync generated images to S3
+    # Sync generated images to S3 (without --delete to preserve generated images)
     if [ -d "${WEBSITE_DIR}/generated_images" ]; then
         if [ "$DRY_RUN" = "true" ]; then
             aws s3 sync "${WEBSITE_DIR}/generated_images" "s3://${BUCKET_NAME}/generated_images" --dryrun
         else
             aws s3 sync "${WEBSITE_DIR}/generated_images" "s3://${BUCKET_NAME}/generated_images" \
                 --content-type "image/webp" \
-                --cache-control "max-age=31536000" \
-                --delete
+                --cache-control "max-age=31536000"
         fi
         echo -e "${GREEN}  ✓ Generated images synced${NC}"
     fi

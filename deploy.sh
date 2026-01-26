@@ -169,7 +169,7 @@ if [ "$DEPLOY_TO_SERVER" = "true" ]; then
         BACKUP_TIMESTAMP=$(date +%Y%m%d-%H%M%S)
         echo "  Creating backup on server..."
         ssh ${SSH_OPTS} "${SERVER_USER}@${SERVER_IP}" \
-            "tar -czf ${BACKUP_DIR}/hrocinc-backup-${BACKUP_TIMESTAMP}.tar.gz -C /mnt/tank/websites/kusanagi/web hrocinc.org" \
+            "sudo tar -czf ${BACKUP_DIR}/hrocinc-backup-${BACKUP_TIMESTAMP}.tar.gz -C /mnt/tank/websites/kusanagi/web hrocinc.org" \
             && echo -e "${GREEN}  ✓ Backup created: ${BACKUP_DIR}/hrocinc-backup-${BACKUP_TIMESTAMP}.tar.gz${NC}"
     fi
 
@@ -182,6 +182,7 @@ if [ "$DEPLOY_TO_SERVER" = "true" ]; then
         echo -e "${YELLOW}  (DRY RUN MODE)${NC}"
         rsync -avzn --progress --delete \
             -e "${RSYNC_SSH_OPTS}" \
+            --rsync-path="sudo rsync" \
             --exclude '.git' \
             --exclude 'node_modules' \
             --exclude '.DS_Store' \
@@ -193,6 +194,7 @@ if [ "$DEPLOY_TO_SERVER" = "true" ]; then
     else
         rsync -avz --progress --delete \
             -e "${RSYNC_SSH_OPTS}" \
+            --rsync-path="sudo rsync" \
             --exclude '.git' \
             --exclude 'node_modules' \
             --exclude '.DS_Store' \
@@ -208,7 +210,7 @@ if [ "$DEPLOY_TO_SERVER" = "true" ]; then
     if [ "$DRY_RUN" = "false" ]; then
         echo "  Setting correct permissions..."
         ssh ${SSH_OPTS} "${SERVER_USER}@${SERVER_IP}" \
-            "chown -R 33:33 ${SERVER_PATH} && chmod -R 755 ${SERVER_PATH}" \
+            "sudo chown -R 33:33 ${SERVER_PATH} && sudo chmod -R 755 ${SERVER_PATH}" \
             && echo -e "${GREEN}  ✓ Permissions set${NC}"
     fi
 

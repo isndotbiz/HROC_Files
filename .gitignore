@@ -52,6 +52,7 @@ __pycache__/
 .npmrc
 **/credentials
 **/config.json
+.serena/memories/credentials_and_tokens.md
 
 # Scripts with hardcoded credentials (deprecated - use deploy.sh instead)
 sync_to_new_s3.py

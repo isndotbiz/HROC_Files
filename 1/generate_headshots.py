@@ -19,9 +19,9 @@ except ImportError:
 
 # Load keys from .env.local if not already set
 if not os.environ.get("FAL_KEY"):
-    env_local = Path("D:/workspace/.env.local")
+    env_local = Path("/home/jdmal/workspace/.env.local")
     if not env_local.exists():
-        env_local = Path("/d/workspace/.env.local")
+        env_local = Path("/home/jdmal/workspace/.env.local")
     if env_local.exists():
         for line in env_local.read_text().splitlines():
             line = line.strip()
@@ -31,7 +31,7 @@ if not os.environ.get("FAL_KEY"):
             os.environ[key.strip()] = val.strip()
 
 if not os.environ.get("FAL_KEY"):
-    print("ERROR: FAL_KEY not found. Set it or add to D:/workspace/.env.local")
+    print("ERROR: FAL_KEY not found. Set it or add to /home/jdmal/workspace/.env.local")
     sys.exit(1)
 
 

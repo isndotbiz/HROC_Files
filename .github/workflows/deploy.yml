@@ -8,6 +8,8 @@ on:
       - 'HROC_Website_New/**'
       - 'netlify.toml'
       - '.github/workflows/deploy.yml'
+      - 'tests/**'
+      - 'playwright.config.ts'
   workflow_dispatch:  # Allow manual triggering
 
 jobs:
@@ -73,3 +75,28 @@ jobs:
           echo "=== S3 Asset Sync Complete ==="
           echo "Bucket: hroc-website-20251230043930"
           aws s3 ls s3://hroc-website-20251230043930/ --summarize --human-readable | tail -2
+
+  site-health-check:
+    runs-on: ubuntu-latest
+    name: Playwright site health check
+    needs: [deploy-netlify, sync-s3-assets]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium
+
+      - name: Run site health tests
+        run: npx playwright test --reporter=list
+        env:
+          SITE_URL: https://hrocinc.org

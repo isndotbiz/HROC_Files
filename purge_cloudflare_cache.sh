@@ -1,8 +1,15 @@
 #!/bin/bash
 # Purge Cloudflare cache for hrocinc.org
+# Credentials loaded from 1Password
 
-EMAIL="jdmallin25x40@gmail.com"
-API_KEY="b90eb8d819ae0c4ab1c14a481db66b99b2d38"
+EMAIL=$(op item get "Cloudflare" --vault "TrueNAS Infrastructure" --fields username 2>/dev/null)
+API_KEY=$(op item get "Cloudflare" --vault "TrueNAS Infrastructure" --fields credential 2>/dev/null)
+
+if [ -z "$EMAIL" ] || [ -z "$API_KEY" ]; then
+  echo "Failed to load Cloudflare credentials from 1Password."
+  echo "Make sure OP_SERVICE_ACCOUNT_TOKEN is set or run: eval \$(op signin)"
+  exit 1
+fi
 
 echo "Getting zone ID for hrocinc.org..."
 ZONE_ID=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones?name=hrocinc.org" \
@@ -21,7 +28,8 @@ if [ "$ZONE_ID" != "null" ] && [ -n "$ZONE_ID" ]; then
     --data '{"purge_everything":true}' | jq
 
   echo ""
-  echo "✅ Cloudflare cache purged successfully!"
+  echo "Cloudflare cache purged successfully!"
 else
-  echo "❌ Could not find zone ID for hrocinc.org"
+  echo "Could not find zone ID for hrocinc.org"
+  exit 1
 fi

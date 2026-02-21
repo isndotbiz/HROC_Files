@@ -111,7 +111,7 @@ Cloudflare: DNS/CDN protection active
 Host: 10.0.0.89
 User: root
 SSH Key: ~/.ssh/truenas_admin_10_0_0_89
-Password: uppercut%$## (fallback only)
+Password: (stored in 1Password vault: "TrueNAS Infrastructure" > "Truenas Password")
 Port: 22
 Web Root: /mnt/tank/encrypted/containers/hrocinc/web/
 ```

@@ -20,7 +20,7 @@ s3_client = boto3.client(
 )
 
 # Images to upload
-images_dir = Path("/Users/jonathanmallinger/Workspace/HROC_Files/HROC_Website_New/images/founders/b")
+images_dir = Path(__file__).resolve().parent / "HROC_Website_New" / "images" / "founders" / "b"
 images = [
     "qwen_bri_01_professional_office_laptop.webp",
     "qwen_bri_02_business_casual_outdoor.webp",

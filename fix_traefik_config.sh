@@ -1,7 +1,23 @@
 #!/bin/bash
 # Fix Traefik configuration to add HROC routing
+# Credentials loaded from 1Password - no hardcoded secrets
 
-sshpass -p 'uppercut%$##' ssh root@10.0.0.89 "cat > /tmp/hroc_router.yml << 'EOF'
+SSH_KEY=$(op item get "TrueNAS SSH Key - jdmal" --vault "TrueNAS Infrastructure" --fields "private key" 2>/dev/null)
+TRUENAS_HOST="10.0.0.89"
+
+if [ -z "$SSH_KEY" ]; then
+  echo "Failed to load SSH key from 1Password."
+  echo "Make sure OP_SERVICE_ACCOUNT_TOKEN is set or run: eval \$(op signin)"
+  exit 1
+fi
+
+# Write temp key file
+TMPKEY=$(mktemp)
+echo "$SSH_KEY" > "$TMPKEY"
+chmod 600 "$TMPKEY"
+trap "rm -f $TMPKEY" EXIT
+
+ssh -i "$TMPKEY" -o StrictHostKeyChecking=no root@${TRUENAS_HOST} "cat > /tmp/hroc_router.yml << 'EOF'
     # HROC Website
     hrocinc:
       rule: \"Host(\`hrocinc.org\`) || Host(\`www.hrocinc.org\`)\"

@@ -21,7 +21,7 @@ Hostname: 10.0.0.89
 Username: root
 Port: 22
 SSH Key: ~/.ssh/truenas_admin_10_0_0_89
-Password Fallback: uppercut%$##
+Password Fallback: (see 1Password vault: "TrueNAS Infrastructure" > "Truenas Password")
 ```
 
 ### Quick SSH Command:
@@ -33,7 +33,7 @@ ssh -i ~/.ssh/truenas_admin_10_0_0_89 root@10.0.0.89
 ```bash
 # Use password authentication
 ssh root@10.0.0.89
-# When prompted for password, enter: uppercut%$##
+# When prompted for password, get it from 1Password: op item get "Truenas Password" --vault "TrueNAS Infrastructure" --fields password
 ```
 
 ---
@@ -220,7 +220,7 @@ ssh -i ~/.ssh/truenas_admin_10_0_0_89 root@10.0.0.89 "grep -c 's3.us-west-2.amaz
 ```bash
 # Try password authentication instead
 ssh root@10.0.0.89
-# When prompted, enter: uppercut%$##
+# When prompted, get password from 1Password: op item get "Truenas Password" --vault "TrueNAS Infrastructure" --fields password
 
 # Or copy your SSH key to TrueNAS
 ssh-copy-id -i ~/.ssh/truenas_admin_10_0_0_89.pub root@10.0.0.89
@@ -272,7 +272,7 @@ AWS S3 Bucket (hroc-outreach-assets-1765630540) serves images
 TRUENAS_HOST=10.0.0.89
 TRUENAS_USER=root
 TRUENAS_SSH_KEY=~/.ssh/truenas_admin_10_0_0_89
-TRUENAS_PASSWORD=uppercut%$##
+TRUENAS_PASSWORD=$(op item get "Truenas Password" --vault "TrueNAS Infrastructure" --fields password)
 WEB_ROOT=/mnt/tank/encrypted/containers/hrocinc/web/
 DOCKER_CONTAINER=hrocinc-nginx
 ```

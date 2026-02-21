@@ -48,9 +48,9 @@ jobs:
 
       - name: Sync founder images to S3
         run: |
+          # No --delete: founder images are managed via direct S3 upload, not git
           aws s3 sync HROC_Website_New/images/founders s3://hroc-website-20251230043930/images/founders \
-            --cache-control "max-age=31536000" \
-            --delete
+            --cache-control "max-age=31536000"
 
       - name: Sync generated service images to S3
         run: |

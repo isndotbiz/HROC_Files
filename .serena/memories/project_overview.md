@@ -11,10 +11,9 @@ This project contains files and resources for **Healing Roots Outreach Collectiv
 ## Tech Stack
 - **Website**: Static HTML/CSS/JavaScript (no framework)
 - **Hosting**: 
-  - AWS S3 (for assets/CDN)
-  - NAS server with Nginx (self-hosted)
-  - GitHub Pages (backup)
-  - Cloudflare (CDN/DNS)
+  - Netlify (PRIMARY at hrocinc.org, Site ID: f5c7828a-b18a-41c1-a8bc-c64e5beb13ba)
+  - AWS S3 bucket `hroc-website-20251230043930` (images, PDFs - assets only, 77 files, 12.8 MiB)
+  - Cloudflare (CDN/DNS, zone ID: 0da5d1116d7e40e8c77615ce8a757cd1, SSL: Full mode)
 - **Deployment**: Bash scripts, Python scripts (boto3 for S3)
 - **Image Generation**: Python scripts using Flux LoRA models
 - **Version Control**: Git/GitHub
@@ -26,7 +25,7 @@ This project contains files and resources for **Healing Roots Outreach Collectiv
 - `Archive_*` - Historical/backup files
 
 ## Website URL
-- Production: https://hrocinc.org
+- Production: https://hrocinc.org\n- Backup (Netlify): https://hrocinc.netlify.app
 
 ## GitHub Repository
 - https://github.com/isndotbiz/HROC_Files.git

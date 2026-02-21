@@ -41,6 +41,9 @@ __pycache__/
 # Secrets and credentials (NEVER commit these)
 .env
 .env.*
+!.env.tpl
+!.env.example
+!.env.template
 *.pem
 *.key
 *.p12
@@ -95,3 +98,6 @@ npm-debug.log
 # HROC_Website_New/styles.css - tracked
 # HROC_Website_New/script.js - tracked
 # HROC_Website_New/generated_images/ - tracked for deployment
+
+# Local Netlify folder
+.netlify

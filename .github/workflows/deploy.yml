@@ -6,13 +6,32 @@ on:
       - main
     paths:
       - 'HROC_Website_New/**'
+      - 'netlify.toml'
       - '.github/workflows/deploy.yml'
   workflow_dispatch:  # Allow manual triggering
 
 jobs:
-  deploy:
+  deploy-netlify:
     runs-on: ubuntu-latest
-    name: Deploy to S3 (TrueNAS requires local network)
+    name: Deploy to Netlify (primary)
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v3
+        with:
+          publish-dir: './HROC_Website_New'
+          production-deploy: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 5
+
+  sync-s3-assets:
+    runs-on: ubuntu-latest
+    name: Sync assets to S3
 
     steps:
       - name: Checkout code
@@ -25,73 +44,32 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Install AWS CLI
+      - name: Sync founder images to S3
         run: |
-          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-          unzip awscliv2.zip
-          sudo ./aws/install --update
-          aws --version
-
-      - name: Sync images to S3
-        run: |
-          aws s3 sync HROC_Website_New/images s3://hroc-website-20251230043930/images \
-            --content-type "image/webp" \
+          aws s3 sync HROC_Website_New/images/founders s3://hroc-website-20251230043930/images/founders \
             --cache-control "max-age=31536000" \
             --delete
 
-      - name: Sync generated images to S3
+      - name: Sync generated service images to S3
         run: |
-          aws s3 sync HROC_Website_New/generated_images s3://hroc-website-20251230043930/generated_images \
-            --content-type "image/webp" \
+          aws s3 sync HROC_Website_New/images/generated s3://hroc-website-20251230043930/images/generated \
+            --cache-control "max-age=31536000" \
+            --delete
+
+      - name: Sync community photos to S3
+        run: |
+          aws s3 sync HROC_Website_New/generated_images/community_photos s3://hroc-website-20251230043930/generated_images/community_photos \
             --cache-control "max-age=31536000" \
             --delete
 
       - name: Sync PDFs to S3
         run: |
           aws s3 sync HROC_Website_New/pdfs s3://hroc-website-20251230043930/pdfs \
-            --content-type "application/pdf" \
             --cache-control "max-age=31536000" \
             --delete
 
-      # NOTE: TrueNAS deployment skipped - server is on local network (10.0.0.89)
-      # GitHub Actions runners cannot access local network IPs
-      # To deploy to TrueNAS, run from local network: ./deploy.sh
-
-      # - name: Setup SSH key
-      #   env:
-      #     SSH_PRIVATE_KEY: ${{ secrets.TRUENAS_SSH_KEY }}
-      #   run: |
-      #     mkdir -p ~/.ssh
-      #     echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
-      #     chmod 600 ~/.ssh/id_ed25519
-      #     ssh-keyscan -H 10.0.0.89 >> ~/.ssh/known_hosts
-
-      # - name: Deploy to TrueNAS
-      #   run: |
-      #     # Create backup
-      #     ssh root@10.0.0.89 "tar -czf /mnt/tank/backups/hrocinc-backup-$(date +%Y%m%d-%H%M%S).tar.gz -C /mnt/tank/websites/kusanagi/web hrocinc.org"
-      #
-      #     # Sync files
-      #     rsync -avz --delete \
-      #       --exclude '.git' \
-      #       --exclude 'node_modules' \
-      #       --exclude '.DS_Store' \
-      #       --exclude 'lora_training' \
-      #       --exclude 'image-generator' \
-      #       --exclude 'lora_models' \
-      #       HROC_Website_New/ \
-      #       root@10.0.0.89:/mnt/tank/websites/kusanagi/web/hrocinc.org/
-      #
-      #     # Fix permissions
-      #     ssh root@10.0.0.89 "chown -R 33:33 /mnt/tank/websites/kusanagi/web/hrocinc.org && chmod -R 755 /mnt/tank/websites/kusanagi/web/hrocinc.org"
-
-      - name: Verify deployment
+      - name: Verify S3 sync
         run: |
-          echo "Checking website status..."
-          curl -I https://hrocinc.org || echo "Website check failed"
-
-      - name: Notify deployment success
-        run: |
-          echo "✓ Deployment complete!"
-          echo "S3 bucket: hroc-website-20251230043930"
-          echo "Website: https://hrocinc.org"
+          echo "=== S3 Asset Sync Complete ==="
+          echo "Bucket: hroc-website-20251230043930"
+          aws s3 ls s3://hroc-website-20251230043930/ --summarize --human-readable | tail -2

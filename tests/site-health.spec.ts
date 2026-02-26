@@ -60,9 +60,13 @@ for (const page of PAGES) {
         timeout: 30000,
       });
 
-      // Filter out known Cloudflare-injected script errors
+      // Filter out known third-party script errors
       const realErrors = errors.filter(
-        (e) => !e.includes('cdn-cgi') && !e.includes('email-decode')
+        (e) =>
+          !e.includes('cdn-cgi') &&         // Cloudflare-injected scripts
+          !e.includes('email-decode') &&    // Cloudflare email obfuscation
+          !e.includes('googletagmanager') && // GA4 (placeholder ID or ad blocker)
+          !e.includes('google-analytics')   // GA4 beacon
       );
 
       expect(realErrors, `Console errors on ${page.name}:\n${realErrors.join('\n')}`).toHaveLength(0);

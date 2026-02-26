@@ -2943,3 +2943,12 @@ legend {
     page-break-inside: avoid;
   }
 }
+
+/* ============================================
+   Form Utilities
+   ============================================ */
+
+/* Netlify Forms honeypot — visible to bots, hidden from users */
+.hidden-honeypot {
+  display: none;
+}

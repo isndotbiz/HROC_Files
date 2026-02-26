@@ -18,6 +18,16 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23E91E8C'/><text x='50' y='60' font-size='60' text-anchor='middle' fill='white' font-weight='bold'>🌱</text></svg>">
+
+  <!-- Google Analytics 4 -->
+  <!-- TODO: Replace G-XXXXXXXXXX with your Measurement ID (analytics.google.com → Admin → Data Streams) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
 
@@ -679,7 +689,22 @@
           </div>
 
           <div class="contact-form-wrapper">
-            <form class="contact-form" action="#" method="post" aria-label="Contact form">
+            <form class="contact-form"
+                  name="contact"
+                  method="POST"
+                  action="/"
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
+                  aria-label="Contact form">
+
+              <!-- Required for AJAX: links this POST to the registered Netlify form -->
+              <input type="hidden" name="form-name" value="contact">
+
+              <!-- Honeypot: hidden from humans, trap for bots -->
+              <p class="hidden-honeypot" aria-hidden="true">
+                <label>Don't fill this out: <input name="bot-field"></label>
+              </p>
+
               <h3>Send Us a Message</h3>
 
               <div class="form-group">

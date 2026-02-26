@@ -141,35 +141,58 @@
     });
   }
 
-  // Contact form
+  // Contact form — Netlify Forms via AJAX
   const contactForm = document.querySelector('.contact-form');
 
   if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
       e.preventDefault();
 
-      const formData = new FormData(this);
-      const data = Object.fromEntries(formData);
+      const submitBtn = this.querySelector('[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
 
-      // In production, this would send email or save to database
-      console.log('Contact form:', data);
+      try {
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(this)).toString(),
+        });
 
-      // Show success message
-      const successMessage = document.createElement('div');
-      successMessage.className = 'form-success';
-      successMessage.style.cssText = 'padding: 1rem; background: #d1fae5; border: 2px solid #047857; border-radius: 0.5rem; margin-top: 1rem; color: #065f46;';
-      successMessage.innerHTML = '<strong>✓ Message sent!</strong><br>Thank you for reaching out. We\'ll get back to you soon.';
+        if (!response.ok) throw new Error(`Netlify returned ${response.status}`);
 
-      this.appendChild(successMessage);
-      this.reset();
+        // GA4 event — only fires on confirmed success
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'form_submit', { form_name: 'contact' });
+        }
 
-      // Announce to screen readers
-      announceToScreenReader('Your message has been sent successfully');
+        // Show success message
+        const successMessage = document.createElement('div');
+        successMessage.className = 'form-success';
+        successMessage.style.cssText = 'padding: 1rem; background: #d1fae5; border: 2px solid #047857; border-radius: 0.5rem; margin-top: 1rem; color: #065f46;';
+        successMessage.innerHTML = '<strong>✓ Message sent!</strong><br>Thank you for reaching out. We\'ll get back to you soon.';
 
-      // Remove success message after 5 seconds
-      setTimeout(() => {
-        successMessage.remove();
-      }, 5000);
+        this.appendChild(successMessage);
+        this.reset();
+
+        // Announce to screen readers
+        announceToScreenReader('Your message has been sent successfully');
+
+        // Remove success message after 5 seconds
+        setTimeout(() => successMessage.remove(), 5000);
+
+      } catch {
+        // Show visible error so user knows to retry
+        const errorMessage = document.createElement('div');
+        errorMessage.style.cssText = 'padding: 1rem; background: #fee2e2; border: 2px solid #dc2626; border-radius: 0.5rem; margin-top: 1rem; color: #7f1d1d;';
+        errorMessage.innerHTML = '<strong>Something went wrong.</strong><br>Please try again or email us at <a href="mailto:admin@hrocinc.org">admin@hrocinc.org</a>.';
+        this.appendChild(errorMessage);
+        setTimeout(() => errorMessage.remove(), 8000);
+
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
     });
   }
 
@@ -334,5 +357,46 @@
     //     .catch(err => console.log('Service Worker registration failed'));
     // });
   }
+
+  // ============================================
+  // GA4 Event Tracking
+  // ============================================
+
+  // Guard wrapper — no-ops if GA4 hasn't loaded (e.g. blocked by ad blocker)
+  function ga4(eventName, params) {
+    if (typeof gtag !== 'undefined') gtag('event', eventName, params);
+  }
+
+  // Donation intent — hero CTAs and donate form submit button
+  document.querySelectorAll('a[href="#donate"], .donate-form [type="submit"]')
+    .forEach(function(el) {
+      el.addEventListener('click', function() {
+        ga4('donation_intent', { page_location: window.location.href });
+      });
+    });
+
+  // Outbound link clicks
+  document.querySelectorAll('a[href^="http"]').forEach(function(link) {
+    if (link.hostname !== window.location.hostname) {
+      link.addEventListener('click', function() {
+        ga4('click', {
+          event_category: 'outbound',
+          event_label: link.href,
+        });
+      });
+    }
+  });
+
+  // PDF / file downloads (documents page)
+  document.querySelectorAll('a.document-item[href$=".pdf"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      var fileName = (link.querySelector('.document-name') || {}).textContent || link.href;
+      ga4('file_download', {
+        file_name: fileName,
+        file_extension: 'pdf',
+        link_url: link.href,
+      });
+    });
+  });
 
 })();

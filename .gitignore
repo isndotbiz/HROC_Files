@@ -101,3 +101,10 @@ npm-debug.log
 
 # Local Netlify folder
 .netlify
+
+# Serena (session-local)
+.serena/cache/
+.serena/memories/
+
+# Local MCP config (machine-specific)
+.mcp.json

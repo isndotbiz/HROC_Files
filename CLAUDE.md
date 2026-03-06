@@ -323,10 +323,10 @@ git commit -m "Standardize Alicia photos"
 ### Optimizing S3 Image Delivery
 
 ```bash
-# Get S3 credentials from 1Password
-eval $(op signin)
-AWS_KEY=$(op item get "AWS S3" --vault "TrueNAS Infrastructure" --fields access_key)
-AWS_SECRET=$(op item get "AWS S3" --vault "TrueNAS Infrastructure" --fields secret_key)
+# Get S3 credentials from 1Password (Connect API)
+source ~/.config/op/connect.env
+AWS_KEY=$(op item get "AWS S3" --vault "TrueNAS Infrastructure" --fields access_key --format json | jq -r '.value')
+AWS_SECRET=$(op item get "AWS S3" --vault "TrueNAS Infrastructure" --fields secret_key --format json | jq -r '.value')
 
 # Configure AWS CLI
 aws configure set aws_access_key_id "$AWS_KEY"
@@ -433,19 +433,19 @@ All HROC credentials stored in 1Password vaults.
 ### Accessing Credentials
 
 ```bash
-# Sign in
-eval $(op signin)
+# Load Connect API token
+source ~/.config/op/connect.env
 
 # List HROC-related items
-op item list | grep -i hroc
+op item list --format json | jq -r '.[].title' | grep -i hroc
 
 # Get specific credential
-op item get "HROC AWS S3" --vault "TrueNAS Infrastructure"
-op item get "HROC WordPress" --vault "TrueNAS Infrastructure"
+op item get "HROC AWS S3" --vault "TrueNAS Infrastructure" --format json
+op item get "HROC WordPress" --vault "TrueNAS Infrastructure" --format json
 
 # Get specific fields
-WP_USER=$(op item get "HROC WordPress" --vault "TrueNAS Infrastructure" --fields username)
-WP_PASS=$(op item get "HROC WordPress" --vault "TrueNAS Infrastructure" --fields password)
+WP_USER=$(op item get "HROC WordPress" --vault "TrueNAS Infrastructure" --fields username --format json | jq -r '.value')
+WP_PASS=$(op item get "HROC WordPress" --vault "TrueNAS Infrastructure" --fields password --format json | jq -r '.value')
 ```
 
 ### Common Credentials
@@ -637,3 +637,9 @@ HROC is a non-profit website project with:
 **Canonical Location:** `/mnt/d/workspace/projects/HROC_Files/`
 
 **Note:** This is the authoritative HROC location. Old copy archived to `/mnt/d/workspace/Archive/2026-02-01/HROC_Files_old/`
+
+## Canonical Stack Policy
+
+- Read `docs/state/STACK_CANONICAL.md` before editing RAG/orchestrator configuration.
+- Treat TrueNAS Apps as canonical data plane unless explicitly documented otherwise.
+- Use `op://` references for secrets; never embed literal credentials.

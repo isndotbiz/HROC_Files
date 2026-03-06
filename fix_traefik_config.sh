@@ -2,7 +2,7 @@
 # Fix Traefik configuration to add HROC routing
 # Credentials loaded from 1Password - no hardcoded secrets
 
-SSH_KEY=$(op item get "TrueNAS SSH Key - jdmal" --vault "TrueNAS Infrastructure" --fields "private key" 2>/dev/null)
+SSH_KEY=$(op item get "TrueNAS SSH Key - jdmal" --vault "TrueNAS Infrastructure" --fields "private key" --format json 2>/dev/null)
 TRUENAS_HOST="10.0.0.89"
 
 if [ -z "$SSH_KEY" ]; then

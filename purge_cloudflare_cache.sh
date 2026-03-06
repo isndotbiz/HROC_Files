@@ -2,8 +2,8 @@
 # Purge Cloudflare cache for hrocinc.org
 # Credentials loaded from 1Password
 
-EMAIL=$(op item get "Cloudflare" --vault "TrueNAS Infrastructure" --fields username 2>/dev/null)
-API_KEY=$(op item get "Cloudflare" --vault "TrueNAS Infrastructure" --fields credential 2>/dev/null)
+EMAIL=$(op item get "Cloudflare" --vault "TrueNAS Infrastructure" --fields username --format json 2>/dev/null)
+API_KEY=$(op item get "Cloudflare" --vault "TrueNAS Infrastructure" --fields credential --format json 2>/dev/null)
 
 if [ -z "$EMAIL" ] || [ -z "$API_KEY" ]; then
   echo "Failed to load Cloudflare credentials from 1Password."

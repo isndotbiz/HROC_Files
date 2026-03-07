@@ -638,6 +638,26 @@ HROC is a non-profit website project with:
 
 **Note:** This is the authoritative HROC location. Old copy archived to `/mnt/d/workspace/Archive/2026-02-01/HROC_Files_old/`
 
+## RAG Access
+
+RAG system on TrueNAS (canonical reference: `True_Nas` repo, `docs/state/RAG-REFERENCE.md`).
+
+| Context | URL |
+|---------|-----|
+| Tailscale | `http://100.67.89.29:8400` |
+| LAN / Docker | `http://10.0.0.89:8400` |
+
+**API Key:** `op://Research/RAG API Key/credential`
+**Auth header:** `x-api-key: <key>` (lowercase)
+**Response:** `{query, mode, count, duration_ms, results: [{id, collection, content, similarity, metadata}]}`
+
+**MCP tools** (preferred in Claude Code):
+- `mcp__rag__rag_search(query="...", collection="...")`
+- `mcp__rag__rag_ingest(collection="...", documents=[...])`
+- `mcp__rag__rag_collections()`
+
+31 collections, 11,458 docs, all `mxbai-embed-large` 1024-dim.
+
 ## Canonical Stack Policy
 
 - Read `docs/state/STACK_CANONICAL.md` before editing RAG/orchestrator configuration.
